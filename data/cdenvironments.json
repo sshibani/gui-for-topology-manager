@@ -1,0 +1,16 @@
+{
+  "@odata.context":"http://localhost:81/ttm201501/$metadata#CdEnvironments","value":[
+    {
+      "Id":"CdEnvironment2","ExtensionProperties":[],"ScopedRepositoryKeys":[],"EnvironmentPurpose":"Staging","DiscoveryEndpointUrl":"http://app543.dmz3.sca.se:8882/discovery.svc",
+      "Credentials":{"@odata.type":"#Tridion.TopologyManager.Client.OAuthServiceCredentials","AuthenticationType":"OAuth","ClientId":"cmuser","ClientSecret":null},"IsOffline":false
+    },{
+      "Id":"CdEnvironment1","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"EnvironmentPurpose":"Live","DiscoveryEndpointUrl":"http://app543.dmz3.sca.se:8082/discovery.svc","Credentials":{
+        "@odata.type":"#Tridion.TopologyManager.Client.OAuthServiceCredentials","AuthenticationType":"OAuth","ClientId":"cmuser","ClientSecret":null
+      },"IsOffline":false
+    }
+  ]
+}

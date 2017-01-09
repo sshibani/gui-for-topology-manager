@@ -1,0 +1,9 @@
+<div class="environment" BackgroundHighlight="lightblue"
+     (click)="gotoEnvironment(env)"
+     *ngFor="let env of cdEnvironments">
+    <div><label>Id: </label> {{env.Id}} </div>
+    <div><label>Purpose: </label> {{env.EnvironmentPurpose}} </div>
+    <div><label>DiscoveryUrl: </label> {{env.DiscoveryEndpointUrl}} </div>
+    <div><label>IsOffline: </label> {{env.IsOffline}} </div>
+    <div><label>ClientId: </label> {{env.Credentials.ClientId}} </div>
+</div>

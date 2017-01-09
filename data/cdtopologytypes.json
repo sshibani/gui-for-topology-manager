@@ -1,0 +1,17 @@
+{
+  "@odata.context":"http://localhost:81/ttm201501/$metadata#CdTopologyTypes","value":[
+    {
+      "Id":"CdTopologyType1","ExtensionProperties":[
+        
+      ],"Name":"Live and Staging","EnvironmentPurposes":[
+        "Live","Staging"
+      ]
+    },{
+      "Id":"CdTopologyType2","ExtensionProperties":[
+        
+      ],"Name":"liveandpreview","EnvironmentPurposes":[
+        "live","preview"
+      ]
+    }
+  ]
+}
