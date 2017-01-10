@@ -7,12 +7,6 @@
     </div>
 </div>
 
-<div class="website" BackgroundHighlight="lightblue"
-     *ngFor="let website of _viewWebsites">
-    <div><label>Id: </label> {{website.Id}} </div>
-    <div><label>CdEnvironmentId: </label> {{website.CdEnvironmentId}} </div>
-    <div><label>EnvironmentPurpose: </label> {{website.EnvironmentPurpose}} </div>
-    <div *ngFor="let baseUrl of website.BaseUrls">
-        <label>BaseUrl: </label> {{baseUrl}}
-    </div>
+<div *ngFor="let item of ViewCollection">
+   <website-promobox [website]="item"></website-promobox>
 </div>

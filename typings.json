@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "topology-manager",
   "dependencies": {},
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.9.7+20161130133742",

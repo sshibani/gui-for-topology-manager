@@ -3,6 +3,9 @@ export class RouteConst {
     public static Environmentpath = "environment";
 
     public static WebsiteOverviewPath = "websites";
+
+    public static WebApplicationOverviewPath = "webapplications";
+    public static MappingOverviewPath = "mappings";
 }
 
 export class CommonConst {

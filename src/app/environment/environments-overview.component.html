@@ -1,9 +1,9 @@
 <div class="environment" BackgroundHighlight="lightblue"
-     (click)="gotoEnvironment(env)"
-     *ngFor="let env of cdEnvironments">
-    <div><label>Id: </label> {{env.Id}} </div>
-    <div><label>Purpose: </label> {{env.EnvironmentPurpose}} </div>
-    <div><label>DiscoveryUrl: </label> {{env.DiscoveryEndpointUrl}} </div>
-    <div><label>IsOffline: </label> {{env.IsOffline}} </div>
-    <div><label>ClientId: </label> {{env.Credentials.ClientId}} </div>
+     (click)="gotoEnvironment(item)"
+     *ngFor="let item of ViewCollection">
+    <div><label>Id: </label> {{item.Id}} </div>
+    <div><label>Purpose: </label> {{item.EnvironmentPurpose}} </div>
+    <div><label>DiscoveryUrl: </label> {{item.DiscoveryEndpointUrl}} </div>
+    <div><label>IsOffline: </label> {{item.IsOffline}} </div>
+    <div><label>ClientId: </label> {{item.Credentials.ClientId}} </div>
 </div>

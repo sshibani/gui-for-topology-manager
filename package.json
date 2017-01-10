@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "topology-manager",
   "version": "1.0.0",
   "scripts": {
     "clean": "gulp clean",

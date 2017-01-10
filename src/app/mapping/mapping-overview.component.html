@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<div class="webapplication search">
+    <div class="search--title">
+        <label>Search</label>
+        <input (keyup)="Search($event)" placeholder="search"/>
+    </div>
+</div>
+<div *ngFor="let item of ViewCollection">
+   <mapping-promobox [Model]="item"></mapping-promobox>
+</div>

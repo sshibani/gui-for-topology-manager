@@ -2,3 +2,8 @@
     <div><label>Id:</label> {{cdEnvironment.Id}}</div>
     <div><label>Purpose:</label> {{cdEnvironment.EnvironmentPurpose}}</div>
 </div>
+
+<div *ngFor="let website of websites">
+   <website-promobox [website]="website"></website-promobox>
+</div>
+
