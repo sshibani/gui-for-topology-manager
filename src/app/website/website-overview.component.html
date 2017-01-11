@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 
-<search [SearchCallback]="SearchCallback"></search>
+<search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 
 <div *ngFor="let item of ViewCollection">
    <website-promobox [website]="item"></website-promobox>

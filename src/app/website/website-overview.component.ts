@@ -14,7 +14,6 @@ import { Website } from './../shared/models/website';
 export class WebsiteOverviewComponent extends ComponentBase<Website> implements OnInit {
     title = "website";
 
-
     constructor(private websiteService: WebsiteService) {
         super(websiteService);
      }

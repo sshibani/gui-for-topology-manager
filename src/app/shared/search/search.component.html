@@ -1,6 +1,11 @@
+<h3>{{title}}</h3>
 <div class="search">
-    <div class="search--title">
-        <label>Search</label>
-        <input (keyup)="SearchCallback($event)" placeholder="search"/>
+    <div class="search--id">
+        <label>Id: </label>
+        <input (keyup)="OnId($event)" placeholder="search"/>
+    </div>
+     <div class="search--purpose">
+        <label>EnvironmentPurpose: </label>
+        <input (keyup)="OnEnvironmentPurpose($event)" placeholder="search"/>
     </div>
 </div>
