@@ -23,6 +23,8 @@ import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
 
+import { SearchComponent } from './shared/search/search.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { HighlightDirective } from './shared/attribute-directives/highlight-dire
   ],
   declarations: [
     HighlightDirective,
+    SearchComponent,
     AppComponent,
     MainComponent,
     NavigationComponent,

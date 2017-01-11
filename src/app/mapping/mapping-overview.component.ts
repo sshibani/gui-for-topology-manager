@@ -20,6 +20,6 @@ export class MappingOverviewComponent extends ComponentBase<Mapping> implements 
      }
 
     ngOnInit() {
-        this.Load();
+        this.Init();
     }
 }

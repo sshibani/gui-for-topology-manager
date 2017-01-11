@@ -20,6 +20,6 @@ export class WebApplicationOverviewComponent extends ComponentBase<WebApplicatio
      }
 
     ngOnInit() {
-        this.Load();
+        this.Init();
     }
 }

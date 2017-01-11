@@ -21,7 +21,7 @@ export class EnvironmentsOverviewComponent extends ComponentBase<CdEnvironment> 
                  }
 
     ngOnInit() {
-        this.Load();
+        this.Init();
     }
 
     gotoEnvironment(env: CdEnvironment): void {

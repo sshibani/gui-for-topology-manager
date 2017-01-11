@@ -13,21 +13,21 @@ export abstract class ComponentBase<T extends ITopologyItem> implements ICompone
     @Input()
     ViewCollection: T[];
     Collection: T[];
-
+    public SearchCallback: Function;
     constructor(private service: IServiceBase<T>) { }
-
-
-
-    Load() {
+    Init() {
         this.service.GetAll()
                 .then(w => {
                     this.Collection = w;
                     this.ViewCollection = w;
                 });
+        this.SearchCallback = this.Search.bind(this);
     }
 
     Search(event: any): void {
         console.log(event.target.value);
         this.ViewCollection = this.Collection.filter(item => item.Id.includes(event.target.value));
     }
+
+
 }

@@ -1,11 +1,6 @@
 <h1>{{title}}</h1>
 
-<div class="website search">
-    <div class="search--title">
-        <label>Search</label>
-        <input (keyup)="Search($event)" placeholder="search"/>
-    </div>
-</div>
+<search [SearchCallback]="SearchCallback"></search>
 
 <div *ngFor="let item of ViewCollection">
    <website-promobox [website]="item"></website-promobox>
