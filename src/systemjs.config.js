@@ -25,21 +25,17 @@
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
       'typescript':                 'npm:typescript@2.0.2/lib/typescript.js',
+      'moment':                     'npm:moment',
+      'ng2-bootstrap':              'npm:ng2-bootstrap'
     }
    // packages tells the System loader how to load when no filename and/or no extension
 
   var packages = {
-      app: {
-        main: './main.js',
-        defaultExtension: 'js'
-      },
-      rxjs: {
-        defaultExtension: 'js'
-      },
-      'angular2-in-memory-web-api': {
-        main: './index.js',
-        defaultExtension: 'js'
-      }
+      app: { main: './main.js', defaultExtension: 'js' },
+      rxjs: { defaultExtension: 'js' },
+      'ng2-bootstrap': { format: 'cjs', main: 'bundles/ng2-bootstrap.umd.js', defaultExtension: 'js' },
+      'moment':  { main: 'moment.js', defaultExtension: 'js' },
+      'angular2-in-memory-web-api': { main: './index.js', defaultExtension: 'js'}
     }
 
   System.config({

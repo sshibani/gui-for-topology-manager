@@ -10,7 +10,7 @@ import { WebApplicationOverviewComponent } from './webapplication/webapplication
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/main', pathMatch: 'full' },
+    { path: '', redirectTo: RouteConst.EnvironmentOverviewPath, pathMatch: 'full' },
     { path: 'main', component: MainComponent },
     { path: RouteConst.EnvironmentOverviewPath, component: EnvironmentsOverviewComponent },
     { path: RouteConst.Environmentpath + '/:id', component: EnvironmentComponent },

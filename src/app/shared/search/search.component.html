@@ -1,11 +1,27 @@
-<h3>{{title}}</h3>
-<div class="search">
-    <div class="search--id">
-        <label>Id: </label>
-        <input (keyup)="OnId($event)" placeholder="search"/>
+<button type="button" class="btn btn-primary"
+        (click)="isCollapsed = !isCollapsed">{{title}}
+</button>
+<hr/>
+<div (collapsed)="collapsed($event)"
+     (expanded)="expanded($event)"
+     [collapse]="isCollapsed"
+     class="card card-block card-header">
+  <div class="well well-lg">
+     <div class="container">
+        <label class="btn btn-primary" [(ngModel)]="operator" btnRadio="AND">AND</label>
+        <label class="btn btn-primary" [(ngModel)]="operator"  btnRadio="OR">OR</label>
     </div>
-     <div class="search--purpose">
-        <label>EnvironmentPurpose: </label>
-        <input (keyup)="OnEnvironmentPurpose($event)" placeholder="search"/>
+    <br/>
+    <div class="conatiner">
+        <div class="search--id">
+            <label>Id: </label>
+            <input (keyup)="OnId($event)" placeholder="Id"/>
+        </div>
+        <div class="search--purpose">
+            <label>EnvironmentPurpose: </label>
+            <input (keyup)="OnEnvironmentPurpose($event)" placeholder="EnvironmentPurpose"/>
+        </div>
+    </div>
     </div>
 </div>
+

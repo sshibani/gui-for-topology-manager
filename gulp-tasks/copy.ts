@@ -7,6 +7,8 @@ module.exports = function (gulp, $, config) {
                 'systemjs/dist/system.src.js',
                 'reflect-metadata/Reflect.js',
                 'angular2-in-memory-web-api/**/*.js',
+                'ng2-bootstrap/**/*.js',
+                'bootstrap/dist/**',
                 'rxjs/**/*.js',
                 'zone.js/dist/**',
                 '@angular/**/bundles/**'

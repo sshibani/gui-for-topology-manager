@@ -10,6 +10,9 @@ import { ITopologyItem } from './../models/contracts/itopologyitem';
 })
 export class SearchComponent implements OnInit {
     title = "Search";
+    public operator: string = 'Middle';
+    public isCollapsed: boolean = true;
+
     @Output()
     onKeypress = new EventEmitter<ITopologyItem[]>();
     @Input()
@@ -42,5 +45,13 @@ export class SearchComponent implements OnInit {
             list = list.filter(item => item.EnvironmentPurpose.toLowerCase().includes(this.environmentPurpose));
         }
         this.onKeypress.emit(list);
+    }
+
+    public collapsed(event:any):void {
+        console.log(event);
+    }
+
+    public expanded(event:any):void {
+        console.log(event);
     }
 }

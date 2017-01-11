@@ -4,6 +4,8 @@ import { FormsModule }   from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
+import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule  } from 'ng2-bootstrap';
+
 import { AppRoutingModule } from './app.routing';
 import { AppComponent }  from './app.component';
 
@@ -24,17 +26,24 @@ import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
 
 import { SearchComponent } from './shared/search/search.component';
+import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    TabsModule.forRoot(),
+    AccordionModule.forRoot(),
+    CollapseModule.forRoot(),
+    ButtonsModule.forRoot(),
+    ModalModule.forRoot()
   ],
   declarations: [
     HighlightDirective,
     SearchComponent,
+    ActionButtonsComponent,
     AppComponent,
     MainComponent,
     NavigationComponent,

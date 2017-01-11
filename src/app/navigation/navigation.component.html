@@ -1,7 +1,5 @@
-<nav>
-    <ul>
-        <li *ngFor="let item of navItems">
-            <a routerLink="{{item.path}}">{{item.title}}</a>
-        </li>
-    </ul>
-</nav>
+<tabset>
+  <tab *ngFor="let item of navItems">
+    <template tabHeading><a routerLink="{{item.path}}">{{item.title}}</a></template>
+  </tab>
+</tabset>
