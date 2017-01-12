@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ComponentBase } from './../shared/bases/component-base';
-
 import { Mapping } from './../shared/models/mapping';
-
 import { MappingService } from './../services/mapping.service';
+
 @Component({
     moduleId: module.id,
     selector: 'mapping-overview',

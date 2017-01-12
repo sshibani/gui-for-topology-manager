@@ -1,10 +1,12 @@
-<div *ngIf="Model" class="mapping" BackgroundHighlight="lightblue">
-    <div><label>Id: </label> {{Model.Id}} </div>
-    <div><label>CmEnvironmentId: </label> {{Model.CmEnvironmentId}} </div>
-    <div><label>PublicationId: </label> {{Model.PublicationId}} </div>
-    <div><label>EnvironmentPurpose: </label> {{Model.EnvironmentPurpose}} </div>
-    <div><label>WebApplicationId: </label> {{Model.WebApplicationId}} </div>
-    <div><label>RelativeUrl: </label> {{Model.RelativeUrl}} </div>
-    <div><label>PrimaryMappedUrl: </label> {{Model.PrimaryMappedUrl}} </div>
-    <div><label>ContexIsOfflinetUrl: </label> {{Model.IsOffline}} </div>
+<div *ngIf="model" class="mapping" BackgroundHighlight="lightblue">
+    <div><label>Id: </label> {{model.Id}} </div>
+    <div><label>CmEnvironmentId: </label> {{model.CmEnvironmentId}} </div>
+    <div><label>PublicationId: </label> {{model.PublicationId}} </div>
+    <div><label>EnvironmentPurpose: </label> {{model.EnvironmentPurpose}} </div>
+    <div><label>WebApplicationId: </label> {{model.WebApplicationId}} </div>
+    <div><label>RelativeUrl: </label> {{model.RelativeUrl}} </div>
+    <div><label>PrimaryMappedUrl: </label> {{model.PrimaryMappedUrl}} </div>
+    <div><label>IsOffline: </label> {{model.IsOffline}} </div>
+
+    <action-buttons [Model]="model" Path="{{detailsPath}}"></action-buttons>
 </div>

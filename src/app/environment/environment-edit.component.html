@@ -1,11 +1,4 @@
-<div *ngIf="model">
-    <button type="button" class="btn btn-success"(click)="lgModal.show()">Edit</button>
-    <div><label>Id:</label> {{model.Id}}</div>
-    <div><label>Purpose:</label> {{model.EnvironmentPurpose}}</div>
-    <div><label>IsOffline:</label> {{model.IsOffline}}</div>
-
-
-    <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+ <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -24,11 +17,3 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<!--
-<div *ngFor="let item of websites">
-   <website-promobox [Model]="item"></website-promobox>
-</div>-->
-

@@ -8,8 +8,8 @@ import { Website } from './../shared/models/website';
     templateUrl: 'website-promobox.component.html'
 })
 export class WebsitePromoboxComponent implements OnInit {
-    @Input()
-    website: Website;
+    @Input("Model")
+    model: Website;
     constructor() { }
 
     ngOnInit() { }

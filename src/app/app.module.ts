@@ -23,6 +23,8 @@ import { WebApplicationOverviewComponent } from './webapplication/webapplication
 import { WebApplicationPromoboxComponent } from './webapplication/webapplication-promobox-component';
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
+
+import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
 
 import { SearchComponent } from './shared/search/search.component';
@@ -42,6 +44,7 @@ import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.c
   ],
   declarations: [
     HighlightDirective,
+    GoToDirective,
     SearchComponent,
     ActionButtonsComponent,
     AppComponent,

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 import { CdEnvironment } from './../shared/models/cdenvironment';
 import { Website } from './../shared/models/website';
@@ -17,9 +18,10 @@ import { WebsiteService } from './../services/website.service';
 export class EnvironmentComponent implements OnInit {
     title = "adsfa";
     cdid: string;
-    @Input()
-    cdEnvironment: CdEnvironment;
+    @Input("Model")
+    model: CdEnvironment;
     websites: Website[];
+    @ViewChild('lgModal') modal:any;
 
     constructor(private environmentService: EnvironmentService,
                 private websiteService: WebsiteService,
@@ -31,9 +33,14 @@ export class EnvironmentComponent implements OnInit {
              let id = params['id'];
              this.cdid = id;
              this.environmentService.Get(id)
-                .then(e => this.cdEnvironment = e);
+                .then(e => this.model = e);
              this.websiteService.GetByCdEnvironmentId(id)
                 .then(e => this.websites = e);
         });
      }
+
+    Save(event: any): void {
+        console.log("save");
+        this.modal.hide();
+    }
 }

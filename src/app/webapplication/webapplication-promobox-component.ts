@@ -8,8 +8,8 @@ import { WebApplication } from './../shared/models/webapplication';
     templateUrl: 'webapplication-promobox.component.html'
 })
 export class WebApplicationPromoboxComponent implements OnInit {
-    @Input()
-    Model: WebApplication;
+    @Input("Model")
+    model: WebApplication;
     constructor() { }
 
     ngOnInit() { }

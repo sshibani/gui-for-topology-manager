@@ -9,5 +9,6 @@
     <div><label>IsOffline: </label> {{item.IsOffline}} </div>
     <div><label>ClientId: </label> {{item.Credentials.ClientId}} </div>
 
-    <action-buttons [Model]="item"></action-buttons>
+    <button type="button" class="btn btn-primary" [GoTo]="item" Path="{{detailsPath}}">Zoom in</button>
+    <!--<action-buttcons [Model]="item" Path="{{detailsPath}}"></action-buttons>-->
 </div>

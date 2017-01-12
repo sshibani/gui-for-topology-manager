@@ -15,8 +15,8 @@ export class SearchComponent implements OnInit {
 
     @Output()
     onKeypress = new EventEmitter<ITopologyItem[]>();
-    @Input()
-    Collection: ITopologyItem[];
+    @Input("Collection")
+    collection: ITopologyItem[];
 
     id: string = '';
     environmentPurpose: string = '';
@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit {
     }
 
     filter(): void {
-        let list = this.Collection;
+        let list = this.collection;
         if (this.id !== '') {
             list = list.filter(item => item.Id.toLowerCase().includes(this.id));
         }

@@ -8,8 +8,8 @@ import { Mapping } from './../shared/models/mapping';
     templateUrl: 'mapping-promobox.component.html'
 })
 export class MappingPromoboxComponent implements OnInit {
-    @Input()
-    Model: Mapping;
+    @Input("Model")
+    model: Mapping;
     constructor() { }
 
     ngOnInit() { }

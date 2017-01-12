@@ -1,6 +1,8 @@
-<div *ngIf="Model" class="Webapplication" BackgroundHighlight="lightblue">
-    <div><label>Id: </label> {{Model.Id}} </div>
-    <div><label>WebsiteId: </label> {{Model.WebsiteId}} </div>
-    <div><label>EnvironmentPurpose: </label> {{Model.EnvironmentPurpose}} </div>
-    <div><label>ContextUrl: </label> {{Model.Url}} </div>
+<div *ngIf="model" class="Webapplication" BackgroundHighlight="lightblue">
+    <div><label>Id: </label> {{model.Id}} </div>
+    <div><label>WebsiteId: </label> {{model.WebsiteId}} </div>
+    <div><label>EnvironmentPurpose: </label> {{model.EnvironmentPurpose}} </div>
+    <div><label>ContextUrl: </label> {{model.Url}} </div>
+
+       <action-buttons [Model]="model" Path="{{detailsPath}}"></action-buttons>
 </div>
