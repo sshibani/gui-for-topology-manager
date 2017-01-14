@@ -17,4 +17,14 @@ export class EnvironmentService extends ServiceBase<CdEnvironment> {
         console.warn(res.json());
         return res.json().value as CdEnvironment[];
     }
+
+    handleCreate(res: Response) {
+        console.log(res);
+        if (res.status === 201) {
+            return res.json() as CdEnvironment;
+        }
+    }
+    handleDelete(res: Response) {
+
+    }
 }

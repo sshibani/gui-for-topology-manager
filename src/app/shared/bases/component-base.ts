@@ -24,7 +24,7 @@ export abstract class ComponentBase<T extends ITopologyItem> implements ICompone
 
     }
 
-      ViewUpdate(collection: T[]) {
+    ViewUpdate(collection: T[]) {
         this.ViewCollection = collection;
     }
 }

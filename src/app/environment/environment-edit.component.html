@@ -8,9 +8,13 @@
                 <h4 class="modal-title">{{tabHeader}}</h4>
             </div>
             <div class="modal-body">
+                <div class="form-group" *ngIf="showIdField">
+                    <label>Id</label>
+                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" required />
+                </div>
                 <div class="form-group">
                     <label>EnvironmentPurpose</label>
-                    <input [(ngModel)]="model.EnvironmentPurpose" placeholder="Purpose" required />
+                    <input type="text" [(ngModel)]="model.EnvironmentPurpose" placeholder="Purpose" required />
                 </div>
                 <div class="form-group">
                     <label>DiscoveryEndpointUrl</label>

@@ -20,4 +20,10 @@ export class WebsiteService extends ServiceBase<Website> {
          return this.GetAll()
                     .then(env => env.filter(e => e.CdEnvironmentId === id));
     }
+    handleCreate(res: Response) {
+
+    }
+    handleDelete(res: Response) {
+
+    }
 }

@@ -9,6 +9,7 @@ import { CdEnvironment } from './../shared/models/cdenvironment';
 export interface IServiceBase<T> {
     GetAll(): Promise<T[]>;
     Get(id: string): Promise<T>;
+    Create(data: T): Promise<T>;
 }
 
 export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBase<T> {
@@ -22,7 +23,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         this._environmentUrl = CommonConst.TopologyManagerBaseUrl + endPoint;
         this._headers = new Headers();
         this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
-        this._headers.append('Content-Type', 'text/plain');
+        this._headers.append('Content-Type', 'application/json');
     }
 
 
@@ -36,6 +37,19 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
          return this.GetAll()
                     .then(env => env.find(e => e.Id === id));
     }
+    public Create(data: T): Promise<T> {
+        let body = JSON.stringify(data);
+        body = body.replace(/ODatatype/g, "@odata.type");
+        console.log(body);
+        return this._http.post(this._environmentUrl, body, {headers: this._headers })
+                    .toPromise()
+                    .then(this.handleCreate)
+                    .catch(this.handleError);
+
+    }
+
+    abstract handleCreate(res: Response);
+    abstract handleDelete(res: Response);
 
     abstract extractData(res: Response);
 

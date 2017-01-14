@@ -16,5 +16,10 @@ export class WebApplicationService extends ServiceBase<WebApplication> {
         return res.json().value as WebApplication[];
     }
 
+    handleCreate(res: Response) {
 
+    }
+    handleDelete(res: Response) {
+
+    }
 }
