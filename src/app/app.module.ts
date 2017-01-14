@@ -17,6 +17,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 import { EnvironmentComponent } from './environment/environment.component';
 import { EnvironmentsOverviewComponent } from './environment/environments-overview.component';
+import { EnvironmentPromoboxComponent } from './environment/environment-promobox.component';
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsitePromoboxComponent } from './website/website-promobox.component';
 import { WebApplicationOverviewComponent } from './webapplication/webapplication-overview.component';
@@ -29,6 +30,8 @@ import { HighlightDirective } from './shared/attribute-directives/highlight-dire
 
 import { SearchComponent } from './shared/search/search.component';
 import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.component';
+
+import { EnvironmentEditComponent } from './environment/environment-edit.component';
 
 @NgModule({
   imports: [
@@ -51,6 +54,8 @@ import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.c
     MainComponent,
     NavigationComponent,
     EnvironmentsOverviewComponent,
+    EnvironmentPromoboxComponent,
+    EnvironmentEditComponent,
     EnvironmentComponent,
     WebsiteOverviewComponent,
     WebsitePromoboxComponent,

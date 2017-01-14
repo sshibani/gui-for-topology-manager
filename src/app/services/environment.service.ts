@@ -10,7 +10,7 @@ import { CdEnvironment } from './../shared/models/cdenvironment';
 export class EnvironmentService extends ServiceBase<CdEnvironment> {
 
     constructor(private http: Http) {
-        super(http, "data/cdenvironments.json");
+        super(http, "CdEnvironments");
     }
 
     extractData(res: Response) {

@@ -14,12 +14,26 @@ export class EnvironmentEditComponent implements OnInit {
     @ViewChild('lgModal')
     modal:any;
 
+    tabHeader: string;
+    authenticationTypes = CdEnvironment.AuthenticationTypes;
+
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        if (this.model) {
+            this.tabHeader = "Edit Environment (" + this.model.Id + ")";
+        } else {
+            this.tabHeader = "Add Environment";
+            this.model = new CdEnvironment();
+        }
+    }
 
     Save(event: any): void {
         console.log("save");
         this.modal.hide();
+    }
+
+    Show(): void {
+        this.modal.show();
     }
 }

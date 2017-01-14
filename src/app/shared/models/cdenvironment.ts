@@ -6,7 +6,9 @@ export class CdEnvironment implements ITopologyItem {
     EnvironmentPurpose: string;
     DiscoveryEndpointUrl: string;
     IsOffline: boolean;
-    Credentials: Credentials;
+    Credentials: Credentials = new Credentials();
+
+    static AuthenticationTypes: string[] = [ "Anonymous", "Basic", "Windows", "OAuth" ];
 }
 
 export class Credentials {

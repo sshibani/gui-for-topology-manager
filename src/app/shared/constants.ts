@@ -9,5 +9,5 @@ export class RouteConst {
 }
 
 export class CommonConst {
-    public static TopologyManagerBaseUrl = "http://localhost:85/api/";
+    public static TopologyManagerBaseUrl = "http://52.214.201.184:81/ttm201601/";
 }

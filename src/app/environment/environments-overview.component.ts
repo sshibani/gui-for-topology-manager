@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ComponentBase } from './../shared/bases/component-base';
 import { CdEnvironment } from './../shared/models/cdenvironment';
 import { EnvironmentService } from './../services/environment.service';
-import { RouteConst } from './../shared/constants';
+
+import { EnvironmentEditComponent } from './environment-edit.component';
+
 @Component({
     moduleId: module.id,
     selector: 'env',
@@ -12,12 +14,17 @@ import { RouteConst } from './../shared/constants';
     providers: [EnvironmentService]
 })
 export class EnvironmentsOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
-    detailsPath: string = RouteConst.Environmentpath;
+    @ViewChild(EnvironmentEditComponent)
+    private _environmentEdit: EnvironmentEditComponent;
     constructor(private environmentService: EnvironmentService) {
                     super(environmentService);
                  }
 
     ngOnInit() {
         this.Init();
+    }
+
+     ShowEditWindow(event: any): void {
+        this._environmentEdit.Show();
     }
 }

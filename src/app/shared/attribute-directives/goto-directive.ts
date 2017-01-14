@@ -19,29 +19,3 @@ export class GoToDirective {
     }
 
 }
-
-
-
-// import { Directive, HostListener , Input } from '@angular/core';
-// import { Router } from '@angular/router';
-
-// import { ITopologyItem } from './../models/contracts/itopologyitem';
-
-// @Directive({ selector: '[GoTO]' })
-// export class GoToDirective {
-//     private _router;
-
-//     constructor(router: Router) {
-//         console.log("goto");
-//         this._router = router;
-//     }
-
-//     @Input('GoTo') Model : ITopologyItem;
-
-//     @HostListener('mouseenter') onMouseEnter() {
-//         console.log(this.Model);
-//         // let link = ['/environment', this.Model.Id];
-//         // this._router.navigate(link);
-//     }
-
-// }

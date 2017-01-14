@@ -7,6 +7,7 @@ import { Website } from './../shared/models/website';
 
 import { EnvironmentService } from './../services/environment.service';
 import { WebsiteService } from './../services/website.service';
+import { EnvironmentEditComponent } from './environment-edit.component';
 
 @Component({
     moduleId: module.id,
@@ -18,10 +19,12 @@ import { WebsiteService } from './../services/website.service';
 export class EnvironmentComponent implements OnInit {
     title = "adsfa";
     cdid: string;
+    websites: Website[];
     @Input("Model")
     model: CdEnvironment;
-    websites: Website[];
-    @ViewChild('lgModal') modal:any;
+
+    @ViewChild(EnvironmentEditComponent)
+    private _environmentEdit: EnvironmentEditComponent;
 
     constructor(private environmentService: EnvironmentService,
                 private websiteService: WebsiteService,
@@ -39,8 +42,7 @@ export class EnvironmentComponent implements OnInit {
         });
      }
 
-    Save(event: any): void {
-        console.log("save");
-        this.modal.hide();
+    ShowEditWindow(event: any): void {
+        this._environmentEdit.Show();
     }
 }

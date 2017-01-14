@@ -1,0 +1,10 @@
+<div *ngIf="model" class="model" BackgroundHighlight="lightblue">
+    <div><label>Id: </label> {{model.Id}} </div>
+    <div><label>Purpose: </label> {{model.EnvironmentPurpose}} </div>
+    <div><label>DiscoveryUrl: </label> {{model.DiscoveryEndpointUrl}} </div>
+    <div><label>IsOffline: </label> {{model.IsOffline}} </div>
+    <div><label>ClientId: </label> {{model.Credentials.ClientId}} </div>
+    <div><label>Authentication Type: </label> {{model.Credentials.AuthenticationType}} </div>
+
+    <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
+</div>

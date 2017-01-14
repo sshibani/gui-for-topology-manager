@@ -1,14 +1,21 @@
 
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 
+<div>
+    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
+</div>
+<env-edit></env-edit>
 <div class="environment" BackgroundHighlight="lightblue"
      *ngFor="let item of ViewCollection">
-    <div><label>Id: </label> {{item.Id}} </div>
+    <environment-promobox [Model]="item"></environment-promobox>
+    <!--<div><label>Id: </label> {{item.Id}} </div>
     <div><label>Purpose: </label> {{item.EnvironmentPurpose}} </div>
     <div><label>DiscoveryUrl: </label> {{item.DiscoveryEndpointUrl}} </div>
     <div><label>IsOffline: </label> {{item.IsOffline}} </div>
     <div><label>ClientId: </label> {{item.Credentials.ClientId}} </div>
+    <div><label>Authentication Type: </label> {{item.Credentials.AuthenticationType}} </div>
 
-    <button type="button" class="btn btn-primary" [GoTo]="item" Path="{{detailsPath}}">Zoom in</button>
+    <button type="button" class="btn btn-primary" [GoTo]="item" Path="{{detailsPath}}">Zoom in</button>-->
+
     <!--<action-buttcons [Model]="item" Path="{{detailsPath}}"></action-buttons>-->
 </div>
