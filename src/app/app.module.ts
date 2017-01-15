@@ -4,7 +4,7 @@ import { FormsModule }   from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
-import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule  } from 'ng2-bootstrap';
+import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule, AlertModule   } from 'ng2-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent }  from './app.component';
@@ -43,7 +43,8 @@ import { EnvironmentEditComponent } from './environment/environment-edit.compone
     AccordionModule.forRoot(),
     CollapseModule.forRoot(),
     ButtonsModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AlertModule .forRoot()
   ],
   declarations: [
     HighlightDirective,

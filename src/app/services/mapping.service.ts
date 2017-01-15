@@ -15,11 +15,4 @@ export class MappingService extends ServiceBase<Mapping> {
         console.warn(res.json());
         return res.json().value as Mapping[];
     }
-
-    handleCreate(res: Response) {
-
-    }
-    handleDelete(res: Response) {
-
-    }
 }

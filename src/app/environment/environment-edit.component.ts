@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 
 import { CdEnvironment } from './../shared/models/cdenvironment';
 
@@ -17,9 +17,12 @@ export class EnvironmentEditComponent implements OnInit {
     model: CdEnvironment;
     @ViewChild('lgModal')
     modal:any;
+    @Output("ModelUpdate")
+    modelUpdate = new EventEmitter<CdEnvironment>();
 
     tabHeader: string;
     showIdField: boolean = false;
+    autoGenerateId: boolean = true;
     authenticationTypes = CdEnvironment.AuthenticationTypes;
     private _service: EnvironmentService;
 
@@ -33,6 +36,7 @@ export class EnvironmentEditComponent implements OnInit {
         } else {
             this.tabHeader = "Add Environment";
             this.model = new CdEnvironment();
+            this.model.DiscoveryEndpointUrl = "http://localhost:8082/discovery.svc";
             this.showIdField = true;
         }
     }
@@ -40,7 +44,7 @@ export class EnvironmentEditComponent implements OnInit {
     Save(event: any): void {
         console.log("save");
         this._service.Create(this.model)
-            .then(m => this.model = m);
+            .then(a => this.modelUpdate.emit(a));
         this.modal.hide();
     }
 

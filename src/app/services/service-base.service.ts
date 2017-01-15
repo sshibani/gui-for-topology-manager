@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
 import { CommonConst } from './../shared/constants';
 import 'rxjs/add/operator/toPromise';
+import { Subject }   from 'rxjs/Subject';
 import { ITopologyItem } from './../shared/models/contracts/itopologyitem';
 
 import { CdEnvironment } from './../shared/models/cdenvironment';
@@ -10,12 +11,20 @@ export interface IServiceBase<T> {
     GetAll(): Promise<T[]>;
     Get(id: string): Promise<T>;
     Create(data: T): Promise<T>;
+    Delete(data: T): void;
+
+    DeleteEvent: Subject<T>;
+    //CreateEvent: Subject<T>;
 }
 
 export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBase<T> {
     private _environmentUrl;
     private _headers;
     private _http: Http;
+
+    DeleteEvent: Subject<T> = new Subject<T>();
+    CreateEvent: Subject<T> = new Subject<T>();
+
 
     constructor(http: Http, endPoint: string) {
         this._http = http;
@@ -41,15 +50,27 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         console.log(body);
-        return this._http.post(this._environmentUrl, body, {headers: this._headers })
+        return this._http.post(this._environmentUrl, body, { headers: this._headers })
                     .toPromise()
-                    .then(this.handleCreate)
+                    .then(res => {
+                        if (res.status === 201) {
+                            return res.json() as T;
+                        }
+                    })
                     .catch(this.handleError);
 
     }
-
-    abstract handleCreate(res: Response);
-    abstract handleDelete(res: Response);
+    public Delete(data: T): void {
+        let url = this._environmentUrl + "('" + data.Id + "')";
+        this._http.delete(url, { headers: this._headers })
+                    .toPromise()
+                    .then(res => {
+                        if (res.status === 200) {
+                            this.DeleteEvent.next(data);
+                        }
+                    })
+                    .catch(this.handleError);
+    }
 
     abstract extractData(res: Response);
 
