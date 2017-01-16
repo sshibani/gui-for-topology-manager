@@ -18,7 +18,7 @@ module.exports = function (gulp, $, config) {
 
     gulp.task("copy:testdata", () => {
         return gulp.src([
-                '*.json',
+                '*',
             ], {cwd: 'data/**'}) /* Glob required here. */
             .pipe(gulp.dest(config.distPath + "/data"));
     });

@@ -23,7 +23,8 @@ export class NavigationComponent implements OnInit {
             new NavigationItem("Environments", RouteConst.EnvironmentOverviewPath),
             new NavigationItem("Websites", RouteConst.WebsiteOverviewPath),
             new NavigationItem("WebApplications", RouteConst.WebApplicationOverviewPath),
-            new NavigationItem("Mappings", RouteConst.MappingOverviewPath)
+            new NavigationItem("Mappings", RouteConst.MappingOverviewPath),
+            new NavigationItem("Topology Types", RouteConst.TopologyTypeOverViewPath)
         ];
     }
 }

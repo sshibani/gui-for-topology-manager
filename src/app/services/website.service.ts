@@ -9,13 +9,8 @@ import { Website } from './../shared/models/website';
 export class WebsiteService extends ServiceBase<Website> {
 
     constructor(private http: Http) {
-        super(http, "data/websites.json");
+        super(http, "Websites");
     }
-    extractData(res: Response) {
-        console.warn(res.json());
-        return res.json().value as Website[];
-    }
-
      GetByCdEnvironmentId(id: string): Promise<Website[]> {
          return this.GetAll()
                     .then(env => env.filter(e => e.CdEnvironmentId === id));

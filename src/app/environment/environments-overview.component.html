@@ -6,7 +6,7 @@
 <div>
     <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
 </div>
-<env-edit (ModelUpdate)="UpdateModel($event)"></env-edit>
+<env-edit></env-edit>
 <div class="environment" BackgroundHighlight="lightblue"
      *ngFor="let item of ViewCollection">
     <environment-promobox [Model]="item"></environment-promobox>

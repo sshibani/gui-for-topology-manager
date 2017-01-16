@@ -17,6 +17,7 @@ export abstract class ComponentBase<T extends ITopologyItem> implements ICompone
     Collection: T[];
 
     private deleteSubscription: Subscription;
+    private createSubscription: Subscription;
 
     constructor(private service: IServiceBase<T>, private messageService: MessageService) {
         this.deleteSubscription = this.service.GetDeletedMessage().subscribe(value => {
@@ -24,6 +25,11 @@ export abstract class ComponentBase<T extends ITopologyItem> implements ICompone
                                     this.ViewCollection = this.ViewCollection.filter(item => item !== value);
                                     this.Collection = this.Collection.filter(item => item !== value);
                                 });
+        this.createSubscription = this.service.GetCreateMessage().subscribe(value => {
+                                this.showMessage('success', `TopologyItem with Id: ${value.Id} created.`);
+                                this.ViewCollection.push(value);
+                                this.Collection.push(value);
+                            });
      }
     Init() {
         this.service.GetAll()
@@ -32,10 +38,6 @@ export abstract class ComponentBase<T extends ITopologyItem> implements ICompone
                     this.ViewCollection = w;
                 });
 
-    }
-    UpdateModel(model: T) {
-        this.showMessage('success', `TopologyItem with Id: ${model.Id} created.`);
-        this.ViewCollection.push(model);
     }
 
     showMessage(msgType: string, message: string): void {

@@ -5,6 +5,8 @@ import { CdEnvironment } from './../shared/models/cdenvironment';
 
 import { EnvironmentService } from './../services/environment.service';
 
+import { ComponentPromoboxBase } from './../shared/bases/componentpromobox-base';
+
 @Component({
     moduleId: module.id,
     styleUrls: [ "environment.component.css" ],
@@ -12,19 +14,12 @@ import { EnvironmentService } from './../services/environment.service';
     templateUrl: 'environment-promobox.component.html',
 
 })
-export class EnvironmentPromoboxComponent implements OnInit {
+export class EnvironmentPromoboxComponent extends ComponentPromoboxBase<CdEnvironment> implements OnInit {
     detailsPath: string = RouteConst.Environmentpath;
-    @Input("Model")
-    model: CdEnvironment;
-
-    private _service: EnvironmentService;
     constructor(service: EnvironmentService) {
-        this._service = service;
+        super(service);
     }
 
     ngOnInit() { }
 
-    public Delete(): void {
-        this._service.Delete(this.model);
-    }
 }

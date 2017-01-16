@@ -24,6 +24,9 @@ import { WebApplicationOverviewComponent } from './webapplication/webapplication
 import { WebApplicationPromoboxComponent } from './webapplication/webapplication-promobox-component';
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
+import { TopologyTypeOverviewComponent } from './topologytype/topologytype-overview.component';
+import { TopologyTypePromoboxComponent } from './topologytype/topologytype-promobox.component';
+import { TopologyTypeEditComponent } from './topologytype/topologytype-edit.component';
 
 import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
@@ -67,6 +70,9 @@ import { MessageService } from './services/message.service';
     WebApplicationPromoboxComponent,
     MappingOverviewComponent,
     MappingPromoboxComponent,
+    TopologyTypeOverviewComponent,
+    TopologyTypePromoboxComponent,
+    TopologyTypeEditComponent,
     MessageComponent
   ],
   providers: [

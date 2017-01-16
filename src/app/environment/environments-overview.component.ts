@@ -17,7 +17,7 @@ import { EnvironmentEditComponent } from './environment-edit.component';
 export class EnvironmentsOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
     @ViewChild(EnvironmentEditComponent)
     private _environmentEdit: EnvironmentEditComponent;
-    constructor(private environmentService: EnvironmentService, private messageService: MessageService) {
+    constructor(environmentService: EnvironmentService, messageService: MessageService) {
                     super(environmentService, messageService);
                  }
 

@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
+<div>
+    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
+</div>
+<topologytype-edit></topologytype-edit>
+<div *ngFor="let item of ViewCollection">
+   <topologytype-promobox [Model]="item"></topologytype-promobox>
+</div>

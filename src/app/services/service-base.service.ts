@@ -12,11 +12,11 @@ import { CdEnvironment } from './../shared/models/cdenvironment';
 export interface IServiceBase<T> {
     GetAll(): Promise<T[]>;
     Get(id: string): Promise<T>;
-    Create(data: T): Promise<T>;
+    Create(data: T): void;
     Delete(data: T): void;
 
     GetDeletedMessage(): Observable<T>;
-    //CreateEvent: Subject<T>;
+    GetCreateMessage(): Observable<T>;
 }
 
 export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBase<T> {
@@ -25,7 +25,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private _http: Http;
 
     private deleteSubject = new Subject<T>();
-
+    private createSubject = new Subject<T>();
 
     constructor(http: Http, endPoint: string) {
         this._http = http;
@@ -47,15 +47,16 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
          return this.GetAll()
                     .then(env => env.find(e => e.Id === id));
     }
-    public Create(data: T): Promise<T> {
+    public Create(data: T): void {
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         console.log(body);
-        return this._http.post(this._environmentUrl, body, { headers: this._headers })
+        this._http.post(this._environmentUrl, body, { headers: this._headers })
                     .toPromise()
                     .then(res => {
                         if (res.status === 201) {
-                            return res.json() as T;
+                            let m = res.json() as T;
+                            this.createSubject.next(m);
                         }
                     })
                     .catch(this.handleError);
@@ -72,12 +73,19 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                     })
                     .catch(this.handleError);
     }
-
     public GetDeletedMessage(): Observable<T> {
         return this.deleteSubject.asObservable();
     }
 
-    abstract extractData(res: Response);
+    public GetCreateMessage(): Observable<T> {
+        return this.createSubject.asObservable();
+    }
+
+     extractData(res: Response) {
+        console.warn(res.json());
+        return res.json().value as T[];
+    }
+    //abstract extractData(res: Response);
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
