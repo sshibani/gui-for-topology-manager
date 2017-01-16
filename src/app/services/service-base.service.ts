@@ -2,7 +2,9 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
 import { CommonConst } from './../shared/constants';
 import 'rxjs/add/operator/toPromise';
-import { Subject }   from 'rxjs/Subject';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+
 import { ITopologyItem } from './../shared/models/contracts/itopologyitem';
 
 import { CdEnvironment } from './../shared/models/cdenvironment';
@@ -13,7 +15,7 @@ export interface IServiceBase<T> {
     Create(data: T): Promise<T>;
     Delete(data: T): void;
 
-    DeleteEvent: Subject<T>;
+    GetDeletedMessage(): Observable<T>;
     //CreateEvent: Subject<T>;
 }
 
@@ -22,8 +24,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private _headers;
     private _http: Http;
 
-    DeleteEvent: Subject<T> = new Subject<T>();
-    CreateEvent: Subject<T> = new Subject<T>();
+    private deleteSubject = new Subject<T>();
 
 
     constructor(http: Http, endPoint: string) {
@@ -42,7 +43,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                 .then(this.extractData)
                 .catch(this.handleError);
     }
-    Get(id: string): Promise<T> {
+    public Get(id: string): Promise<T> {
          return this.GetAll()
                     .then(env => env.find(e => e.Id === id));
     }
@@ -66,10 +67,14 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                     .toPromise()
                     .then(res => {
                         if (res.status === 200) {
-                            this.DeleteEvent.next(data);
+                            this.deleteSubject.next(data);
                         }
                     })
                     .catch(this.handleError);
+    }
+
+    public GetDeletedMessage(): Observable<T> {
+        return this.deleteSubject.asObservable();
     }
 
     abstract extractData(res: Response);

@@ -33,6 +33,9 @@ import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.c
 
 import { EnvironmentEditComponent } from './environment/environment-edit.component';
 
+import { MessageComponent } from './shared/message/message.component';
+import { MessageService } from './services/message.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -63,9 +66,11 @@ import { EnvironmentEditComponent } from './environment/environment-edit.compone
     WebApplicationOverviewComponent,
     WebApplicationPromoboxComponent,
     MappingOverviewComponent,
-    MappingPromoboxComponent
+    MappingPromoboxComponent,
+    MessageComponent
   ],
   providers: [
+    MessageService
   ],
     bootstrap: [ AppComponent ]
 })

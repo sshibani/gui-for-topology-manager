@@ -4,6 +4,7 @@ import { ComponentBase } from './../shared/bases/component-base';
 import { CdEnvironment } from './../shared/models/cdenvironment';
 import { EnvironmentService } from './../services/environment.service';
 
+import { MessageService } from './../services/message.service';
 import { EnvironmentEditComponent } from './environment-edit.component';
 
 @Component({
@@ -11,13 +12,13 @@ import { EnvironmentEditComponent } from './environment-edit.component';
     selector: 'env',
     styleUrls: [ 'environments.component.css'],
     templateUrl: 'environments-overview.component.html',
-    providers: [EnvironmentService]
+    providers: [ EnvironmentService ]
 })
 export class EnvironmentsOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
     @ViewChild(EnvironmentEditComponent)
     private _environmentEdit: EnvironmentEditComponent;
-    constructor(private environmentService: EnvironmentService) {
-                    super(environmentService);
+    constructor(private environmentService: EnvironmentService, private messageService: MessageService) {
+                    super(environmentService, messageService);
                  }
 
     ngOnInit() {

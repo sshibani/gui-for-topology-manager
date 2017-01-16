@@ -1,7 +1,6 @@
-
-<div *ngFor="let alert of alerts">
+<!--<div *ngFor="let alert of alerts">
   <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
-</div>
+</div>-->
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 
 <div>
@@ -11,14 +10,4 @@
 <div class="environment" BackgroundHighlight="lightblue"
      *ngFor="let item of ViewCollection">
     <environment-promobox [Model]="item"></environment-promobox>
-    <!--<div><label>Id: </label> {{item.Id}} </div>
-    <div><label>Purpose: </label> {{item.EnvironmentPurpose}} </div>
-    <div><label>DiscoveryUrl: </label> {{item.DiscoveryEndpointUrl}} </div>
-    <div><label>IsOffline: </label> {{item.IsOffline}} </div>
-    <div><label>ClientId: </label> {{item.Credentials.ClientId}} </div>
-    <div><label>Authentication Type: </label> {{item.Credentials.AuthenticationType}} </div>
-
-    <button type="button" class="btn btn-primary" [GoTo]="item" Path="{{detailsPath}}">Zoom in</button>-->
-
-    <!--<action-buttcons [Model]="item" Path="{{detailsPath}}"></action-buttons>-->
 </div>

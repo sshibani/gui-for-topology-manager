@@ -1,0 +1,3 @@
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.Type" [dismissOnTimeout]="alert.Timeout">{{ alert.Value }}</alert>
+</div>
