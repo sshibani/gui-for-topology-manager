@@ -1,8 +1,12 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
-import { CdEnvironment } from './../shared/models/cdenvironment';
+import { CdEnvironment, WindowsCredentials,
+        BasicCredentials, OAuthCredentials,
+        AnonymousCredentials  } from './../shared/models/cdenvironment';
 
 import { EnvironmentService } from './../services/environment.service';
+import { TopologyTypeService } from './../services/topologytype.service';
+
 import {ComponentEditBase } from './../shared/bases/componentedit-base';
 
 @Component({
@@ -10,12 +14,12 @@ import {ComponentEditBase } from './../shared/bases/componentedit-base';
     selector: 'env-edit',
     styleUrls: [ 'environment.component.css'],
     templateUrl: 'environment-edit.component.html',
-    providers: [ ]
+    providers: [ TopologyTypeService ]
 })
 export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> implements OnInit {
     authenticationTypes = CdEnvironment.AuthenticationTypes;
-
-    constructor(service: EnvironmentService) {
+    purposes: string[];
+    constructor(service: EnvironmentService, private topologyTypeService: TopologyTypeService) {
         super(service);
     }
 
@@ -25,8 +29,29 @@ export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> i
         } else {
             this.tabHeader = "Add Environment";
             this.model = new CdEnvironment();
+            this.model.Credentials = new AnonymousCredentials();
             this.model.DiscoveryEndpointUrl = "http://localhost:8082/discovery.svc";
             this.showIdField = true;
         }
+        this.getAvailableEnvironmentPurposes();
+    }
+
+    getAvailableEnvironmentPurposes(): void {
+        this.topologyTypeService.getPurposes()
+                    .then(a => this.purposes = a);
+    }
+
+    onChange(type: any) {
+        switch (type) {
+            case "Anonymous":
+                this.model.Credentials = new AnonymousCredentials();
+                break;
+            case "OAuth":
+                this.model.Credentials = new OAuthCredentials();
+                break;
+            default:
+                break;
+        }
+        console.log(this.model.Credentials.ODatatype);
     }
 }

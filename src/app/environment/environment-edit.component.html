@@ -15,7 +15,10 @@
                 </div>
                 <div class="form-group">
                     <label>EnvironmentPurpose</label>
-                    <input type="text" [(ngModel)]="model.EnvironmentPurpose" placeholder="Purpose" required />
+                    <select class="form-control" id="purposes"
+                            [(ngModel)]="model.EnvironmentPurpose" required >
+                        <option *ngFor="let c of purposes" [value]="c">{{c}}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>DiscoveryEndpointUrl</label>
@@ -27,10 +30,20 @@
                 </div>
                 <div class="form-group">
                     <label>AuthenticationType</label>
-                    <select class="form-control" id="authenticationtypes"
+                    <select class="form-control" id="authenticationtypes" (change)="onChange($event.target.value)"
                             [(ngModel)]="model.Credentials.AuthenticationType" required >
                         <option *ngFor="let type of authenticationTypes" [value]="type">{{type}}</option>
                     </select>
+                </div>
+                <div *ngIf="model.Credentials.AuthenticationType && model.Credentials.AuthenticationType != 'Anonymous'">
+                       <div class="form-group">
+                            <label>ClientId</label>
+                            <input [(ngModel)]="model.Credentials.ClientId" placeholder="ClientId" required />
+                        </div>
+                        <div class="form-group">
+                            <label>ClientSecret</label>
+                            <input [(ngModel)]="model.Credentials.ClientSecret" placeholder="ClientSecret" required />
+                        </div>
                 </div>
 
                 <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>

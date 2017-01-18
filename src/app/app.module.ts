@@ -32,9 +32,10 @@ import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
 
 import { SearchComponent } from './shared/search/search.component';
-import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.component';
 
 import { EnvironmentEditComponent } from './environment/environment-edit.component';
+
+import { DeleteWindowComponent } from './shared/popup/delete-window.component';
 
 import { MessageComponent } from './shared/message/message.component';
 import { MessageService } from './services/message.service';
@@ -56,7 +57,6 @@ import { MessageService } from './services/message.service';
     HighlightDirective,
     GoToDirective,
     SearchComponent,
-    ActionButtonsComponent,
     AppComponent,
     MainComponent,
     NavigationComponent,
@@ -73,7 +73,8 @@ import { MessageService } from './services/message.service';
     TopologyTypeOverviewComponent,
     TopologyTypePromoboxComponent,
     TopologyTypeEditComponent,
-    MessageComponent
+    MessageComponent,
+    DeleteWindowComponent
   ],
   providers: [
     MessageService

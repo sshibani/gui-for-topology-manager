@@ -6,7 +6,7 @@ export class CdEnvironment implements ITopologyItem {
     EnvironmentPurpose: string;
     DiscoveryEndpointUrl: string;
     IsOffline: boolean;
-    Credentials: Credentials = new Credentials();
+    Credentials: Credentials;
 
     ODatatype: string;
 
@@ -14,16 +14,31 @@ export class CdEnvironment implements ITopologyItem {
         this.ODatatype = "#Tridion.TopologyManager.Client.CdEnvironmentData";
     }
 
-    static AuthenticationTypes: string[] = [ "Anonymous", "Basic", "Windows", "OAuth" ];
+    static AuthenticationTypes: string[] = [ "Anonymous", "OAuth" ];
 }
 
 export class Credentials {
-    ClientId: string;
-    ClientSecret: string;
+    // ClientId: string;
+    // ClientSecret: string;
     AuthenticationType: string;
 
     ODatatype: string;
-     constructor() {
-        this.ODatatype = "#Tridion.TopologyManager.Client.AnonymousServiceCredentials";
+     constructor(type: string, oDataType: string) {
+        this.AuthenticationType = type;
+        this.ODatatype = oDataType;
+    }
+}
+
+export class OAuthCredentials extends Credentials {
+    ClientId: string;
+    ClientSecret: string;
+    constructor() {
+        super("OAuth",  "#Tridion.TopologyManager.Client.OAuthServiceCredentials");
+    }
+}
+
+export class AnonymousCredentials extends Credentials {
+    constructor() {
+        super("Anonymous",  "#Tridion.TopologyManager.Client.AnonymousServiceCredentials");
     }
 }

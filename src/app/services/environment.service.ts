@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Response, Http } from '@angular/http';
 
-
+import { MessageService } from './message.service';
 import { ServiceBase } from './service-base.service';
 
 import { CdEnvironment } from './../shared/models/cdenvironment';

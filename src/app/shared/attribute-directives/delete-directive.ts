@@ -13,8 +13,8 @@ export class GoToDirective {
     modelUpdate = new EventEmitter<boolean>();
 
     @HostListener("click") onClick() {
-        this.service.Delete(this.model)
-            .then(a => this.modelUpdate.emit(a));
+        this.service.Delete(this.model);
+           // .then(a => this.modelUpdate.emit(a));
    }
 
 }

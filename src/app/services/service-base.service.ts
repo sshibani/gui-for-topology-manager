@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 
 import { ITopologyItem } from './../shared/models/contracts/itopologyitem';
+import { MessageService } from './message.service';
 
 import { CdEnvironment } from './../shared/models/cdenvironment';
 
@@ -23,12 +24,14 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private _environmentUrl;
     private _headers;
     private _http: Http;
+    private _messageService: MessageService;
 
     private deleteSubject = new Subject<T>();
     private createSubject = new Subject<T>();
 
     constructor(http: Http, endPoint: string) {
         this._http = http;
+        //this._messageService = messageService;
         // this._environmentUrl = endPoint;
         this._environmentUrl = CommonConst.TopologyManagerBaseUrl + endPoint;
         this._headers = new Headers();
@@ -89,6 +92,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
+        //this._messageService.SendMessage("error", error.message, 5000);
         return Promise.reject(error.message || error);
     }
 }
