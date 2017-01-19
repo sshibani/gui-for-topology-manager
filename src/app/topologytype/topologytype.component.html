@@ -1,0 +1,5 @@
+<div *ngIf="model">
+    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Edit</button>
+    <topologytype-promobox [ShowActionButtons]="false" [Model]="model"></topologytype-promobox>
+    <topologytype-edit [Model]="model"></topologytype-edit>
+</div>

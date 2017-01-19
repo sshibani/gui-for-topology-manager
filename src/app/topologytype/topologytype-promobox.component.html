@@ -1,13 +1,15 @@
 <div *ngIf="model" class="topologytype" BackgroundHighlight="lightblue">
 
  <div><label>Id: </label> {{model.Id}} </div>
-    <div><label>CdEnvironmentId: </label> {{model.Name}} </div>
+    <div><label>Name: </label> {{model.Name}} </div>
     <div *ngFor="let env of model.EnvironmentPurposes">
         <label>EnvironmentPurpose: </label> {{env}}
     </div>
-    <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
-    <!--<button type="button" class="btn btn-primary" (click)="ShowEditWindow()">Edit</button>-->
-    <button type="button" class="btn btn-warning" (click)="smModal.show()">Delete</button>
+     <div *ngIf="showActionButtons">
+        <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
+        <!--<button type="button" class="btn btn-primary" (click)="ShowEditWindow()">Edit</button>-->
+        <button type="button" class="btn btn-warning" (click)="smModal.show()">Delete</button>
+     </div>
 
     <!--<topologytype-edit [Model]="model"></topologytype-edit>-->
 
@@ -23,7 +25,6 @@
             <div class="modal-body">
                 <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
                 <button type="button" class="btn btn-warning" (click)="Delete()">Delete</button>
-
             </div>
             </div>
         </div>

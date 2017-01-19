@@ -19,12 +19,14 @@ export class TopologyTypeEditComponent extends ComponentEditBase<TopologyType> i
 
     ngOnInit() {
         if (this.model) {
+            this.isNew = false;
             this.tabHeader = "Edit TopologyType (" + this.model.Id + ")";
         } else {
             this.tabHeader = "Add Topology Type";
             this.model = new TopologyType();
             this.model.EnvironmentPurposes = [ "a", "b" ];
             this.showIdField = true;
+            this.isNew = true;
         }
     }
 }

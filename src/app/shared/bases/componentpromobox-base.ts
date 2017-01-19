@@ -15,6 +15,9 @@ export abstract class ComponentPromoboxBase<T extends ITopologyItem> {
     @Input("Model")
     model: T;
 
+    @Input("ShowActionButtons")
+    showActionButtons: boolean = true;
+
     private _service: IServiceBase<T>;
     constructor(service: IServiceBase<T>) {
         this._service = service;

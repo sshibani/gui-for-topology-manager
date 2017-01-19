@@ -10,11 +10,11 @@ import { EnvironmentEditComponent } from './environment-edit.component';
 @Component({
     moduleId: module.id,
     selector: 'env',
-    styleUrls: [ 'environments.component.css'],
-    templateUrl: 'environments-overview.component.html',
+    styleUrls: [ 'environment.component.css'],
+    templateUrl: 'environment-overview.component.html',
     providers: [ EnvironmentService ]
 })
-export class EnvironmentsOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
+export class EnvironmentOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
     @ViewChild(EnvironmentEditComponent)
     private _environmentEdit: EnvironmentEditComponent;
     constructor(environmentService: EnvironmentService, messageService: MessageService) {

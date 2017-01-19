@@ -1,7 +1,7 @@
 <div *ngIf="model">
     <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Edit</button>
     <div class="environment">
-        <environment-promobox [Model]="model"></environment-promobox>
+        <environment-promobox [ShowActionButtons]="false" [Model]="model"></environment-promobox>
     </div>
     <env-edit [Model]="model"></env-edit>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
+import { RouteConst } from './../shared/constants';
 import { TopologyType } from './../shared/models/topologytype';
 import { TopologyTypeService } from './../services/topologytype.service';
 import { ComponentPromoboxBase } from './../shared/bases/componentpromobox-base';
@@ -13,8 +14,7 @@ import { TopologyTypeEditComponent } from './topologytype-edit.component';
     templateUrl: 'topologytype-promobox.component.html'
 })
 export class TopologyTypePromoboxComponent extends ComponentPromoboxBase<TopologyType> implements OnInit {
-    // @ViewChild(TopologyTypeEditComponent)
-    // private _topologyTypeEdit: TopologyTypeEditComponent;
+    detailsPath: string = RouteConst.TopologyTypePath;
 
     constructor(service: TopologyTypeService) {
         super(service);

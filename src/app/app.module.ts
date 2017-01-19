@@ -16,7 +16,7 @@ import { MainComponent } from './main/main.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 import { EnvironmentComponent } from './environment/environment.component';
-import { EnvironmentsOverviewComponent } from './environment/environments-overview.component';
+import { EnvironmentOverviewComponent } from './environment/environment-overview.component';
 import { EnvironmentPromoboxComponent } from './environment/environment-promobox.component';
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsitePromoboxComponent } from './website/website-promobox.component';
@@ -24,9 +24,11 @@ import { WebApplicationOverviewComponent } from './webapplication/webapplication
 import { WebApplicationPromoboxComponent } from './webapplication/webapplication-promobox-component';
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
+
 import { TopologyTypeOverviewComponent } from './topologytype/topologytype-overview.component';
 import { TopologyTypePromoboxComponent } from './topologytype/topologytype-promobox.component';
 import { TopologyTypeEditComponent } from './topologytype/topologytype-edit.component';
+import { TopologyTypeComponent } from './topologytype/topologytype.component';
 
 import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
@@ -51,7 +53,7 @@ import { MessageService } from './services/message.service';
     CollapseModule.forRoot(),
     ButtonsModule.forRoot(),
     ModalModule.forRoot(),
-    AlertModule .forRoot()
+    AlertModule.forRoot()
   ],
   declarations: [
     HighlightDirective,
@@ -60,7 +62,7 @@ import { MessageService } from './services/message.service';
     AppComponent,
     MainComponent,
     NavigationComponent,
-    EnvironmentsOverviewComponent,
+    EnvironmentOverviewComponent,
     EnvironmentPromoboxComponent,
     EnvironmentEditComponent,
     EnvironmentComponent,
@@ -73,6 +75,7 @@ import { MessageService } from './services/message.service';
     TopologyTypeOverviewComponent,
     TopologyTypePromoboxComponent,
     TopologyTypeEditComponent,
+    TopologyTypeComponent,
     MessageComponent,
     DeleteWindowComponent
   ],
