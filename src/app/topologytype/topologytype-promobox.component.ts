@@ -15,14 +15,11 @@ import { TopologyTypeEditComponent } from './topologytype-edit.component';
 })
 export class TopologyTypePromoboxComponent extends ComponentPromoboxBase<TopologyType> implements OnInit {
     detailsPath: string = RouteConst.TopologyTypePath;
-
     constructor(service: TopologyTypeService) {
         super(service);
     }
 
     ngOnInit() { }
 
-    //  ShowEditWindow(event: any): void {
-    //     this._topologyTypeEdit.Show();
-    // }
+
 }

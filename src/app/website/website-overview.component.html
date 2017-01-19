@@ -1,7 +1,9 @@
 <h1>{{title}}</h1>
 
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-
+<div>
+    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
+</div>
 <div *ngFor="let item of ViewCollection">
    <website-promobox [Model]="item"></website-promobox>
 </div>

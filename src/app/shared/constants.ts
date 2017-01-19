@@ -3,6 +3,7 @@ export class RouteConst {
     public static Environmentpath = "environment";
 
     public static WebsiteOverviewPath = "websites";
+    public static WebsitePath = "website";
 
     public static TopologyTypeOverViewPath = "topologytypes";
     public static TopologyTypePath = "topologytype";

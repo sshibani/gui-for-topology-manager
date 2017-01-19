@@ -18,8 +18,13 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { EnvironmentComponent } from './environment/environment.component';
 import { EnvironmentOverviewComponent } from './environment/environment-overview.component';
 import { EnvironmentPromoboxComponent } from './environment/environment-promobox.component';
+import { EnvironmentEditComponent } from './environment/environment-edit.component';
+
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsitePromoboxComponent } from './website/website-promobox.component';
+import { WebsiteEditComponent } from './website/website-edit.component';
+import { WebsiteComponent } from './website/website.component';
+
 import { WebApplicationOverviewComponent } from './webapplication/webapplication-overview.component';
 import { WebApplicationPromoboxComponent } from './webapplication/webapplication-promobox-component';
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
@@ -35,7 +40,6 @@ import { HighlightDirective } from './shared/attribute-directives/highlight-dire
 
 import { SearchComponent } from './shared/search/search.component';
 
-import { EnvironmentEditComponent } from './environment/environment-edit.component';
 
 import { DeleteWindowComponent } from './shared/popup/delete-window.component';
 
@@ -68,6 +72,8 @@ import { MessageService } from './services/message.service';
     EnvironmentComponent,
     WebsiteOverviewComponent,
     WebsitePromoboxComponent,
+    WebsiteEditComponent,
+    WebsiteComponent,
     WebApplicationOverviewComponent,
     WebApplicationPromoboxComponent,
     MappingOverviewComponent,
