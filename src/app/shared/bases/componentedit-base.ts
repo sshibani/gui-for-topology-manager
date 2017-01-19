@@ -14,15 +14,21 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     tabHeader: string;
     showIdField: boolean = false;
     autoGenerateId: boolean = true;
+    isNew: boolean = true;
     private _service: IServiceBase<T>;
 
     constructor(service: IServiceBase<T>) {
         this._service = service;
     }
 
-    Save(event: any): void {
-        console.log("save");
-        this._service.Create(this.model);
+    SaveOrUpdate(event: any): void {
+        if (this.isNew) {
+            console.log("save");
+            this._service.Create(this.model);
+        } else {
+            console.log("update");
+            this._service.Update(this.model);
+        }
         this.modal.hide();
     }
 

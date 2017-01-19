@@ -26,7 +26,9 @@ export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> i
     ngOnInit() {
         if (this.model) {
             this.tabHeader = "Edit Environment (" + this.model.Id + ")";
+            this.isNew = false;
         } else {
+            this.isNew = true;
             this.tabHeader = "Add Environment";
             this.model = new CdEnvironment();
             this.model.Credentials = new AnonymousCredentials();

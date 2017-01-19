@@ -15,9 +15,11 @@ export interface IServiceBase<T> {
     Get(id: string): Promise<T>;
     Create(data: T): void;
     Delete(data: T): void;
+    Update(data: T): void;
 
     GetDeletedMessage(): Observable<T>;
     GetCreateMessage(): Observable<T>;
+    GetUpdateMessage(): Observable<T>;
 }
 
 export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBase<T> {
@@ -28,6 +30,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
 
     private deleteSubject = new Subject<T>();
     private createSubject = new Subject<T>();
+    private updateSubject = new Subject<T>();
 
     constructor(http: Http, endPoint: string) {
         this._http = http;
@@ -65,6 +68,22 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                     .catch(this.handleError);
 
     }
+    public Update(data: T): void {
+        let body = JSON.stringify(data);
+        body = body.replace(/ODatatype/g, "@odata.type");
+        let url = this._environmentUrl + "('" + data.Id + "')";
+        console.log(body);
+        this._http.patch(url, body, { headers: this._headers })
+                    .toPromise()
+                    .then(res => {
+                        if (res.status === 200) {
+                            let m = res.json() as T;
+                            this.updateSubject.next(m);
+                        }
+                    })
+                    .catch(this.handleError);
+
+    }
     public Delete(data: T): void {
         let url = this._environmentUrl + "('" + data.Id + "')";
         this._http.delete(url, { headers: this._headers })
@@ -78,6 +97,10 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     }
     public GetDeletedMessage(): Observable<T> {
         return this.deleteSubject.asObservable();
+    }
+
+    public GetUpdateMessage(): Observable<T> {
+        return this.updateSubject.asObservable();
     }
 
     public GetCreateMessage(): Observable<T> {
