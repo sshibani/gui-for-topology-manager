@@ -4,4 +4,10 @@ export class Website implements ITopologyItem {
     CdEnvironmentId: string;
     EnvironmentPurpose: string;
     BaseUrls: string[];
+
+    ODatatype: string;
+
+    constructor() {
+        this.ODatatype = "#Tridion.TopologyManager.Client.WebsiteData";
+    }
 }

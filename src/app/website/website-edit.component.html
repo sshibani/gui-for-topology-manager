@@ -13,14 +13,17 @@
                     <input type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
                     <input type="checkbox" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                 </div>
-                <!--<div class="form-group">
-                    <label>Name</label>
-                    <input type="text" [(ngModel)]="model.Name" placeholder="Name" required />
+                <div class="form-group">
+                    <label>CdEnvironment</label>
+                     <select class="form-control" id="CdEnvironmentId"
+                            [(ngModel)]="model.EnvironmentPurpose" required >
+                        <option *ngFor="let c of availableEnvironments" [value]="c[0]">{{c[0]}} | ({{c[1]}})</option>
+                    </select>
                 </div>
-                <div class="form-group" *ngFor="let env of model.EnvironmentPurposes; let i = index;">
-                    <label>Purpose</label>
-                    <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" required />
-                </div>-->
+                <div class="form-group" *ngFor="let env of model.BaseUrls; let i = index;">
+                    <label>BaseUrls</label>
+                    <input type="text" [(ngModel)]="model.BaseUrls[i]" placeholder="Url" required />
+                </div>
 
                 <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
                 <button type="button" (click)="SaveOrUpdate()" aria-label="Save">Save</button>

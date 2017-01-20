@@ -38,7 +38,7 @@ export class TopologyTypeComponent implements OnInit {
      }
 
     ShowEditWindow(event: any): void {
-        this._environmentEdit.Show();
+        this._environmentEdit.show();
     }
 
 }

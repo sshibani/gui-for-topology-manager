@@ -1,8 +1,14 @@
-<div *ngIf="model" class="model" BackgroundHighlight="lightblue">
+<div *ngIf="model" class="website" BackgroundHighlight="lightblue">
     <div><label>Id: </label> {{model.Id}} </div>
     <div><label>CdEnvironmentId: </label> {{model.CdEnvironmentId}} </div>
     <div><label>EnvironmentPurpose: </label> {{model.EnvironmentPurpose}} </div>
     <div *ngFor="let baseUrl of model.BaseUrls">
         <label>BaseUrl: </label> {{baseUrl}}
     </div>
+
+    <div *ngIf="showActionButtons">
+        <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
+        <!--<button type="button" class="btn btn-primary" (click)="ShowEditWindow()">Edit</button>-->
+        <button type="button" class="btn btn-warning" (click)="smModal.show()">Delete</button>
+     </div>
 </div>
