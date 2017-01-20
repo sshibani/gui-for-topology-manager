@@ -28,7 +28,7 @@ export abstract class ComponentBase<T extends ITopologyItem> implements ICompone
         this.createSubscription = this.service.GetCreateMessage().subscribe(value => {
                                 this.showMessage('success', `TopologyItem with Id: ${value.Id} created.`);
                                 this.ViewCollection.push(value);
-                                this.Collection.push(value);
+                                //this.Collection.push(value);
                             });
      }
     Init() {

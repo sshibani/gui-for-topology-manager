@@ -14,7 +14,7 @@ import { MessageService } from './../services/message.service';
     providers: [ WebsiteService ]
 })
 export class WebsiteOverviewComponent extends ComponentBase<Website> implements OnInit {
-    title = "website";
+    title = "Website";
 
     @ViewChild(WebsiteEditComponent)
     private _edit: WebsiteEditComponent;

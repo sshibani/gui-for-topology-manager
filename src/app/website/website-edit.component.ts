@@ -13,7 +13,7 @@ import { EnvironmentService } from './../services/environment.service';
     selector: 'website-edit',
     styleUrls: [ 'website.component.css'],
     templateUrl: 'website-edit.component.html',
-    providers: [ WebsiteService, EnvironmentService ]
+    providers: [ EnvironmentService ]
 })
 export class WebsiteEditComponent extends ComponentEditBase<Website> implements OnInit {
     availableEnvironments: string[][];

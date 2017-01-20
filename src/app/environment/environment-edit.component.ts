@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
-import { CdEnvironment, WindowsCredentials,
-        BasicCredentials, OAuthCredentials,
+import { CdEnvironment,
+        OAuthCredentials,
         AnonymousCredentials  } from './../shared/models/cdenvironment';
 
 import { EnvironmentService } from './../services/environment.service';

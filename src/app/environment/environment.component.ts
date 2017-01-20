@@ -44,7 +44,7 @@ export class EnvironmentComponent implements OnInit {
      }
 
     ShowEditWindow(event: any): void {
-        this._environmentEdit.show();
+        this._environmentEdit.Show();
     }
 
 
