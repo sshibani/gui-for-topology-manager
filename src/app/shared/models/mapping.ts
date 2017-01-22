@@ -9,4 +9,10 @@ export class Mapping implements ITopologyItem {
     RelativeUrl: string;
     PrimaryMappedUrl: string;
     IsOffline: string;
+
+    ODatatype: string;
+
+    constructor() {
+        this.ODatatype = "#Tridion.TopologyManager.Client.MappingData";
+    }
 }

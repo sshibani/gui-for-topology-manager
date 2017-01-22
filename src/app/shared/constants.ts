@@ -9,9 +9,12 @@ export class RouteConst {
     public static TopologyTypePath = "topologytype";
 
     public static WebApplicationOverviewPath = "webapplications";
+
     public static MappingOverviewPath = "mappings";
+    public static MappingPath = "mapping";
+
 }
 export class CommonConst {
     //public static TopologyManagerBaseUrl = "data/";
-    public static TopologyManagerBaseUrl = "http://34.249.32.62:81/ttm201601/";
+    public static TopologyManagerBaseUrl = "http://34.248.197.108:81/ttm201601/";
 }

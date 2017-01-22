@@ -1,7 +1,8 @@
 <h1>{{title}}</h1>
 
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-
-<div *ngFor="let item of ViewCollection">
-   <mapping-promobox [Model]="item"></mapping-promobox>
+<div>
+    <button type="button" class="btn btn-success"(click)="mappingEdit.show()">Add</button>
 </div>
+<mapping-edit #mappingEdit></mapping-edit>
+<mapping-promobox *ngFor="let item of ViewCollection" [Model]="item"></mapping-promobox>

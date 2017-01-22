@@ -1,0 +1,51 @@
+ <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">{{tabHeader}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" *ngIf="showIdField">
+                    <label>Id</label>
+                    <input class="form-control" type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
+                    <input type="checkbox" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
+                </div>
+                <div class="form-group">
+                    <label>CmEnvironmentId</label>
+                    <select class="form-control" id="WebApplicationId"
+                            [(ngModel)]="model.CmEnvironmentId" required >
+                        <option *ngFor="let c of availableCmEnvironments" [value]="c">{{c}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>WebApplicationId</label>
+                     <select class="form-control" id="WebApplicationId"
+                            [(ngModel)]="model.WebApplicationId" required >
+                        <option *ngFor="let c of availableWebApplications" [value]="c">{{c}}</option>
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label>PublicationId</label>
+                     <select class="form-control" id="publicationid" (change)="onChange($event.target.value)"
+                            [(ngModel)]="model.PublicationId" required >
+                        <option *ngFor="let c of publications" [value]="c.Id">{{c.Title}} || ({{c.Id}})</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>RelativeUrl</label>
+                    <input class="form-control" [(ngModel)]="model.RelativeUrl" placeholder="RelativeUrl" required />
+                </div>
+
+                <!--<div class="form-group" *ngFor="let env of model.BaseUrls; let i = index;">
+                    <label>BaseUrls</label>
+                    <input type="text" [(ngModel)]="model.BaseUrls[i]" placeholder="Url" required />
+                </div>-->
+
+                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
+                <button type="button" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+            </div>
+        </div>
+    </div>

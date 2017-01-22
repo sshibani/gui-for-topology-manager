@@ -21,7 +21,7 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
         this._service = service;
     }
 
-    SaveOrUpdate(event: any): void {
+    saveOrUpdate(event: any): void {
         if (this.isNew) {
             console.log("save");
             this._service.Create(this.model);

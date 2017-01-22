@@ -1,0 +1,25 @@
+{
+   "value":[
+    {
+       "Id": "tcm:0-1-1",
+       "Title": "My First Publication",
+       "RelativeUrl": "/hallo"
+    },
+     {
+       "Id": "tcm:0-2-1",
+       "Title": "My second Publication",
+       "RelativeUrl": "/second"
+    },
+     {
+       "Id": "tcm:0-3-1",
+       "Title": "My thrid Publication",
+       "RelativeUrl": ""
+    },
+     {
+       "Id": "tcm:0-4-1",
+       "Title": "My firth Publication"
+
+    }
+
+  ]
+}

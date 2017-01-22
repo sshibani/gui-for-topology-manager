@@ -11,4 +11,12 @@ export class WebApplicationService extends ServiceBase<WebApplication> {
     constructor(private http: Http) {
         super(http, "WebApplications");
     }
+
+    getWebApplicationTitles(): Promise<string[]> {
+          return this.GetAll().then(items => {
+             let list: string[] = [];
+             items.forEach(a => list = list.concat(a.Id));
+             return list;
+        });
+    }
 }

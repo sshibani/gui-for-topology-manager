@@ -31,6 +31,7 @@ import { WebApplicationEditComponent } from './webapplication/webapplication-edi
 
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
+import { MappingEditComponent } from './mapping/mapping-edit.component';
 
 import { TopologyTypeOverviewComponent } from './topologytype/topologytype-overview.component';
 import { TopologyTypePromoboxComponent } from './topologytype/topologytype-promobox.component';
@@ -85,6 +86,7 @@ import { MessageService } from './services/message.service';
     WebApplicationEditComponent,
     MappingOverviewComponent,
     MappingPromoboxComponent,
+    MappingEditComponent,
     MessageComponent,
     DeleteWindowComponent
   ],

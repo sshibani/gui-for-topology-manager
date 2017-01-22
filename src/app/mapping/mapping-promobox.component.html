@@ -8,4 +8,12 @@
     <div><label>PrimaryMappedUrl: </label> {{model.PrimaryMappedUrl}} </div>
     <div><label>IsOffline: </label> {{model.IsOffline}} </div>
 
+    <div *ngIf="showActionButtons">
+        <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
+        <button type="button" class="btn btn-primary" (click)="mappingEdit.show()">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="deleteItem.show()">Delete</button>
+     </div>
+    <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
+    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+
 </div>
