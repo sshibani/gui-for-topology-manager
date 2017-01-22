@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Mapping } from './../shared/models/mapping';
+import { ExtensionProperties } from './../shared/models/extensionproperties';
 import { Publication } from './../shared/models/publication';
 import { MappingService } from './../services/mapping.service';
 import { ComponentEditBase } from './../shared/bases/componentedit-base';
@@ -55,6 +56,15 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
     getPublications(): void {
         this.publicationService.GetAll()
                 .then(p => this.publications = p);
+    }
+
+    addExtensionProperties(): void {
+        let newExt = new ExtensionProperties();
+        this.model.ExtensionProperties.push(newExt);
+    }
+
+    removeExtensionProperty(data: ExtensionProperties): void {
+        this.model.ExtensionProperties = this.model.ExtensionProperties.filter(item => item !== data);
     }
 
      onChange(id: any) {

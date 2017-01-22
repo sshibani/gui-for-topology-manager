@@ -42,16 +42,17 @@
                 <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title">ExtensionProperties</h3>
+                        <button type="button" class="icon-pencil pull-right" (click)="addExtensionProperties()">Add</button>
                     </div>
                     <div class="panel-body" *ngFor="let extensionProperties of model.ExtensionProperties; let i = index;">
                         <label>Name</label>
                         <input class="form-control" type="text" [ngModel]="model.ExtensionProperties[i].Name" placeholder="Name" required />
                         <label>Value</label>
                         <input class="form-control" type="text"  [ngModel]="model.ExtensionProperties[i].Value" placeholder="Value" required />
+                        <button type="button" class="btn btn-warning" (click)="removeExtensionProperty(extensionProperties)">Remove</button>
                         <hr/>
                     </div>
                 </div>
-
                 <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
                 <button type="button" class="btn btn-success" (click)="saveOrUpdate()" aria-label="Save">Save</button>
             </div>
