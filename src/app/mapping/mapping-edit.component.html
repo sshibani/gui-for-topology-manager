@@ -39,13 +39,21 @@
                     <input class="form-control" [(ngModel)]="model.RelativeUrl" placeholder="RelativeUrl" required />
                 </div>
 
-                <!--<div class="form-group" *ngFor="let env of model.BaseUrls; let i = index;">
-                    <label>BaseUrls</label>
-                    <input type="text" [(ngModel)]="model.BaseUrls[i]" placeholder="Url" required />
-                </div>-->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">ExtensionProperties</h3>
+                    </div>
+                    <div class="panel-body" *ngFor="let extensionProperties of model.ExtensionProperties; let i = index;">
+                        <label>Name</label>
+                        <input class="form-control" type="text" [ngModel]="model.ExtensionProperties[i].Name" placeholder="Name" required />
+                        <label>Value</label>
+                        <input class="form-control" type="text"  [ngModel]="model.ExtensionProperties[i].Value" placeholder="Value" required />
+                        <hr/>
+                    </div>
+                </div>
 
-                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
-                <button type="button" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
+                <button type="button" class="btn btn-success" (click)="saveOrUpdate()" aria-label="Save">Save</button>
             </div>
         </div>
     </div>

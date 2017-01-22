@@ -15,6 +15,6 @@ export class RouteConst {
 
 }
 export class CommonConst {
-    //public static TopologyManagerBaseUrl = "data/";
-    public static TopologyManagerBaseUrl = "http://34.248.197.108:81/ttm201601/";
+    public static TopologyManagerBaseUrl = "data/";
+    //public static TopologyManagerBaseUrl = "http://34.248.197.108:81/ttm201601/";
 }

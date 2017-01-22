@@ -1,5 +1,7 @@
 import { ITopologyItem } from './contracts/itopologyitem';
 
+import { ExtensionProperties } from './extensionproperties';
+
 export class Mapping implements ITopologyItem {
     Id: string;
     CmEnvironmentId: string;
@@ -9,6 +11,7 @@ export class Mapping implements ITopologyItem {
     RelativeUrl: string;
     PrimaryMappedUrl: string;
     IsOffline: string;
+    ExtensionProperties: ExtensionProperties[];
 
     ODatatype: string;
 
