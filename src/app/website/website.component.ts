@@ -4,8 +4,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Website } from './../shared/models/website';
 import { WebsiteService } from './../services/website.service';
 
-import { WebsiteEditComponent } from './website-edit.component';
-
 @Component({
     moduleId: module.id,
     selector: 'website',
@@ -14,13 +12,8 @@ import { WebsiteEditComponent } from './website-edit.component';
     providers: [ WebsiteService ]
 })
 export class WebsiteComponent implements OnInit {
-
-
     @Input("Model")
     model: Website;
-
-    @ViewChild(WebsiteEditComponent)
-    private _edit: WebsiteEditComponent;
 
     constructor(private service: WebsiteService,
                 private router: Router,
@@ -35,8 +28,4 @@ export class WebsiteComponent implements OnInit {
 
         });
      }
-
-    ShowEditWindow(event: any): void {
-        this._edit.Show();
-    }
 }

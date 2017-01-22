@@ -5,6 +5,7 @@ import { WebsiteService } from './../services/website.service';
 import { RouteConst } from './../shared/constants';
 import { ComponentPromoboxBase } from './../shared/bases/componentpromobox-base';
 
+
 @Component({
     moduleId: module.id,
     selector: 'website-promobox',

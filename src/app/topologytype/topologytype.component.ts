@@ -4,8 +4,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { TopologyType } from './../shared/models/topologytype';
 import { TopologyTypeService } from './../services/topologytype.service';
 
-import { TopologyTypeEditComponent } from './topologytype-edit.component';
-
 @Component({
     moduleId: module.id,
     selector: 'topologytype',
@@ -18,9 +16,6 @@ export class TopologyTypeComponent implements OnInit {
 
     @Input("Model")
     model: TopologyType;
-
-    @ViewChild(TopologyTypeEditComponent)
-    private _environmentEdit: TopologyTypeEditComponent;
 
     constructor(service: TopologyTypeService,
                 private router: Router,
@@ -36,9 +31,4 @@ export class TopologyTypeComponent implements OnInit {
 
         });
      }
-
-    ShowEditWindow(event: any): void {
-        this._environmentEdit.show();
-    }
-
 }

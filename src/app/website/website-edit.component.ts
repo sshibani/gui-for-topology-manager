@@ -6,8 +6,6 @@ import { ComponentEditBase } from './../shared/bases/componentedit-base';
 
 import { EnvironmentService } from './../services/environment.service';
 
-
-
 @Component({
     moduleId: module.id,
     selector: 'website-edit',
@@ -34,6 +32,10 @@ export class WebsiteEditComponent extends ComponentEditBase<Website> implements 
             this.showIdField = true;
             this.isNew = true;
         }
+        this.getCdEnvironments();
+    }
+
+    getCdEnvironments(): void {
         this.envService.getCdEnvrinmentsTitle()
                         .then(item => this.availableEnvironments = item);
         console.log(this.availableEnvironments);

@@ -2,16 +2,19 @@
 
  <div><label>Id: </label> {{model.Id}} </div>
     <div><label>Name: </label> {{model.Name}} </div>
-    <div *ngFor="let env of model.EnvironmentPurposes">
-        <label>EnvironmentPurpose: </label> {{env}}
-    </div>
+    <ul class="list-group">
+        <li *ngFor="let env of model.EnvironmentPurposes" class="list-group-item">
+            <span> <label>EnvironmentPurpose: </label> {{env}}</span>
+            <!--<a *ngIf="!showActionButtons" href="#" (click)="delete(env)" class="badge" aria-hidden="true">&times;</a>-->
+        </li>
+    </ul>
      <div *ngIf="showActionButtons">
         <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
-        <!--<button type="button" class="btn btn-primary" (click)="ShowEditWindow()">Edit</button>-->
+        <button type="button" class="btn btn-primary" (click)="topologyEdit.show()">Edit</button>
         <button type="button" class="btn btn-warning" (click)="smModal.show()">Delete</button>
      </div>
 
-    <!--<topologytype-edit [Model]="model"></topologytype-edit>-->
+    <topologytype-edit #topologyEdit [Model]="model"></topologytype-edit>
 
      <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -24,7 +27,7 @@
             </div>
             <div class="modal-body">
                 <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
-                <button type="button" class="btn btn-warning" (click)="Delete()">Delete</button>
+                <button type="button" class="btn btn-warning" (click)="delete()">Delete</button>
             </div>
             </div>
         </div>

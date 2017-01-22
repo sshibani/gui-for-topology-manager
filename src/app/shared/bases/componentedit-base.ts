@@ -32,7 +32,7 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
         this.modal.hide();
     }
 
-    Show(): void {
+    show(): void {
         this.modal.show();
     }
 }

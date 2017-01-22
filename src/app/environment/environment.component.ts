@@ -7,8 +7,6 @@ import { Website } from './../shared/models/website';
 
 import { EnvironmentService } from './../services/environment.service';
 import { WebsiteService } from './../services/website.service';
-import { EnvironmentEditComponent } from './environment-edit.component';
-
 
 @Component({
     moduleId: module.id,
@@ -23,9 +21,6 @@ export class EnvironmentComponent implements OnInit {
     websites: Website[];
     @Input("Model")
     model: CdEnvironment;
-
-    @ViewChild(EnvironmentEditComponent)
-    private _environmentEdit: EnvironmentEditComponent;
 
     constructor(private environmentService: EnvironmentService,
                 private websiteService: WebsiteService,
@@ -42,10 +37,4 @@ export class EnvironmentComponent implements OnInit {
                 .then(e => this.websites = e);
         });
      }
-
-    ShowEditWindow(event: any): void {
-        this._environmentEdit.Show();
-    }
-
-
 }

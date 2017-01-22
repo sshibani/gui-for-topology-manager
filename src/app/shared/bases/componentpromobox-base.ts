@@ -23,7 +23,7 @@ export abstract class ComponentPromoboxBase<T extends ITopologyItem> {
         this._service = service;
     }
 
-    public Delete(): void {
-        this._service.Delete(this.model);
+    public delete(data: T): void {
+        this._service.Delete(data);
     }
 }

@@ -10,17 +10,24 @@
             <div class="modal-body">
                 <div class="form-group" *ngIf="showIdField">
                     <label>Id</label>
-                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
+                    <input  class="form-control" type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
                     <input type="checkbox" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                 </div>
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" [(ngModel)]="model.Name" placeholder="Name" required />
+                    <input  class="form-control" type="text" [(ngModel)]="model.Name" placeholder="Name" required />
                 </div>
                 <div class="form-group" *ngFor="let env of model.EnvironmentPurposes; let i = index;">
                     <label>Purpose</label>
-                    <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" required />
+                    <input class="form-control" type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" required />
                 </div>
+                 <ul class="list-group">
+                    <li *ngFor="let env of model.EnvironmentPurposes; let i = index;" class="list-group-item">
+                        <label>Purpose</label>
+                        <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" required />
+                        <a *ngIf="!showActionButtons" href="#" (click)="delete(env)" class="badge" aria-hidden="true">&times;</a>
+                    </li>
+                </ul>
 
                 <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
                 <button type="button" (click)="SaveOrUpdate()" aria-label="Save">Save</button>

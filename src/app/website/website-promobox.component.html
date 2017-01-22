@@ -8,24 +8,9 @@
 
     <div *ngIf="showActionButtons">
         <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>
-        <!--<button type="button" class="btn btn-primary" (click)="ShowEditWindow()">Edit</button>-->
-        <button type="button" class="btn btn-warning" (click)="smModal.show()">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="websiteEdit.show()">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="deleteItem.show()">Delete</button>
      </div>
-
-    <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title pull-left">Delete Website {{model.Id}}??</h4>
-                <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
-                <button type="button" class="btn btn-warning" (click)="Delete()">Delete</button>
-            </div>
-            </div>
-        </div>
-    </div>
+    <website-edit #websiteEdit [Model]="model"></website-edit>
+    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
 </div>

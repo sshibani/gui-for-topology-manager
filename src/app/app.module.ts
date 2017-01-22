@@ -27,6 +27,8 @@ import { WebsiteComponent } from './website/website.component';
 
 import { WebApplicationOverviewComponent } from './webapplication/webapplication-overview.component';
 import { WebApplicationPromoboxComponent } from './webapplication/webapplication-promobox-component';
+import { WebApplicationEditComponent } from './webapplication/webapplication-edit.component';
+
 import { MappingOverviewComponent } from './mapping/mapping-overview.component';
 import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
 
@@ -65,6 +67,10 @@ import { MessageService } from './services/message.service';
     SearchComponent,
     AppComponent,
     MainComponent,
+    TopologyTypeOverviewComponent,
+    TopologyTypePromoboxComponent,
+    TopologyTypeEditComponent,
+    TopologyTypeComponent,
     NavigationComponent,
     EnvironmentOverviewComponent,
     EnvironmentPromoboxComponent,
@@ -76,12 +82,9 @@ import { MessageService } from './services/message.service';
     WebsiteComponent,
     WebApplicationOverviewComponent,
     WebApplicationPromoboxComponent,
+    WebApplicationEditComponent,
     MappingOverviewComponent,
     MappingPromoboxComponent,
-    TopologyTypeOverviewComponent,
-    TopologyTypePromoboxComponent,
-    TopologyTypeEditComponent,
-    TopologyTypeComponent,
     MessageComponent,
     DeleteWindowComponent
   ],

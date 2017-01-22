@@ -16,18 +16,11 @@ import { MessageService } from './../services/message.service';
 export class WebsiteOverviewComponent extends ComponentBase<Website> implements OnInit {
     title = "Website";
 
-    @ViewChild(WebsiteEditComponent)
-    private _edit: WebsiteEditComponent;
-
     constructor(websiteService: WebsiteService,  messageService: MessageService) {
         super(websiteService, messageService);
      }
 
     ngOnInit() {
         this.Init();
-    }
-
-     ShowEditWindow(event: any): void {
-        this._edit.Show();
     }
 }

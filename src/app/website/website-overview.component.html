@@ -2,9 +2,7 @@
 
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 <div>
-    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
+    <button type="button" class="btn btn-success"(click)="websiteEdit.show()">Add</button>
 </div>
-<website-edit> </website-edit>
-<div *ngFor="let item of ViewCollection">
-   <website-promobox [Model]="item"></website-promobox>
-</div>
+<website-edit #websiteEdit> </website-edit>
+<website-promobox *ngFor="let item of ViewCollection" [Model]="item"></website-promobox>

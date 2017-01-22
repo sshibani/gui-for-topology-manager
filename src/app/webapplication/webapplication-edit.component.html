@@ -1,0 +1,19 @@
+ <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">{{tabHeader}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>ContextUrl</label>
+                    <input type="text" [(ngModel)]="model.ContextUrl" placeholder="ContextUrl"/>
+                </div>
+                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
+                <button type="button" (click)="SaveOrUpdate()" aria-label="Save">Save</button>
+            </div>
+        </div>
+    </div>

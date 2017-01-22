@@ -8,22 +8,23 @@ import { ITopologyItem } from './../models/contracts/itopologyitem';
     templateUrl: 'delete-window.component.html'
 })
 export class DeleteWindowComponent implements OnInit {
-    // @Input("Model")
-    // model: ITopologyItem;
-    // @Output()
-    // onDelete = new EventEmitter<ITopologyItem>();
-    // @ViewChild('bsModal')
-    // modal:any;
+    @Input("Model")
+    model: ITopologyItem;
+    @Output()
+    onDelete = new EventEmitter<ITopologyItem>();
+    @ViewChild('smModal')
+    modal:any;
+
     constructor() { }
 
     ngOnInit() { }
 
-    // Delete() {
-    //     this.onDelete.emit(this.deleteItem);
-    // }
+    delete(): void {
+        this.onDelete.emit(this.model);
+    }
 
-    public Show() {
+    show(): void {
         console.log("show k");
-        //this.modal.show();
+        this.modal.show();
     }
 }

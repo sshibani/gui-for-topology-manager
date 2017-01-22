@@ -5,8 +5,6 @@ import { TopologyType } from './../shared/models/topologytype';
 import { TopologyTypeService } from './../services/topologytype.service';
 import { ComponentPromoboxBase } from './../shared/bases/componentpromobox-base';
 
-import { TopologyTypeEditComponent } from './topologytype-edit.component';
-
 @Component({
     moduleId: module.id,
     selector: 'topologytype-promobox',

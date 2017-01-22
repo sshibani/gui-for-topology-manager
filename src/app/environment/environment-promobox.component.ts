@@ -17,22 +17,9 @@ import { DeleteWindowComponent } from './../shared/popup/delete-window.component
 export class EnvironmentPromoboxComponent extends ComponentPromoboxBase<CdEnvironment> implements OnInit {
     detailsPath: string = RouteConst.Environmentpath;
 
-    // @ViewChild(DeleteWindowComponent)
-    // private deleteWindowComponent: DeleteWindowComponent;
-
     constructor(service: EnvironmentService) {
         super(service);
     }
 
     ngOnInit() { }
-
-
-    // ShowDeleteWindow() {
-    //     console.log("promo click");
-    //     //this._deleteWindow.Show();
-    // }
-
-    //  ShowDeleteWindow(event: any): void {
-    //     this.deleteWindow.Show();
-    // }
 }

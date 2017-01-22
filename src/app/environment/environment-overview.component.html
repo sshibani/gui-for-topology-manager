@@ -1,13 +1,8 @@
-<!--<div *ngFor="let alert of alerts">
-  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
-</div>-->
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 
 <div>
-    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
+    <button type="button" class="btn btn-success"(click)="envEdit.show()">Add</button>
 </div>
-<env-edit></env-edit>
-<div class="environment" BackgroundHighlight="lightblue"
-     *ngFor="let item of ViewCollection">
-    <environment-promobox [Model]="item"></environment-promobox>
-</div>
+<env-edit #envEdit></env-edit>
+<environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></environment-promobox>
+
