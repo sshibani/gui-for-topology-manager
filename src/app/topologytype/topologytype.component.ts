@@ -12,21 +12,18 @@ import { TopologyTypeService } from './../services/topologytype.service';
     providers: [ TopologyTypeService ]
 })
 export class TopologyTypeComponent implements OnInit {
-    private _service: TopologyTypeService;
-
     @Input("Model")
     model: TopologyType;
 
-    constructor(service: TopologyTypeService,
+    constructor(private service: TopologyTypeService,
                 private router: Router,
                 private route: ActivatedRoute) {
-        this._service = service;
     }
 
     ngOnInit() {
          this.route.params.forEach((params: Params) => {
              let id = params['id'];
-             this._service.Get(id)
+             this.service.Get(id)
                 .then(e => this.model = e);
 
         });

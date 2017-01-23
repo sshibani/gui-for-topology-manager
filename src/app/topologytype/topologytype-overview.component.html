@@ -2,9 +2,7 @@
 
 <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 <div>
-    <button type="button" class="btn btn-success"(click)="ShowEditWindow()">Add</button>
+    <button type="button" class="btn btn-success"(click)="topoEdit.show()">Add</button>
 </div>
-<topologytype-edit></topologytype-edit>
-<div *ngFor="let item of ViewCollection">
-   <topologytype-promobox [Model]="item"></topologytype-promobox>
-</div>
+<topologytype-edit #topoEdit></topologytype-edit>
+<topologytype-promobox  *ngFor="let item of ViewCollection" [Model]="item"></topologytype-promobox>
