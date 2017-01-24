@@ -24,9 +24,17 @@ export class TopologyTypeEditComponent extends ComponentEditBase<TopologyType> i
         } else {
             this.tabHeader = "Add Topology Type";
             this.model = new TopologyType();
-            this.model.EnvironmentPurposes = [ "a", "b" ];
+            this.model.EnvironmentPurposes = [ "" ];
             this.showIdField = true;
             this.isNew = true;
         }
+    }
+
+    addPurpose(): void {
+        this.model.EnvironmentPurposes.push("");
+    }
+
+    deletePurpose(data: string): void {
+        this.model.EnvironmentPurposes = this.model.EnvironmentPurposes.filter(item => item !== data);
     }
 }

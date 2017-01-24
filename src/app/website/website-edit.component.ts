@@ -40,4 +40,11 @@ export class WebsiteEditComponent extends ComponentEditBase<Website> implements 
                         .then(item => this.availableEnvironments = item);
         console.log(this.availableEnvironments);
     }
+
+    addBaseUrl(): void {
+        this.model.BaseUrls.push("");
+    }
+    deleteBaseUrl(data: string): void {
+        this.model.BaseUrls = this.model.BaseUrls.filter(item => item !== data);
+    }
 }

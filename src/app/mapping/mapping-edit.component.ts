@@ -14,7 +14,7 @@ import { PublicationService } from './../services/publication.service';
     selector: 'mapping-edit',
     styleUrls: [ "mapping.component.css" ],
     templateUrl: 'mapping-edit.component.html',
-    providers: [ WebApplicationService, CmEnvironmentService, PublicationService ]
+    providers: [ WebApplicationService, CmEnvironmentService ]
 })
 export class MappingEditComponent extends ComponentEditBase<Mapping> implements OnInit {
     availableWebApplications: string[];

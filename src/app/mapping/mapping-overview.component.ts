@@ -5,12 +5,14 @@ import { Mapping } from './../shared/models/mapping';
 import { MappingService } from './../services/mapping.service';
 import { MessageService } from './../services/message.service';
 
+import { PublicationService } from './../services/publication.service';
+
 @Component({
     moduleId: module.id,
     selector: 'mapping-overview',
     styleUrls: ['mapping.component.css'],
     templateUrl: 'mapping-overview.component.html',
-    providers: [ MappingService ]
+    providers: [ MappingService, PublicationService ]
 })
 export class MappingOverviewComponent extends ComponentBase<Mapping> implements OnInit {
     title = "Mappings";

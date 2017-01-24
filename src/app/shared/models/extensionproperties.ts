@@ -9,5 +9,5 @@ export class ExtensionProperties {
         this.ODatatype = "#Tridion.TopologyManager.Client.ExtensionProperty";
     }
 
-     static availableKeys: string[] = [ "AudienceManager", "test" ];
+     static availableKeys: string[] = [ "AudienceManager-SynchronizationTarget", "test" ];
 }
