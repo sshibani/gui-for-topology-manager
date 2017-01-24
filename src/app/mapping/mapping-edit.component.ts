@@ -31,9 +31,11 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
         if (this.model) {
             this.isNew = false;
             this.tabHeader = "Edit Mapping (" + this.model.Id + ")";
+            let d = new ExtensionProperties();
         } else {
             this.tabHeader = "Add Mapping";
             this.model = new Mapping();
+            this.model.ExtensionProperties = new Array<ExtensionProperties>();
             this.showIdField = true;
             this.isNew = true;
         }
@@ -64,6 +66,7 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
     }
 
     removeExtensionProperty(data: ExtensionProperties): void {
+        console.log(data);
         this.model.ExtensionProperties = this.model.ExtensionProperties.filter(item => item !== data);
     }
 

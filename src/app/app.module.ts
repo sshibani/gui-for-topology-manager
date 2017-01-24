@@ -45,7 +45,7 @@ import { SearchComponent } from './shared/search/search.component';
 
 
 import { DeleteWindowComponent } from './shared/popup/delete-window.component';
-
+import { ExtensionPropertiesComponent } from './shared/extensionsproperties/extensionproperties.component';
 import { MessageComponent } from './shared/message/message.component';
 import { MessageService } from './services/message.service';
 
@@ -88,7 +88,8 @@ import { MessageService } from './services/message.service';
     MappingPromoboxComponent,
     MappingEditComponent,
     MessageComponent,
-    DeleteWindowComponent
+    DeleteWindowComponent,
+    ExtensionPropertiesComponent
   ],
   providers: [
     MessageService

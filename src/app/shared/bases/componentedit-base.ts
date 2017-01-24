@@ -25,6 +25,7 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
             this.service.Create(this.model);
         } else {
             console.log("update");
+            console.log(this.model);
             this.service.Update(this.model);
         }
         this.modal.hide();

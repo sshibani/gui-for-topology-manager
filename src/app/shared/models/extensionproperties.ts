@@ -8,4 +8,6 @@ export class ExtensionProperties {
     constructor() {
         this.ODatatype = "#Tridion.TopologyManager.Client.ExtensionProperty";
     }
+
+     static availableKeys: string[] = [ "AudienceManager", "test" ];
 }
