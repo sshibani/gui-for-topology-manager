@@ -8,35 +8,33 @@
                 <h4 class="modal-title">{{tabHeader}}</h4>
             </div>
             <div class="modal-body">
-                <div class="form-group" *ngIf="showIdField">
-                    <label>Id</label>
-                    <input  class="form-control" type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
-                    <input type="checkbox" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
-                </div>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input  class="form-control" type="text" [(ngModel)]="model.Name" placeholder="Name" required />
-                </div>
-                <!--<div class="form-group" *ngFor="let env of model.EnvironmentPurposes; let i = index;">
-                    <label>Purpose</label>
-                    <input class="form-control" type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" required />
-                </div>-->
-
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Environment Purposes</h3>
-                        <button type="button" class="icon-pencil pull-right" (click)="addPurpose()">Add</button>
+                 <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+                    <div class="form-group" *ngIf="showIdField">
+                        <label>Id</label>
+                        <input  class="form-control" type="text" name="id" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
+                        <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                     </div>
-                    <ul class="list-group">
-                        <li *ngFor="let purpose of model.EnvironmentPurposes; let i = index; trackBy:customTrackBy;" class="list-group-item">
-                            <label>Purpose</label>
-                            <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" />
-                            <button *ngIf="!showActionButtons" (click)="deletePurpose(purpose)" class="badge" aria-hidden="true">&times;</button>
-                        </li>
-                    </ul>
-                </div>
-                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
-                <button type="button" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input  class="form-control" type="text" [(ngModel)]="model.Name" placeholder="Name" id="name" name="name" #name="ngModel" required />
+                    </div>
+                     <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Environment Purposes</h3>
+                            <button type="button" class="icon-pencil pull-right" (click)="addPurpose()">Add</button>
+                        </div>
+                        <ul class="list-group">
+                            <li *ngFor="let purpose of model.EnvironmentPurposes; let i = index; trackBy:customTrackBy;" class="list-group-item">
+                                <label>Purpose</label>
+                                <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" name="purpose{{i}}"  required />
+                                <button *ngIf="!showActionButtons && i !== 0" (click)="deletePurpose(purpose)" class="badge" aria-hidden="true">&times;</button>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <button type="button" class="btn btn-default" (click)="lgModal.hide()" aria-label="Close">Close</button>
+                    <button type="button" class="btn btn-default" [disabled]="!editForm.form.valid" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                 </form>
             </div>
         </div>
     </div>

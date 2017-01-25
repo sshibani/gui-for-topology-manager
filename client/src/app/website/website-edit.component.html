@@ -11,7 +11,7 @@
                 <div class="form-group" *ngIf="showIdField">
                     <label>Id</label>
                     <input type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
-                    <input type="checkbox" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
+                    <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                 </div>
                 <div class="form-group">
                     <label>CdEnvironment</label>
