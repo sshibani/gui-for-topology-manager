@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked, Input, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 
 import { ExtensionProperties } from './../models/extensionproperties';
 @Component({
@@ -6,7 +6,7 @@ import { ExtensionProperties } from './../models/extensionproperties';
     selector: 'extension-properties',
     templateUrl: 'extensionproperties.component.html'
 })
-export class ExtensionPropertiesComponent implements OnInit, AfterViewChecked {
+export class ExtensionPropertiesComponent implements OnInit, AfterViewInit {
     availableKeys = ExtensionProperties.availableKeys;
     selectModel: string;
     @Input('Model')
@@ -18,13 +18,15 @@ export class ExtensionPropertiesComponent implements OnInit, AfterViewChecked {
     constructor() { }
 
     ngOnInit() {
-        this.selectModel = this.availableKeys.find(e => e === this.model.Name);
-        if (typeof this.selectModel === 'undefined') {
-            this.selectModel = "custom";
+        if (typeof this.model.Name !== "undefined") {
+            this.selectModel = this.availableKeys.find(e => e === this.model.Name);
+            if (typeof this.selectModel === 'undefined') {
+                this.selectModel = "custom";
+            }
         }
     }
 
-    ngAfterViewChecked() {
+    ngAfterViewInit() {
          if (this.selectModel !== "custom") {
             this.input.nativeElement.style.visibility = "hidden";
         }
@@ -33,6 +35,7 @@ export class ExtensionPropertiesComponent implements OnInit, AfterViewChecked {
     onChangeExtensionKeys(type: any): void {
         console.log(type);
         if (type === "custom") {
+            this.model.Name = "";
             this.input.nativeElement.style.visibility = "visible";
         } else {
             this.model.Name = type;

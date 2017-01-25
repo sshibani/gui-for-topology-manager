@@ -28,7 +28,7 @@
                         <button type="button" class="icon-pencil pull-right" (click)="addPurpose()">Add</button>
                     </div>
                     <ul class="list-group">
-                        <li *ngFor="let purpose of model.EnvironmentPurposes; let i = index;" class="list-group-item">
+                        <li *ngFor="let purpose of model.EnvironmentPurposes; let i = index; trackBy:customTrackBy;" class="list-group-item">
                             <label>Purpose</label>
                             <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" />
                             <button *ngIf="!showActionButtons" (click)="deletePurpose(purpose)" class="badge" aria-hidden="true">&times;</button>

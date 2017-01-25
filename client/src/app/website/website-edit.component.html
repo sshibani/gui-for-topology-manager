@@ -26,9 +26,9 @@
                         <button type="button" class="icon-pencil pull-right" (click)="addBaseUrl()">Add</button>
                     </div>
                     <ul class="list-group">
-                        <li  *ngFor="let baseUrl of model.BaseUrls; let i = index;" class="list-group-item">
+                        <li *ngFor="let baseUrl of model.BaseUrls; let i = index; trackBy:customTrackBy;" class="list-group-item">
                             <label>Base Url</label>
-                            <input  type="text" [(ngModel)]="model.BaseUrls[i]" placeholder="BaseUrl" />
+                            <input  type="text" id="baseUrl" [(ngModel)]="model.BaseUrls[i]" placeholder="BaseUrl" />
                             <button *ngIf="!showActionButtons" (click)="deleteBaseUrl(baseUrl)" class="badge" aria-hidden="true">&times;</button>
                         </li>
                     </ul>

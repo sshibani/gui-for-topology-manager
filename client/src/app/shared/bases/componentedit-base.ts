@@ -34,4 +34,8 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     show(): void {
         this.modal.show();
     }
+    customTrackBy(index: number, obj: any): any {
+        return index;
+    }
+
 }

@@ -1,7 +1,7 @@
 <label>Name</label>
 <select class="form-control" [ngModel]="selectModel" required
                     (change)="onChangeExtensionKeys($event.target.value)" >
-    <option disabled hidden [value]="selectUndefinedOptionValue">-- select --</option>
+    <option hidden disabled [value]="selectUndefinedOptionValue">-- select --</option>
     <option *ngFor="let key of availableKeys" [value]="key">{{key}}</option>
     <option value="custom">custom</option>
 </select>

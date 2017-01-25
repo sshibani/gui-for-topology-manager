@@ -50,27 +50,3 @@
             <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
             <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
         </div>
-
-<!--<div *ngIf="model" class="mapping" BackgroundHighlight="lightblue">
-    <div><label>Id: </label> {{model.Id}} </div>
-    <div><label>CmEnvironmentId: </label> {{model.CmEnvironmentId}} </div>
-    <div><label>PublicationId: </label> {{model.PublicationId}} </div>
-    <div><label>EnvironmentPurpose: </label> {{model.EnvironmentPurpose}} </div>
-    <div><label>WebApplicationId: </label> {{model.WebApplicationId}} </div>
-    <div><label>RelativeUrl: </label> {{model.RelativeUrl}} </div>
-    <div><label>PrimaryMappedUrl: </label> {{model.PrimaryMappedUrl}} </div>
-    <div><label>IsOffline: </label> {{model.IsOffline}} </div>
-      <ul class="list-group">
-        <li *ngFor="let c of model.ExtensionProperties" class="list-group-item">
-            <label>{{c.Name}}</label>
-            <span>{{c.Value}}</span>
-        </li>
-    </ul>
-    <div *ngIf="showActionButtons">
-
-        <button type="button" class="btn btn-primary" (click)="mappingEdit.show()">Edit</button>
-        <button type="button" class="btn btn-warning" (click)="deleteItem.show()">Delete</button>
-     </div>
-    <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
-    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
-</div>-->
