@@ -3,7 +3,7 @@
     <div><label>Purpose: </label> {{model.EnvironmentPurpose}} </div>
     <div><label>DiscoveryUrl: </label> {{model.DiscoveryEndpointUrl}} </div>
     <div><label>IsOffline: </label> {{model.IsOffline}} </div>
-    <div><label>ClientId: </label> {{model.Credentials.ClientId}} </div>
+    <div *ngIf="model.Credentials.ClientId"><label>ClientId: </label> {{model.Credentials.ClientId}} </div>
     <div><label>Authentication Type: </label> {{model.Credentials.AuthenticationType}} </div>
     <div *ngIf="showActionButtons">
         <button type="button" class="btn btn-primary" [GoTo]="model" Path="{{detailsPath}}">Zoom in</button>

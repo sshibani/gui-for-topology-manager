@@ -29,7 +29,7 @@
                         <li  *ngFor="let baseUrl of model.BaseUrls; let i = index;" class="list-group-item">
                             <label>Base Url</label>
                             <input  type="text" [(ngModel)]="model.BaseUrls[i]" placeholder="BaseUrl" />
-                            <!--<button *ngIf="!showActionButtons" (click)="deleteBaseUrl(baseUrl)" class="badge" aria-hidden="true">&times;</button>-->
+                            <button *ngIf="!showActionButtons" (click)="deleteBaseUrl(baseUrl)" class="badge" aria-hidden="true">&times;</button>
                         </li>
                     </ul>
                 </div>
