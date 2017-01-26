@@ -1,52 +1,33 @@
-     <div *ngIf="model" class="panel panel-success">
+     <div *ngIf="model"  class="col-sm-6 ">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <strong>Mapping ({{model.Id}})</strong>
                 <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="mappingEdit.show()">Edit</button>
                 <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
             </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <label>CmEnvironmentId:</label>
-                        <span> {{model.CmEnvironmentId}}</span>
-                    </li>
-                    <li class="list-group-item">
-                        <label>PublicationId:</label>
-                        <span> {{model.PublicationId}}</span>
-                    </li>
-                    <li class="list-group-item">
-                        <label>EnvironmentPurpose:</label>
-                        <span> {{model.EnvironmentPurpose}}</span>
-                    </li>
-                    <li class="list-group-item">
-                        <label>WebApplicationId:</label>
-                        <span> {{model.WebApplicationId}}</span>
-                    </li>
-                    <li class="list-group-item">
-                        <label>RelativeUrl:</label>
-                        <span> {{model.RelativeUrl}}</span>
-                    </li>
-                    <li class="list-group-item">
-                        <label>PrimaryMappedUrl:</label>
-                        <span> {{model.PrimaryMappedUrl}}</span>
-                    </li>
-                    <li class="list-group-item">
-                        <label>IsOffline:</label>
-                        <span> {{model.IsOffline}}</span>
-                    </li>
-                </ul>
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        ExtensionProperties
-                    </div>
-                    <ul class="list-group">
-                        <li *ngFor="let c of model.ExtensionProperties" class="list-group-item">
-                            <label>{{c.Name}}</label>
-                            <span>{{c.Value}}</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
-            <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+            <dl class="dl-horizontal">
+                <dt>CmEnvironmentId</dt>
+                <dd>{{model.CmEnvironmentId}}</dd>
+                <dt>PublicationId</dt>
+                <dd>{{model.PublicationId}}</dd>
+                <dt>EnvironmentPurpose</dt>
+                <dd>{{model.EnvironmentPurpose}}</dd>
+                 <dt>WebApplicationId</dt>
+                <dd>{{model.WebApplicationId}}</dd>
+                 <dt>RelativeUrl</dt>
+                <dd>{{model.RelativeUrl}}</dd>
+                 <dt>PrimaryMappedUrl</dt>
+                <dd>{{model.PrimaryMappedUrl}}</dd>
+                 <dt>IsOffline</dt>
+                <dd>{{model.IsOffline}}</dd>
+            </dl>
+            <ul class="list-group">
+                <li *ngFor="let c of model.ExtensionProperties" class="list-group-item">
+                    <label>{{c.Name}}</label>
+                    <span>{{c.Value}}</span>
+                </li>
+            </ul>
         </div>
+    <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
+    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+</div>

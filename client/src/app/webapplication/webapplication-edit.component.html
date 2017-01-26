@@ -8,12 +8,14 @@
                 <h4 class="modal-title">{{tabHeader}}</h4>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label>ContextUrl</label>
-                    <input type="text" [(ngModel)]="model.ContextUrl" placeholder="ContextUrl"/>
-                </div>
-                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
-                <button type="button" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+                    <div class="form-group">
+                        <label>ContextUrl</label>
+                        <input type="text" [(ngModel)]="model.ContextUrl" name="contexualUrl" required placeholder="ContextUrl"/>
+                    </div>
+                    <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
+                    <button type="button" class="btn btn-success"  [disabled]="!editForm.form.valid"  (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                </form>
             </div>
         </div>
     </div>

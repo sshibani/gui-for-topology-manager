@@ -8,33 +8,35 @@
                 <h4 class="modal-title">{{tabHeader}}</h4>
             </div>
             <div class="modal-body">
-                <div class="form-group" *ngIf="showIdField">
-                    <label>Id</label>
-                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
-                    <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
-                </div>
-                <div class="form-group">
-                    <label>CdEnvironment</label>
-                     <select class="form-control" id="CdEnvironmentId"
-                            [(ngModel)]="model.CdEnvironmentId" required >
-                        <option *ngFor="let c of availableEnvironments" [value]="c[0]">{{c[0]}} | ({{c[1]}})</option>
-                    </select>
-                </div>
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Base Urls</h3>
-                        <button type="button" class="icon-pencil pull-right" (click)="addBaseUrl()">Add</button>
+                <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+                    <div class="form-group" *ngIf="showIdField">
+                        <label>Id</label>
+                        <input type="text" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
+                        <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                     </div>
-                    <ul class="list-group">
-                        <li *ngFor="let baseUrl of model.BaseUrls; let i = index; trackBy:customTrackBy;" class="list-group-item">
-                            <label>Base Url</label>
-                            <input  type="text" id="baseUrl" [(ngModel)]="model.BaseUrls[i]" placeholder="BaseUrl" />
-                            <button *ngIf="!showActionButtons" (click)="deleteBaseUrl(baseUrl)" class="badge" aria-hidden="true">&times;</button>
-                        </li>
-                    </ul>
-                </div>
-                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
-                <button type="button" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                    <div class="form-group">
+                        <label>CdEnvironment</label>
+                        <select class="form-control" id="CdEnvironmentId" name="cdenvironment"
+                                [(ngModel)]="model.CdEnvironmentId" required >
+                            <option *ngFor="let c of availableEnvironments" [value]="c[0]">{{c[0]}} | ({{c[1]}})</option>
+                        </select>
+                    </div>
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Base Urls</h3>
+                            <button type="button" class="icon-pencil pull-right" (click)="addBaseUrl()">Add</button>
+                        </div>
+                        <ul class="list-group">
+                            <li *ngFor="let baseUrl of model.BaseUrls; let i = index; trackBy:customTrackBy;" class="list-group-item">
+                                <label>Base Url</label>
+                                <input  type="text" id="baseUrl" [(ngModel)]="model.BaseUrls[i]" name="baseUrl{{i}}" required placeholder="BaseUrl" />
+                                <button *ngIf="!showActionButtons && i != 0" (click)="deleteBaseUrl(baseUrl)" class="badge" aria-hidden="true">&times;</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
+                    <button type="button" class="btn btn-success" [disabled]="!editForm.form.valid" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                </form>
             </div>
         </div>
     </div>

@@ -1,3 +1,30 @@
+<div *ngIf="model" class="col-sm-6 ">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <strong>Mapping ({{model.Id}})</strong>
+            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="websiteEdit.show()">Edit</button>
+            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+        </div>
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd>{{model.Name}}</dd>
+            <dt>CdEnvironmentId</dt>
+            <dd>{{model.CdEnvironmentId}}</dd>
+            <dt>EnvironmentPurpose</dt>
+            <dd>{{model.EnvironmentPurpose}}</dd>
+            <span *ngFor="let baseUrl of model.BaseUrls">
+                <dt>BaseUrl: </dt>
+                <dd>{{baseUrl}}<dd>
+            </span>
+        </dl>
+    </div>
+    <website-edit #websiteEdit [Model]="model"></website-edit>
+    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+</div>
+
+
+
+<!--
 <div *ngIf="model" class="website" BackgroundHighlight="lightblue">
     <div><label>Id: </label> {{model.Id}} </div>
     <div><label>CdEnvironmentId: </label> {{model.CdEnvironmentId}} </div>
@@ -13,4 +40,4 @@
      </div>
     <website-edit #websiteEdit [Model]="model"></website-edit>
     <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
-</div>
+</div>-->

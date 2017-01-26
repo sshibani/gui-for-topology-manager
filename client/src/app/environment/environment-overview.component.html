@@ -1,8 +1,17 @@
-<search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-
-<div>
-    <button type="button" class="btn btn-success"(click)="envEdit.show()">Add</button>
+<div class="container">
+    <div class="row">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-success pull-right"(click)="envEdit.show()">Add</button>
+        <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
+    </div>
 </div>
 <env-edit #envEdit></env-edit>
-<environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></environment-promobox>
-
+<div class="container">
+    <div class="row">
+        <environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></environment-promobox>
+    </div>
+</div>

@@ -8,46 +8,47 @@
                 <h4 class="modal-title">{{tabHeader}}</h4>
             </div>
             <div class="modal-body">
+             <form (ngSubmit)="onSubmit()" #editForm="ngForm">
                 <div class="form-group" *ngIf="showIdField">
                     <label>Id</label>
-                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
+                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
                     <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                 </div>
                 <div class="form-group">
                     <label>EnvironmentPurpose</label>
-                    <select class="form-control" id="purposes"
+                    <select class="form-control" id="purposes" name="purpose"
                             [(ngModel)]="model.EnvironmentPurpose" required >
                         <option *ngFor="let c of purposes" [value]="c">{{c}}</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>DiscoveryEndpointUrl</label>
-                    <input [(ngModel)]="model.DiscoveryEndpointUrl" placeholder="DiscoveryEndpointUrl" required />
+                    <input [(ngModel)]="model.DiscoveryEndpointUrl" name="discoveryEndPoint" placeholder="DiscoveryEndpointUrl" required />
                 </div>
                 <div class="form-group">
                     <label>IsOffline</label>
-                    <input  type="checkbox" [(ngModel)]="model.IsOffline" placeholder="IsOffline" required  />
+                    <input  type="checkbox" [(ngModel)]="model.IsOffline" placeholder="IsOffline" name="isofline"  />
                 </div>
                 <div class="form-group">
                     <label>AuthenticationType</label>
                     <select class="form-control" id="authenticationtypes" (change)="onChange($event.target.value)"
-                            [(ngModel)]="model.Credentials.AuthenticationType" required >
+                            [(ngModel)]="model.Credentials.AuthenticationType" required name="authentication" >
                         <option *ngFor="let type of authenticationTypes" [value]="type">{{type}}</option>
                     </select>
                 </div>
                 <div *ngIf="model.Credentials.AuthenticationType && model.Credentials.AuthenticationType != 'Anonymous'">
                        <div class="form-group">
                             <label>ClientId</label>
-                            <input [(ngModel)]="model.Credentials.ClientId" placeholder="ClientId" required />
+                            <input [(ngModel)]="model.Credentials.ClientId" placeholder="ClientId" required name="clientid" />
                         </div>
                         <div class="form-group">
                             <label>ClientSecret</label>
-                            <input [(ngModel)]="model.Credentials.ClientSecret" placeholder="ClientSecret" required />
+                            <input [(ngModel)]="model.Credentials.ClientSecret" placeholder="ClientSecret" required name="secret" />
                         </div>
                 </div>
-
-                <button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>
-                <button type="button" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
+                <button type="button"  class="btn btn-success"  [disabled]="!editForm.form.valid" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+             </form>
             </div>
         </div>
     </div>

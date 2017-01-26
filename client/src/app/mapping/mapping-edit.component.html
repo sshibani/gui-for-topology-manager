@@ -8,48 +8,51 @@
                 <h4 class="modal-title">{{tabHeader}}</h4>
             </div>
             <div class="modal-body">
-                <div class="form-group" *ngIf="showIdField">
-                    <label>Id</label>
-                    <input class="form-control" type="text" [(ngModel)]="model.Id" placeholder="Id" required [disabled]="autoGenerateId"/>
-                    <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
-                </div>
-                <div class="form-group">
-                    <label>CmEnvironmentId</label>
-                    <select class="form-control" id="WebApplicationId"
-                            [(ngModel)]="model.CmEnvironmentId" required >
-                        <option *ngFor="let c of availableCmEnvironments" [value]="c">{{c}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>WebApplicationId</label>
-                     <select class="form-control" id="WebApplicationId"
-                            [(ngModel)]="model.WebApplicationId" required >
-                        <option *ngFor="let c of availableWebApplications" [value]="c">{{c}}</option>
-                    </select>
-                </div>
-                 <div class="form-group">
-                    <label>PublicationId</label>
-                     <select class="form-control" id="publicationid" (change)="onChange($event.target.value)"
-                            [(ngModel)]="model.PublicationId" required >
-                        <option *ngFor="let c of publications" [value]="c.Id">{{c.Title}} || ({{c.Id}})</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>RelativeUrl</label>
-                    <input class="form-control" [(ngModel)]="model.RelativeUrl" placeholder="RelativeUrl" required />
+                <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+                    <div class="form-group" *ngIf="showIdField">
+                        <label>Id</label>
+                        <input class="form-control" type="text" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
+                        <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
+                    </div>
+                    <div class="form-group">
+                        <label>CmEnvironmentId</label>
+                        <select class="form-control" id="WebApplicationId" name="cmEnvironemt"
+                                [(ngModel)]="model.CmEnvironmentId" required >
+                            <option *ngFor="let c of availableCmEnvironments" [value]="c">{{c}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>WebApplicationId</label>
+                        <select class="form-control" id="WebApplicationId" name="webApplicationId"
+                                [(ngModel)]="model.WebApplicationId" required >
+                            <option *ngFor="let c of availableWebApplications" [value]="c">{{c}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>PublicationId</label>
+                        <select class="form-control" id="publicationid" (change)="onChange($event.target.value)"
+                                [(ngModel)]="model.PublicationId" required name="publicationId">
+                            <option *ngFor="let c of publications" [value]="c.Id">{{c.Title}} || ({{c.Id}})</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>RelativeUrl</label>
+                        <input class="form-control" [(ngModel)]="model.RelativeUrl" placeholder="RelativeUrl" required name="relativeUrl" />
+                    </div>
+
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ExtensionProperties</h3>
+                            <button type="button" class="icon-pencil pull-right" (click)="addExtensionProperties()">Add</button>
+                        </div>
+                        <extension-properties *ngFor="let item of model.ExtensionProperties;"
+                                            [Model]="item"
+                                            (onDelete)="removeExtensionProperty($event)"></extension-properties>
+                    </div>
+                    <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
+                    <button type="button" class="btn btn-success"  [disabled]="!editForm.form.valid" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+                </form>
                 </div>
 
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">ExtensionProperties</h3>
-                        <button type="button" class="icon-pencil pull-right" (click)="addExtensionProperties()">Add</button>
-                    </div>
-                    <extension-properties *ngFor="let item of model.ExtensionProperties;"
-                                        [Model]="item"
-                                        (onDelete)="removeExtensionProperty($event)"></extension-properties>
-                </div>
-                <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
-                <button type="button" class="btn btn-success" (click)="saveOrUpdate()" aria-label="Save">Save</button>
-            </div>
         </div>
     </div>

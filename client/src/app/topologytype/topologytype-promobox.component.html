@@ -1,4 +1,36 @@
-<div *ngIf="model" class="topologytype" BackgroundHighlight="lightblue">
+<div *ngIf="model" class="col-sm-6 ">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <strong>Mapping ({{model.Id}})</strong>
+            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="topologyEdit.show()">Edit</button>
+            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+        </div>
+        <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd>{{model.Name}}</dd>
+            <ul class="list-group">
+                <li *ngFor="let env of model.EnvironmentPurposes" class="list-group-item">
+                    <span><label>purpose</label>{{env}}</span>
+                </li>
+            </ul>
+        </dl>
+        <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Environment Purposes</h3>
+        </div>
+            <ul class="list-group">
+                <li *ngFor="let env of model.EnvironmentPurposes" class="list-group-item">
+                    <span>{{env}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <topologytype-edit #topologyEdit [Model]="model"></topologytype-edit>
+    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+</div>
+
+
+<!--<div *ngIf="model" class="topologytype" BackgroundHighlight="lightblue">
 
  <div><label>Id: </label> {{model.Id}} </div>
     <div><label>Name: </label> {{model.Name}} </div>
@@ -8,7 +40,7 @@
         </div>
         <ul class="list-group">
             <li *ngFor="let env of model.EnvironmentPurposes" class="list-group-item">
-                <span> <label>EnvironmentPurpose: </label> {{env}}</span>
+                <span>{{env}}</span>
             </li>
         </ul>
     </div>
@@ -20,4 +52,4 @@
 
     <topologytype-edit #topologyEdit [Model]="model"></topologytype-edit>
     <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
-</div>
+</div>-->
