@@ -49,6 +49,7 @@ import { DeleteWindowComponent } from './shared/popup/delete-window.component';
 import { ExtensionPropertiesComponent } from './shared/extensionsproperties/extensionproperties.component';
 import { MessageComponent } from './shared/message/message.component';
 import { MessageService } from './services/message.service';
+import { ContextService } from './services/context.service';
 
 @NgModule({
   imports: [
@@ -94,7 +95,8 @@ import { MessageService } from './services/message.service';
     ExtensionPropertiesComponent
   ],
   providers: [
-    MessageService
+    MessageService,
+    ContextService
   ],
     bootstrap: [ AppComponent ]
 })

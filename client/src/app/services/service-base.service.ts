@@ -1,14 +1,17 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
-import { CommonConst } from './../shared/constants';
+import { Router } from '@angular/router';
+import { RouteConst } from './../shared/constants';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 
+import { ContextService } from './../services/context.service';
 import { ITopologyItem } from './../shared/models/contracts/itopologyitem';
 import { MessageService } from './message.service';
 
 import { CdEnvironment } from './../shared/models/cdenvironment';
+import { EndPoint } from './../shared/models/topologyenvironment';
 
 export interface IServiceBase<T> {
     GetAll(): Promise<T[]>;
@@ -26,22 +29,39 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private _environmentUrl;
     private _headers;
     private _http: Http;
+    private _router: Router;
     private _messageService: MessageService;
+    private _contextService: ContextService;
 
     private deleteSubject = new Subject<T>();
     private createSubject = new Subject<T>();
     private updateSubject = new Subject<T>();
 
-    constructor(http: Http, endPoint: string) {
+    constructor(http: Http, router: Router, contextService: ContextService, endPoint: string) {
         this._http = http;
+        this._contextService = contextService;
+        this._router = router;
+        this.initOrRedirect();
+        this.setHttpHeaders(endPoint);
         //this._messageService = messageService;
         // this._environmentUrl = endPoint;
-        this._environmentUrl = CommonConst.TopologyManagerBaseUrl + endPoint;
-        this._headers = new Headers();
-        this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
-        this._headers.append('Content-Type', 'application/json');
     }
 
+    private initOrRedirect(): void {
+        if (typeof this._contextService === 'undefined' || typeof this._contextService.getContextEnvironment() === 'undefined') {
+            let link = ['/' + RouteConst.EnvironmentSelectionPath];
+            this._router.navigate(link);
+        }
+    }
+
+    private setHttpHeaders(endPoint: string): void {
+        let topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
+        this._environmentUrl = topologyEndPoint.Url + endPoint;
+        this._headers = new Headers();
+        let authentication = topologyEndPoint.UserName + ":" + topologyEndPoint.Password;
+        //this._headers.append('Authorization', 'Basic ' + btoa(authentication));
+        this._headers.append('Content-Type', 'application/json');
+    }
 
     public GetAll(): Promise<T[]> {
         return this._http.get(this._environmentUrl, { headers: this._headers })
@@ -57,7 +77,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         console.log(body);
-        this._http.post(this._environmentUrl, body, { headers: this._headers })
+        this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
                         if (res.status === 201) {

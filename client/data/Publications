@@ -1,5 +1,4 @@
-{
-   "value":[
+[
     {
        "Id": "tcm:0-1-1",
        "Title": "My First Publication",
@@ -22,4 +21,3 @@
     }
 
   ]
-}

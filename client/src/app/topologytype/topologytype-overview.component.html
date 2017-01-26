@@ -1,8 +1,13 @@
-<h1>{{title}}</h1>
-
-<search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-<div>
-    <button type="button" class="btn btn-success"(click)="topoEdit.show()">Add</button>
+<div class="container">
+    <div class="row">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-success pull-right"(click)="topoEdit.show()">Add</button>
+        <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
+    </div>
 </div>
 <topologytype-edit #topoEdit></topologytype-edit>
 <div class="container">
