@@ -59,7 +59,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         this._environmentUrl = topologyEndPoint.Url + endPoint;
         this._headers = new Headers();
         let authentication = topologyEndPoint.UserName + ":" + topologyEndPoint.Password;
-        //this._headers.append('Authorization', 'Basic ' + btoa(authentication));
+        this._headers.append('Authorization', 'Basic ' + btoa(authentication));
         this._headers.append('Content-Type', 'application/json');
     }
 
