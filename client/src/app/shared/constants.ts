@@ -13,6 +13,9 @@ export class RouteConst {
     public static MappingOverviewPath = "mappings";
     public static MappingPath = "mapping";
 
+
+    public static EnvironmentSelectionPath = "selectenvironment";
+
 }
 export class CommonConst {
     public static TopologyManagerBaseUrl = "data/";

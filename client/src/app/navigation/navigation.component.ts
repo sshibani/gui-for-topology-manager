@@ -20,11 +20,12 @@ export class NavigationComponent implements OnInit {
     getNavItems(): void {
        this.navItems = NavigationItem[2] = [
             new NavigationItem("Home", "main"),
+            new NavigationItem("Select Environment", RouteConst.EnvironmentSelectionPath),
+            new NavigationItem("Topology Types", RouteConst.TopologyTypeOverViewPath),
             new NavigationItem("Environments", RouteConst.EnvironmentOverviewPath),
             new NavigationItem("Websites", RouteConst.WebsiteOverviewPath),
             new NavigationItem("WebApplications", RouteConst.WebApplicationOverviewPath),
             new NavigationItem("Mappings", RouteConst.MappingOverviewPath),
-            new NavigationItem("Topology Types", RouteConst.TopologyTypeOverViewPath)
         ];
     }
 }

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RouteConst } from './shared/constants';
 import { MainComponent }      from './main/main.component';
+import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
+
 import { EnvironmentOverviewComponent } from './environment/environment-overview.component';
 import { EnvironmentComponent } from './environment/environment.component';
 
@@ -16,8 +18,8 @@ import { TopologyTypeComponent } from './topologytype/topologytype.component';
 
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: RouteConst.EnvironmentOverviewPath, pathMatch: 'full' },
-    { path: 'main', component: MainComponent },
+    { path: '', redirectTo: RouteConst.EnvironmentSelectionPath, pathMatch: 'full' },
+    { path: RouteConst.EnvironmentSelectionPath, component: EnvironmentSelectionComponent },
     { path: RouteConst.EnvironmentOverviewPath, component: EnvironmentOverviewComponent },
     { path: RouteConst.Environmentpath + '/:id', component: EnvironmentComponent },
     { path: RouteConst.WebsiteOverviewPath, component: WebsiteOverviewComponent },
