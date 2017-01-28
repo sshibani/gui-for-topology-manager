@@ -10,12 +10,51 @@ namespace TopologyManager.WebApi.Controllers
 {
     public class TopologyEnvironmentController : ApiController
     {
+        private readonly TopologyManagerService _service;
+
+        public TopologyEnvironmentController()
+        {
+            _service = new TopologyManagerService();
+        }
+
         // GET api/values
         public IEnumerable<TopologyEnvironment> Get()
         {
-            var list = ExtensionMethods.LoadConfiguration();
-
+            var list = _service.LoadEnvironments();
             return list;
+        }
+
+        public TopologyEnvironment Get(string id)
+        {
+            var list = _service.LoadEnvironments();
+            return list.FirstOrDefault(e => e.Name.Equals(id, StringComparison.InvariantCultureIgnoreCase));
+        }
+
+        public HttpResponseMessage Put([FromBody] TopologyEnvironment entity, string id)
+        {
+            var result = _service.Update(id, entity);
+            if (result)
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            else
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+        }
+
+        public HttpResponseMessage Post([FromBody] TopologyEnvironment entity)
+        {
+            var result = _service.Add(entity);
+            if (result)
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            else
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+        }
+
+        public HttpResponseMessage Delete(string id)
+        {
+            var result = _service.Delete(id);
+            if (result)
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            else
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
         }
     }
 }

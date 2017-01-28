@@ -9,6 +9,8 @@
   <div class="row" *ngFor="let item of model">
       <h3>{{item.Name}}</h3>
       <button type="button" (click)="setCurrentEnvironment(item)">Select</button>
+      <button type="edit" (click)="envSelectionEdit.show()">Edit</button>
+      <env-select-edit #envSelectionEdit [Model]="item"></env-select-edit>
   </div>
 </div>
 

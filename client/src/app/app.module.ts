@@ -15,6 +15,7 @@ import { MainComponent } from './main/main.component';
 //Navigation
 import { NavigationComponent } from './navigation/navigation.component';
 import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
+import { EnvrionemtSelectionEditComponent } from './environment-selection/environment-selection-edit.component';
 
 import { EnvironmentComponent } from './environment/environment.component';
 import { EnvironmentOverviewComponent } from './environment/environment-overview.component';
@@ -68,6 +69,7 @@ import { ContextService } from './services/context.service';
     HighlightDirective,
     GoToDirective,
     EnvironmentSelectionComponent,
+    EnvrionemtSelectionEditComponent,
     SearchComponent,
     AppComponent,
     MainComponent,
