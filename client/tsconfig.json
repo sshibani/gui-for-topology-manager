@@ -12,17 +12,20 @@
   },
    "filesGlob": [
     "src/**/*.ts",
-    "typings/*.d.ts"
+    "typings/*.d.ts",
+    "!./node_modules/**/*.ts"
   ],
   "typeRoots": [
-    "node_modules/@types"
+    "typings"
   ],
   "types": [
     "core-js",
     "node"
   ],
     "exclude": [
+      "typings/browser.d.ts",
+      "typings/browser",
       "gulpfile.ts",
-      "node_modules"
+      "node_modules/**"
     ]
 }
