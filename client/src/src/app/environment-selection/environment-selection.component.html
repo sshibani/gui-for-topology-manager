@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <h1>{{title}}</h1>
+    </div>
+</div>
+
+<div class="container">
+  <h2>Select an environment</h2>
+  <div class="row" *ngFor="let item of model">
+      <h3>{{item.Name}}</h3>
+      <button type="button" (click)="setCurrentEnvironment(item)">Select</button>
+      <button type="edit" (click)="envSelectionEdit.show()">Edit</button>
+      <env-select-edit #envSelectionEdit [Model]="item"></env-select-edit>
+  </div>
+</div>
+
+    <!--<accordion>
+        <accordion-group heading="Development"
+                        [panelClass]="customClass"
+                        [isOpen]="isFirstOpen">
+            This content is straight in the template.
+        </accordion-group>
+        <accordion-group heading="Development"
+                        [panelClass]="customClass"
+                        [isOpen]="isFirstOpen">
+            This content is straight in the template.
+        </accordion-group>
+    </accordion>-->
