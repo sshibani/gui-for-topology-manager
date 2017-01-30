@@ -1,5 +1,5 @@
-import { ITopologyItem } from './contracts/itopologyitem';
-export class Website implements ITopologyItem {
+import { ISearchItem } from './contracts/itopologyitem';
+export class Website implements ISearchItem {
     Id: string;
     CdEnvironmentId: string;
     EnvironmentPurpose: string;

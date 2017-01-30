@@ -1,8 +1,8 @@
-import { ITopologyItem } from './contracts/itopologyitem';
+import { ISearchItem } from './contracts/itopologyitem';
 
 import { ExtensionProperties } from './extensionproperties';
 
-export class Mapping implements ITopologyItem {
+export class Mapping implements ISearchItem {
     Id: string;
     CmEnvironmentId: string;
     PublicationId: string;

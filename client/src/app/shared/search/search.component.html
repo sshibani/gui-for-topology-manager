@@ -21,6 +21,10 @@
             <label>EnvironmentPurpose: </label>
             <input (keyup)="OnEnvironmentPurpose($event)" placeholder="EnvironmentPurpose"/>
         </div>
+        <div *ngIf="isWebsite" class="search--baseurl">
+            <label>Base Url's: </label>
+            <input (keyup)="OnBaseUrl($event)" placeholder="Base Url"/>
+        </div>
     </div>
     </div>
 </div>
