@@ -41,9 +41,9 @@ export class SearchComponent implements OnInit {
         if (this.id !== '') {
             list = list.filter(item => item.Id.toLowerCase().includes(this.id));
         }
-        if (this.environmentPurpose !== '') {
-            list = list.filter(item => item.EnvironmentPurpose.toLowerCase().includes(this.environmentPurpose));
-        }
+        // if (this.environmentPurpose !== '') {
+        //     list = list.filter(item => item.EnvironmentPurpose.toLowerCase().includes(this.environmentPurpose));
+        // }
         this.onKeypress.emit(list);
     }
 

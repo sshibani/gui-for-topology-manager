@@ -1,13 +1,15 @@
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+
+import { Routes, RouterModule } from '@angular/router';
 
 import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule, AlertModule   } from 'ng2-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
-import { AppComponent }  from './app.component';
 
 // Main section
 import { MainComponent } from './main/main.component';

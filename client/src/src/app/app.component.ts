@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
     moduleId: module.id,
-    selector: 'topology-app',
+    selector: 'app-root',
     templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
