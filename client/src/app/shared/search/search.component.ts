@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { ITopologyItem } from './../models/contracts/itopologyitem';
+import { ISearchItem } from './../models/contracts/itopologyitem';
+import { Website } from './../models/website';
 
 @Component({
     moduleId: module.id,
@@ -10,19 +11,27 @@ import { ITopologyItem } from './../models/contracts/itopologyitem';
 })
 export class SearchComponent implements OnInit {
     title = "Search";
-    public operator: string = 'Middle';
-    public isCollapsed: boolean = true;
+    operator: string = 'Middle';
+    isCollapsed: boolean = true;
+    isWebsite: boolean = false;
 
     @Output()
-    onKeypress = new EventEmitter<ITopologyItem[]>();
+    onKeypress = new EventEmitter<ISearchItem[]>();
     @Input("Collection")
-    collection: ITopologyItem[];
+    collection: ISearchItem[];
 
     id: string = '';
     environmentPurpose: string = '';
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        if (typeof this.collection !== 'undefined') {
+            let item = this.collection[0];
+            if (item instanceof Website) {
+                this.isWebsite = true;
+            }
+        }
+     }
 
     OnId(event: any): void {
         console.log(event.target.value);
@@ -41,9 +50,9 @@ export class SearchComponent implements OnInit {
         if (this.id !== '') {
             list = list.filter(item => item.Id.toLowerCase().includes(this.id));
         }
-        // if (this.environmentPurpose !== '') {
-        //     list = list.filter(item => item.EnvironmentPurpose.toLowerCase().includes(this.environmentPurpose));
-        // }
+        if (this.environmentPurpose !== '') {
+            list = list.filter(item => item.EnvironmentPurpose.toLowerCase().includes(this.environmentPurpose));
+        }
         this.onKeypress.emit(list);
     }
 

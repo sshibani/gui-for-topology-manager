@@ -38,9 +38,11 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private updateSubject = new Subject<T>();
 
     constructor(http: Http, router: Router, contextService: ContextService, endPoint: string) {
+        console.log("service base ctor");
         this._http = http;
         this._contextService = contextService;
         this._router = router;
+
         this.initOrRedirect();
         this.setHttpHeaders(endPoint);
         //this._messageService = messageService;
@@ -50,6 +52,8 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private initOrRedirect(): void {
         if (typeof this._contextService === 'undefined' || typeof this._contextService.getContextEnvironment() === 'undefined') {
             let link = ['/' + RouteConst.EnvironmentSelectionPath];
+            console.log(link);
+            console.log(this._router);
             this._router.navigate(link);
         }
     }

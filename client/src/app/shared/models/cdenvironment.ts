@@ -1,7 +1,7 @@
 import { WebApplication } from './webapplication';
-import { ITopologyItem } from './contracts/itopologyitem';
+import { ISearchItem } from './contracts/itopologyitem';
 
-export class CdEnvironment implements ITopologyItem {
+export class CdEnvironment implements ISearchItem {
     Id: string;
     EnvironmentPurpose: string;
     DiscoveryEndpointUrl: string;
