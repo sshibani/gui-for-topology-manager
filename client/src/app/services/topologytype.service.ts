@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Response, Http } from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs';
+
 
 import { ServiceBase } from './service-base.service';
 
@@ -16,8 +17,8 @@ export class TopologyTypeService extends ServiceBase<TopologyType> {
         super(http, router, contextService, "CdTopologyTypes");
     }
 
-    getPurposes(): Promise<string[]> {
-       return this.GetAll().then(items => {
+    getPurposes(): Observable<string[]> {
+       return this.GetAll().map(items => {
              let list: string[] = [];
              items.forEach(a => list = list.concat(a.EnvironmentPurposes));
              return list;

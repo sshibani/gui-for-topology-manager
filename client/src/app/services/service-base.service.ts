@@ -3,6 +3,8 @@ import { Headers, Response, Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { RouteConst } from './../shared/constants';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/publishReplay';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
 
@@ -14,8 +16,8 @@ import { CdEnvironment } from './../shared/models/cdenvironment';
 import { EndPoint } from './../shared/models/topologyenvironment';
 
 export interface IServiceBase<T> {
-    GetAll(): Promise<T[]>;
-    Get(id: string): Promise<T>;
+    GetAll(): Observable<T[]>;
+    Get(id: string): Observable<T>;
     Create(data: T): void;
     Delete(data: T): void;
     Update(data: T): void;
@@ -33,30 +35,19 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private _messageService: MessageService;
     private _contextService: ContextService;
 
+    private _observable: Observable<T[]>;
+
     private deleteSubject = new Subject<T>();
     private createSubject = new Subject<T>();
     private updateSubject = new Subject<T>();
 
     constructor(http: Http, router: Router, contextService: ContextService, endPoint: string) {
-        console.log("service base ctor");
         this._http = http;
         this._contextService = contextService;
         this._router = router;
-
-        this.initOrRedirect();
         this.setHttpHeaders(endPoint);
-        //this._messageService = messageService;
-        // this._environmentUrl = endPoint;
     }
 
-    private initOrRedirect(): void {
-        if (typeof this._contextService === 'undefined' || typeof this._contextService.getContextEnvironment() === 'undefined') {
-            let link = ['/' + RouteConst.EnvironmentSelectionPath];
-            console.log(link);
-            console.log(this._router);
-            this._router.navigate(link);
-        }
-    }
 
     private setHttpHeaders(endPoint: string): void {
         let topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
@@ -67,20 +58,25 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         this._headers.append('Content-Type', 'application/json');
     }
 
-    public GetAll(): Promise<T[]> {
-        return this._http.get(this._environmentUrl, { headers: this._headers })
-                .toPromise()
-                .then(this.extractData)
-                .catch(this.handleError);
+    public GetAll(): Observable<T[]> {
+        if (this._observable) {
+            return this._observable;
+        } else {
+            this._observable = this._http.get(this._environmentUrl, { headers: this._headers })
+                                    .map(this.extractData)
+                                    .publishReplay(50)
+                                    .refCount();
+            return this._observable;
+        }
     }
-    public Get(id: string): Promise<T> {
+    public Get(id: string): Observable<T> {
          return this.GetAll()
-                    .then(env => env.find(e => e.Id === id));
+                    .map(env => env.find(e => e.Id === id));
     }
+
     public Create(data: T): void {
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
-        console.log(body);
         this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
@@ -96,7 +92,6 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         let url = this._environmentUrl + "('" + data.Id + "')";
-        console.log(body);
         this._http.patch(url, body, { headers: this._headers })
                     .toPromise()
                     .then(res => {
@@ -132,10 +127,9 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     }
 
      extractData(res: Response) {
-        console.warn(res.json());
+         console.warn(res.json());
         return res.json().value as T[];
     }
-    //abstract extractData(res: Response);
 
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only

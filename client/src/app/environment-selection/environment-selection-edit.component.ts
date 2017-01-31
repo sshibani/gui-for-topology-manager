@@ -9,7 +9,7 @@ import { TopologyEnvironmentService } from './../services/topology-environment.s
     selector: 'env-select-edit',
     styles: [ "environment-selection.component.css" ],
     templateUrl: 'environment-selection-edit.component.html',
-    providers: [ TopologyEnvironmentService ]
+    providers: [  ]
 })
 export class EnvrionemtSelectionEditComponent implements OnInit {
     @Input('Model')

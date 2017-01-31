@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Response, Http } from '@angular/http';
+import { Observable } from 'rxjs';
 
 import { ServiceBase } from './service-base.service';
 import { ContextService } from './context.service';
@@ -13,8 +14,8 @@ export class WebsiteService extends ServiceBase<Website> {
         super(http, router, contextService, "Websites");
     }
 
-    GetByCdEnvironmentId(id: string): Promise<Website[]> {
+    GetByCdEnvironmentId(id: string): Observable<Website[]> {
          return this.GetAll()
-                    .then(env => env.filter(e => e.CdEnvironmentId === id));
+                    .map(env => env.filter(e => e.CdEnvironmentId === id));
     }
 }

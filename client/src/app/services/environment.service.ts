@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Response, Http } from '@angular/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { MessageService } from './message.service';
 import { ServiceBase } from './service-base.service';
@@ -15,9 +16,9 @@ export class EnvironmentService extends ServiceBase<CdEnvironment> {
         super(http, router, contextService, "CdEnvironments");
     }
 
-    getCdEnvrinmentsTitle(): Promise<string[][]> {
+    getCdEnvrinmentsTitle(): Observable<string[][]> {
         let p: Array<any> = Array<any>();
-        return this.GetAll().then(e => {
+        return this.GetAll().map(e => {
              for (var i = 0; i < e.length; i++) {
                  p[i] = [ e[i].Id, e[i].EnvironmentPurpose];
              }

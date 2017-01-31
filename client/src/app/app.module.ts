@@ -11,6 +11,8 @@ import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule
 
 import { AppRoutingModule } from './app.routing';
 
+import { HasContextActivated } from './services/has-context-environment';
+
 // Main section
 import { MainComponent } from './main/main.component';
 
@@ -44,6 +46,7 @@ import { TopologyTypeComponent } from './topologytype/topologytype.component';
 
 import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
+
 
 import { SearchComponent } from './shared/search/search.component';
 
@@ -101,7 +104,8 @@ import { ContextService } from './services/context.service';
   ],
   providers: [
     MessageService,
-    ContextService
+    ContextService,
+    HasContextActivated
   ],
     bootstrap: [ AppComponent ]
 })

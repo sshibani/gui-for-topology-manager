@@ -11,7 +11,7 @@ import { EnvironmentService } from './../services/environment.service';
     selector: 'website-edit',
     styleUrls: [ 'website.component.css'],
     templateUrl: 'website-edit.component.html',
-    providers: [ EnvironmentService ]
+    providers: [  ]
 })
 export class WebsiteEditComponent extends ComponentEditBase<Website> implements OnInit {
     availableEnvironments: string[][];
@@ -37,7 +37,7 @@ export class WebsiteEditComponent extends ComponentEditBase<Website> implements 
 
     getCdEnvironments(): void {
         this.envService.getCdEnvrinmentsTitle()
-                        .then(item => this.availableEnvironments = item);
+                        .subscribe(item => this.availableEnvironments = item);
         console.log(this.availableEnvironments);
     }
 
