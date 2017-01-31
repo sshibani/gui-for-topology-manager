@@ -61,6 +61,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -89,12 +90,22 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Tridion.ContentManager.CoreService.Client">
+      <HintPath>..\reference\Tridion.ContentManager.CoreService.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Tridion.Extensions.CoreService, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\tridion-extensions-coreservice.2.0.1\lib\Tridion.Extensions.CoreService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PublicationController.cs" />
     <Compile Include="Controllers\TopologyEnvironmentController.cs" />
+    <Compile Include="Models\Publication.cs" />
+    <Compile Include="Service\CoreServiceProvider.cs" />
     <Compile Include="Service\TopologyManagerService.cs" />
     <Compile Include="Models\TopologyEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

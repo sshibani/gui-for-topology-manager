@@ -3,6 +3,12 @@
         <h1>{{title}}</h1>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-success pull-right"(click)="envSelectEdit.show()">Add</button>
+      </div>
+</div>
+<env-select-edit #envSelectEdit></env-select-edit>
 
 <div class="container">
   <h2>Select an environment</h2>

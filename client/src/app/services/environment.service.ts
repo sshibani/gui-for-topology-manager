@@ -12,8 +12,8 @@ import { ContextService } from './context.service';
 @Injectable()
 export class EnvironmentService extends ServiceBase<CdEnvironment> {
 
-    constructor(private http: Http, private router: Router, private contextService: ContextService) {
-        super(http, router, contextService, "CdEnvironments");
+    constructor(private http: Http, private router: Router,  private messageService: MessageService, private contextService: ContextService) {
+        super(http, router, contextService, messageService, "CdEnvironments");
     }
 
     getCdEnvrinmentsTitle(): Observable<string[][]> {

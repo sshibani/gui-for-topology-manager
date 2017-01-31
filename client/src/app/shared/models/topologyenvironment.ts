@@ -1,7 +1,7 @@
 export class TopologyEnvironment {
     Name: string;
-    CoreServiceEndpoint: EndPoint;
-    TopologyManagerEndpoint: EndPoint;
+    CoreServiceEndpoint: EndPoint = new EndPoint();
+    TopologyManagerEndpoint: EndPoint = new EndPoint();
 }
 
 export class EndPoint {

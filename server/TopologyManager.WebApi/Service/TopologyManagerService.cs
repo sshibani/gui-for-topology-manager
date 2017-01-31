@@ -81,7 +81,7 @@ namespace System
                 mapping = _serializer.Deserialize<List<TopologyEnvironment>>(reader);
             }
 
-            return mapping;
+            return mapping ?? new List<TopologyEnvironment>();
         }
     }
 }

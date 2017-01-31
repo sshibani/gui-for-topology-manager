@@ -41,9 +41,10 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     private createSubject = new Subject<T>();
     private updateSubject = new Subject<T>();
 
-    constructor(http: Http, router: Router, contextService: ContextService, endPoint: string) {
+    constructor(http: Http, router: Router, contextService: ContextService, messageService: MessageService, endPoint: string) {
         this._http = http;
         this._contextService = contextService;
+        this._messageService = messageService;
         this._router = router;
         this.setHttpHeaders(endPoint);
     }
@@ -54,7 +55,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         this._environmentUrl = topologyEndPoint.Url + endPoint;
         this._headers = new Headers();
         let authentication = topologyEndPoint.UserName + ":" + topologyEndPoint.Password;
-        this._headers.append('Authorization', 'Basic ' + btoa(authentication));
+        //this._headers.append('Authorization', 'Basic ' + btoa(authentication));
         this._headers.append('Content-Type', 'application/json');
     }
 
@@ -62,7 +63,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         if (this._observable) {
             return this._observable;
         } else {
-            this._observable = this._http.get(this._environmentUrl, { headers: this._headers })
+            this._observable = this._http.get(this._environmentUrl, { headers: this._headers,  withCredentials: true })
                                     .map(this.extractData)
                                     .publishReplay(50)
                                     .refCount();
@@ -77,6 +78,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     public Create(data: T): void {
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
+        console.log(body);
         this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
@@ -85,8 +87,12 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                             this.createSubject.next(m);
                         }
                     })
-                    .catch(this.handleError);
+                    .catch(error => this.handleError(error, this._messageService));
+                    // .catch((error: any) => {
+                    //     this._messageService.SendMessage("danger", error, 5000);
 
+                    //     return Promise.reject(error.message || error);
+                    // });
     }
     public Update(data: T): void {
         let body = JSON.stringify(data);
@@ -100,8 +106,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                             this.updateSubject.next(m);
                         }
                     })
-                    .catch(this.handleError);
-
+                    .catch(error => this.handleError(error, this._messageService));
     }
     public Delete(data: T): void {
         let url = this._environmentUrl + "('" + data.Id + "')";
@@ -112,7 +117,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                             this.deleteSubject.next(data);
                         }
                     })
-                    .catch(this.handleError);
+                    .catch(error => this.handleError(error, this._messageService));
     }
     public GetDeletedMessage(): Observable<T> {
         return this.deleteSubject.asObservable();
@@ -131,9 +136,9 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         return res.json().value as T[];
     }
 
-    private handleError(error: any): Promise<any> {
+    private handleError(error: any, service: MessageService): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
-        //this._messageService.SendMessage("error", error.message, 5000);
+        this._messageService.SendMessage("danger", error, 5000);
         return Promise.reject(error.message || error);
     }
 }

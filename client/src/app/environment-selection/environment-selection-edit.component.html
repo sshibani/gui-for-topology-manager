@@ -1,4 +1,4 @@
- <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+ <div *ngIf="model" bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -17,7 +17,7 @@
                     <label>Topology Endpoint</label>
                     <input type="text" [(ngModel)]="model.TopologyManagerEndpoint.Url" placeholder="Url" name="t-url"required />
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label>Domain</label>
                     <input type="text" [(ngModel)]="model.TopologyManagerEndpoint.Domain" placeholder="Domain" name="t-domain" />
                 </div>
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" [(ngModel)]="model.TopologyManagerEndpoint.Password" placeholder="Password" name="t-password" required />
-                </div>
+                </div>-->
                  <div class="form-group">
                     <label>CoreService Endpoint</label>
                     <input type="text" [(ngModel)]="model.CoreServiceEndpoint.Url" placeholder="Url" name="c-name" required />
