@@ -19,7 +19,7 @@ import { TopologyTypeComponent } from './topologytype/topologytype.component';
 
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: RouteConst.EnvironmentSelectionPath, pathMatch: 'full' },
+    { path: '',  component: EnvironmentSelectionComponent, pathMatch: 'full' },
     { path: RouteConst.EnvironmentSelectionPath, component: EnvironmentSelectionComponent },
     { path: RouteConst.EnvironmentOverviewPath, component: EnvironmentOverviewComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.Environmentpath + '/:id', component: EnvironmentComponent, canActivate: [ HasContextActivated ] },
