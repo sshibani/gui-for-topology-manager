@@ -14,4 +14,12 @@ export class ContextService {
     getContextEnvironment(): TopologyEnvironment {
         return this.contextEnvironment;
     }
+
+    hasContext(): boolean {
+        if(this.contextEnvironment) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

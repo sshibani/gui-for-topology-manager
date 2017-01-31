@@ -26,7 +26,7 @@ export class EnvironmentSelectionComponent implements OnInit {
     }
     getEnvironments(): void {
         this.topologyEnvironmentService.GetAll()
-                .then(item => this.model = item);
+                .subscribe(item => this.model = item);
         console.log(this.model);
     }
     setCurrentEnvironment(data: TopologyEnvironment): void {

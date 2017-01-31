@@ -24,7 +24,7 @@ export class TopologyTypeComponent implements OnInit {
          this.route.params.forEach((params: Params) => {
              let id = params['id'];
              this.service.Get(id)
-                .then(e => this.model = e);
+                .subscribe(e => this.model = e);
 
         });
      }

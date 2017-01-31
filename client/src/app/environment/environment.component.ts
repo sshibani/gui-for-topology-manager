@@ -32,9 +32,9 @@ export class EnvironmentComponent implements OnInit {
              let id = params['id'];
              this.cdid = id;
              this.environmentService.Get(id)
-                .then(e => this.model = e);
+                .subscribe(e => this.model = e);
              this.websiteService.GetByCdEnvironmentId(id)
-                .then(e => this.websites = e);
+                .subscribe(e => this.websites = e);
         });
      }
 }

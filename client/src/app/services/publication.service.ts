@@ -2,11 +2,8 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
 import { CommonConst } from './../shared/constants';
 import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/observable/of';
-import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/publishReplay';
 
 import { Publication } from './../shared/models/publication';
 import { MessageService } from './message.service';
@@ -17,12 +14,10 @@ export class PublicationService {
     private _headers;
     private _http: Http;
     private _messageService: MessageService;
-    private _cacheResults: Publication[];
-    private _promise: Promise<Publication[]>;
+
+    private _observable: Observable<Publication[]>;
     constructor(http: Http) {
         this._http = http;
-        //this._messageService = messageService;
-        // this._environmentUrl = endPoint;
         this._environmentUrl = "assets/data/Publications";
         this._headers = new Headers();
         // this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
@@ -30,41 +25,22 @@ export class PublicationService {
     }
 
 
-    public GetAll(): Promise<Publication[]> {
-        // if (this._cacheResults) {
-        //     console.log("data");
-        //     return Promise.apply(this._cacheResults);
-        // } else if (this._promise) {
-        //     console.log("request busy");
-        //     return this._promise;
-        // } else {
-        //     console.log("actual requet");
-        //     this._promise = this._http.get(this._environmentUrl, { headers: this._headers })
-        //                                 .toPromise()
-        //                                 .then(response =>  {
-        //                                         // when the cached data is available we don't need the `Observable` reference anymore
-        //                                         this._promise = null;
+    public GetAll(): Observable<Publication[]> {
+        if (this._observable) {
+            return this._observable;
+        } else {
+            this._observable = this._http.get(this._environmentUrl, { headers: this._headers })
+                                            .map(this.extractData)
+                                            .publishReplay(50)
+                                            .refCount();
+            return this._observable;
+        }
 
-        //                                         if(response.status == 400) {
-        //                                             return "FAILURE";
-        //                                         } else if(response.status == 200) {
-        //                                             this._cacheResults = response.json() as Publication[];
-        //                                         return this._cacheResults;
-        //                                         }
-        //                                 })
-        //                                 .catch(this.handleError);
-        //     this._promise;
-        // }
-
-         return this._http.get(this._environmentUrl, { headers: this._headers })
-                .toPromise()
-                .then(this.extractData)
-                .catch(this.handleError);
     }
-    // public Get(id: string): Promise<Publication> {
-    //      return this.GetAll()
-    //                 .then(env => env.find(e => e.Id === id));
-    // }
+    public Get(id: string): Observable<Publication> {
+         return this.GetAll()
+                    .map(env => env.find(e => e.Id === id));
+    }
 
     extractData(res: Response) {
         console.warn(res.json());

@@ -1,9 +1,11 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
 import { CommonConst } from './../shared/constants';
-import 'rxjs/add/operator/toPromise';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/publishReplay';
+import 'rxjs/add/operator/toPromise';
 
 import { TopologyEnvironment } from './../shared/models/topologyenvironment';
 
@@ -14,6 +16,7 @@ export class TopologyEnvironmentService {
     private _headers;
     private _http: Http;
 
+    private _observable: Observable<TopologyEnvironment[]>;
     private deleteSubject = new Subject<TopologyEnvironment>();
     private createSubject = new Subject<TopologyEnvironment>();
     private updateSubject = new Subject<TopologyEnvironment>();
@@ -27,15 +30,20 @@ export class TopologyEnvironmentService {
     }
 
 
-    public GetAll(): Promise<TopologyEnvironment[]> {
-        return this._http.get(this._url, { headers: this._headers })
-                .toPromise()
-                .then(this.extractData)
-                .catch(this.handleError);
+    public GetAll(): Observable<TopologyEnvironment[]> {
+        if (this._observable) {
+            return this._observable;
+        } else {
+            this._observable = this._http.get(this._url, { headers: this._headers })
+                                    .map(this.extractData)
+                                    .publishReplay(50)
+                                    .refCount();
+            return this._observable;
+        }
     }
-    public Get(name: string): Promise<TopologyEnvironment> {
+    public Get(name: string): Observable<TopologyEnvironment> {
          return this.GetAll()
-                    .then(env => env.find(e => e.Name === name));
+                    .map(env => env.find(e => e.Name === name));
     }
 
     public Create(data: TopologyEnvironment): void {
@@ -66,7 +74,7 @@ export class TopologyEnvironmentService {
                     .catch(this.handleError);
     }
 
-    private extractData(res: Response) {
+    private extractData(res: Response): TopologyEnvironment[] {
         console.log(res.json());
         return res.json() as TopologyEnvironment[];
         //return this._cacheResults;

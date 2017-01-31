@@ -14,7 +14,7 @@ import {ComponentEditBase } from './../shared/bases/componentedit-base';
     selector: 'env-edit',
     styleUrls: [ 'environment.component.css'],
     templateUrl: 'environment-edit.component.html',
-    providers: [ TopologyTypeService ]
+    providers: [ ]
 })
 export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> implements OnInit {
     authenticationTypes = CdEnvironment.AuthenticationTypes;
@@ -40,7 +40,7 @@ export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> i
 
     getAvailableEnvironmentPurposes(): void {
         this.topologyTypeService.getPurposes()
-                    .then(a => this.purposes = a);
+                    .subscribe(a => this.purposes = a);
     }
 
     onChange(type: any) {

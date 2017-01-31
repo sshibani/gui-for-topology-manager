@@ -14,7 +14,7 @@ import { PublicationService } from './../services/publication.service';
     selector: 'mapping-edit',
     styleUrls: [ "mapping.component.css" ],
     templateUrl: 'mapping-edit.component.html',
-    providers: [ WebApplicationService, CmEnvironmentService ]
+    providers: []
 })
 export class MappingEditComponent extends ComponentEditBase<Mapping> implements OnInit {
     availableWebApplications: string[];
@@ -46,18 +46,18 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
 
      getWebApplications(): void {
         this.webApplicationService.getWebApplicationTitles()
-                        .then(item => this.availableWebApplications = item);
+                        .subscribe(item => this.availableWebApplications = item);
         console.log(this.availableWebApplications);
     }
 
     getCmEnvironments(): void {
         this.cmEnvironmentService.getCmEnvrinmentsIds()
-                    .then(a => this.availableCmEnvironments = a);
+                    .subscribe(a => this.availableCmEnvironments = a);
     }
 
     getPublications(): void {
         this.publicationService.GetAll()
-                .then(p => this.publications = p);
+                .subscribe(p => this.publications = p);
     }
 
     addExtensionProperties(): void {
