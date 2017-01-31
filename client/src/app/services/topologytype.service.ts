@@ -5,16 +5,15 @@ import { Observable } from 'rxjs';
 
 
 import { ServiceBase } from './service-base.service';
-
+import { MessageService } from './message.service';
 import { ContextService } from './context.service';
-
 import { TopologyType } from './../shared/models/topologytype';
 
 @Injectable()
 export class TopologyTypeService extends ServiceBase<TopologyType> {
 
-    constructor(private http: Http, private router: Router, private contextService: ContextService) {
-        super(http, router, contextService, "CdTopologyTypes");
+    constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
+        super(http, router, contextService, messageService, "CdTopologyTypes");
     }
 
     getPurposes(): Observable<string[]> {

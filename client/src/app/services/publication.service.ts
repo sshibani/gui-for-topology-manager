@@ -10,7 +10,7 @@ import { MessageService } from './message.service';
 
 @Injectable()
 export class PublicationService {
-    private _environmentUrl;
+    private _url;
     private _headers;
     private _http: Http;
     private _messageService: MessageService;
@@ -18,7 +18,8 @@ export class PublicationService {
     private _observable: Observable<Publication[]>;
     constructor(http: Http) {
         this._http = http;
-        this._environmentUrl = "assets/data/Publications";
+        //this._environmentUrl = "assets/data/Publications";
+        this._url = CommonConst.TopologyManagerBaseUrl + "Publication";
         this._headers = new Headers();
         // this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
         this._headers.append('Content-Type', 'application/json');
@@ -29,7 +30,7 @@ export class PublicationService {
         if (this._observable) {
             return this._observable;
         } else {
-            this._observable = this._http.get(this._environmentUrl, { headers: this._headers })
+            this._observable = this._http.get(this._url, { headers: this._headers })
                                             .map(this.extractData)
                                             .publishReplay(50)
                                             .refCount();

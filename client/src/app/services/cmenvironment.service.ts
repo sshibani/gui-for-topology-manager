@@ -12,8 +12,8 @@ import { ContextService } from './context.service';
 @Injectable()
 export class CmEnvironmentService extends ServiceBase<CmEnvironment> {
 
-  constructor(private http: Http, private router: Router, private contextService: ContextService) {
-        super(http, router, contextService, "CmEnvironments");
+  constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
+        super(http, router, contextService, messageService, "CmEnvironments");
     }
 
     getCmEnvrinmentsIds(): Observable<string[]> {
