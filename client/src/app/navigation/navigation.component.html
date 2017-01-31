@@ -1,5 +1,5 @@
 <tabset>
   <tab *ngFor="let item of navItems">
-    <template tabHeading><a routerLink="{{item.path}}">{{item.title}}</a></template>
+    <template tabHeading><a routerLink="{{item.path}}" [skipLocationChange]="true">{{item.title}}</a></template>
   </tab>
 </tabset>

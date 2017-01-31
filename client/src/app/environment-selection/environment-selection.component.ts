@@ -34,6 +34,6 @@ export class EnvironmentSelectionComponent implements OnInit {
         this.contextService.setContextEnvironment(data);
 
         let link = ['/' + RouteConst.EnvironmentOverviewPath];
-        this.router.navigate(link);
+        this.router.navigate(link, { skipLocationChange: true });
     }
 }
