@@ -6,6 +6,7 @@ import { CdEnvironment,
 
 import { EnvironmentService } from './../services/environment.service';
 import { TopologyTypeService } from './../services/topologytype.service';
+import { MessageService } from './../services/message.service';
 
 import {ComponentEditBase } from './../shared/bases/componentedit-base';
 
@@ -19,8 +20,10 @@ import {ComponentEditBase } from './../shared/bases/componentedit-base';
 export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> implements OnInit {
     authenticationTypes = CdEnvironment.AuthenticationTypes;
     purposes: string[];
-    constructor(service: EnvironmentService, private topologyTypeService: TopologyTypeService) {
-        super(service);
+    constructor(service: EnvironmentService,
+                messageService: MessageService,
+                private topologyTypeService: TopologyTypeService) {
+        super(service, messageService);
     }
 
     ngOnInit() {

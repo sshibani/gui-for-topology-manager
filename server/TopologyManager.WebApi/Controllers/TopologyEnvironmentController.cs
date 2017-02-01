@@ -26,8 +26,7 @@ namespace TopologyManager.WebApi.Controllers
 
         public TopologyEnvironment Get(string id)
         {
-            var list = _service.LoadEnvironments();
-            return list.FirstOrDefault(e => e.Name.Equals(id, StringComparison.InvariantCultureIgnoreCase));
+            return _service.Get(id);
         }
 
         public HttpResponseMessage Put([FromBody] TopologyEnvironment entity, string id)

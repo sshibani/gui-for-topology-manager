@@ -17,16 +17,17 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     isNew: boolean = true;
 
 
-    constructor(private service: IServiceBase<T>) { }
+    constructor(private service: IServiceBase<T>, private messageService: MessageService) { }
 
     saveOrUpdate(event: any): void {
         if (this.isNew) {
-            console.log("save");
-            this.service.Create(this.model);
+            this.service.Create(this.model)
+                        .subscribe(a => a,
+                                    e => this.handleError(e));
         } else {
-            console.log("update");
-            console.log(this.model);
-            this.service.Update(this.model);
+            this.service.Update(this.model)
+                        .subscribe(a => a,
+                                   e => this.handleError(e));
         }
         this.modal.hide();
     }
@@ -36,6 +37,12 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     }
     customTrackBy(index: number, obj: any): any {
         return index;
+    }
+
+    handleError(e: any)
+    {
+        let error =  JSON.parse(e._body).error;
+        this.messageService.SendMessage("danger", error.code + " - " + error.message , 10000)
     }
 
 }

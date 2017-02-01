@@ -17,6 +17,12 @@ namespace System
             return mapping;
         }
 
+        public TopologyEnvironment Get(string id)
+        {
+            var list = this.LoadEnvironments();
+            return list.FirstOrDefault(e => e.Name.Equals(id, StringComparison.InvariantCultureIgnoreCase));
+        }
+
         public bool Delete(string id)
         {
             var models = Load();

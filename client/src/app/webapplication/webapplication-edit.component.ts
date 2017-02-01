@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { WebApplication } from './../shared/models/webapplication';
 import { WebApplicationService } from './../services/webapplication.service';
 import { ComponentEditBase } from './../shared/bases/componentedit-base';
+import { MessageService } from './../services/message.service';
 
 @Component({
     moduleId: module.id,
@@ -12,8 +13,8 @@ import { ComponentEditBase } from './../shared/bases/componentedit-base';
 })
 export class WebApplicationEditComponent extends ComponentEditBase<WebApplication> implements OnInit {
 
-    constructor(service: WebApplicationService) {
-        super(service);
+    constructor(service: WebApplicationService, messageService: MessageService) {
+        super(service, messageService);
     }
 
     ngOnInit() {
