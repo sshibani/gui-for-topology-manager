@@ -7,6 +7,7 @@ import 'rxjs/add/operator/publishReplay';
 
 import { Publication } from './../shared/models/publication';
 import { MessageService } from './message.service';
+import { ContextService } from './context.service';
 
 @Injectable()
 export class PublicationService {
@@ -16,10 +17,10 @@ export class PublicationService {
     private _messageService: MessageService;
 
     private _observable: Observable<Publication[]>;
-    constructor(http: Http) {
+    constructor(http: Http, contextService: ContextService) {
         this._http = http;
         //this._environmentUrl = "assets/data/Publications";
-        this._url = CommonConst.TopologyManagerBaseUrl + "Publication";
+        this._url = CommonConst.TopologyManagerBaseUrl + "Publication/" + contextService.getContextEnvironment().Name;
         this._headers = new Headers();
         // this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
         this._headers.append('Content-Type', 'application/json');

@@ -19,9 +19,9 @@ namespace TopologyManager.WebApi.Controllers
         }
 
         // GET api/values
-        public IEnumerable<Publication> Get()
+        public IEnumerable<Publication> Get(string id)
         {
-            var list = _provider.LoadPublications();
+            var list = _provider.LoadPublications(id);
             return list;
         }
     }

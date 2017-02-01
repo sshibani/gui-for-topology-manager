@@ -18,9 +18,9 @@ import { EndPoint } from './../shared/models/topologyenvironment';
 export interface IServiceBase<T> {
     GetAll(): Observable<T[]>;
     Get(id: string): Observable<T>;
-    Create(data: T): void;
-    Delete(data: T): void;
-    Update(data: T): void;
+    Create(data: T): Observable<T>;
+    Delete(data: T): Observable<T>;
+    Update(data: T): Observable<T>;
 
     GetDeletedMessage(): Observable<T>;
     GetCreateMessage(): Observable<T>;
@@ -75,49 +75,41 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                     .map(env => env.find(e => e.Id === id));
     }
 
-    public Create(data: T): void {
+    public Create(data: T): Observable<T> {
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         console.log(body);
-        this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
-                    .toPromise()
-                    .then(res => {
+        return this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
+                    .map(res => {
                         if (res.status === 201) {
                             let m = res.json() as T;
                             this.createSubject.next(m);
                         }
                     })
-                    .catch(error => this.handleError(error, this._messageService));
-                    // .catch((error: any) => {
-                    //     this._messageService.SendMessage("danger", error, 5000);
-
-                    //     return Promise.reject(error.message || error);
-                    // });
+                   .catch(this.handleError);
     }
-    public Update(data: T): void {
+    public Update(data: T): Observable<T> {
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         let url = this._environmentUrl + "('" + data.Id + "')";
-        this._http.patch(url, body, { headers: this._headers })
-                    .toPromise()
-                    .then(res => {
-                        if (res.status === 200) {
-                            let m = res.json() as T;
-                            this.updateSubject.next(m);
-                        }
-                    })
-                    .catch(error => this.handleError(error, this._messageService));
+        return this._http.patch(url, body, { headers: this._headers })
+                        .map(res => {
+                            if (res.status === 200) {
+                                let m = res.json() as T;
+                                this.updateSubject.next(m);
+                            }
+                        })
+                        .catch(this.handleError);
     }
-    public Delete(data: T): void {
+    public Delete(data: T): Observable<T> {
         let url = this._environmentUrl + "('" + data.Id + "')";
-        this._http.delete(url, { headers: this._headers })
-                    .toPromise()
-                    .then(res => {
+        return this._http.delete(url, { headers: this._headers })
+                    .map(res => {
                         if (res.status === 200) {
                             this.deleteSubject.next(data);
                         }
                     })
-                    .catch(error => this.handleError(error, this._messageService));
+                    .catch(this.handleError);
     }
     public GetDeletedMessage(): Observable<T> {
         return this.deleteSubject.asObservable();
@@ -136,9 +128,8 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         return res.json().value as T[];
     }
 
-    private handleError(error: any, service: MessageService): Promise<any> {
+    private handleError(error: any): Observable<any> {
         console.error('An error occurred', error); // for demo purposes only
-        this._messageService.SendMessage("danger", error, 5000);
-        return Promise.reject(error.message || error);
+        return Observable.throw(error.message || error);
     }
 }

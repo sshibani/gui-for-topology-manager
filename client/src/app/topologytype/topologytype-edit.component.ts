@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 
 import { TopologyType } from './../shared/models/topologytype';
 import { TopologyTypeService } from './../services/topologytype.service';
+import { MessageService } from './../services/message.service';
 import { ComponentEditBase } from './../shared/bases/componentedit-base';
 
 @Component({
@@ -14,8 +15,8 @@ import { ComponentEditBase } from './../shared/bases/componentedit-base';
 })
 export class TopologyTypeEditComponent extends ComponentEditBase<TopologyType> implements OnInit {
 
-    constructor(service: TopologyTypeService) {
-        super(service);
+    constructor(service: TopologyTypeService, messageService: MessageService) {
+        super(service, messageService);
     }
 
     ngOnInit() {

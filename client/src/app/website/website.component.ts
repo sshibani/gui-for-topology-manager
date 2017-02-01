@@ -25,7 +25,6 @@ export class WebsiteComponent implements OnInit {
              let id = params['id'];
              this.service.Get(id)
                 .subscribe(e => this.model = e);
-
         });
      }
 }

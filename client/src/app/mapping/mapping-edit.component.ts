@@ -8,6 +8,7 @@ import { ComponentEditBase } from './../shared/bases/componentedit-base';
 import { WebApplicationService } from './../services/webapplication.service';
 import { CmEnvironmentService } from './../services/cmenvironment.service';
 import { PublicationService } from './../services/publication.service';
+import { MessageService } from './../services/message.service';
 
 @Component({
     moduleId: module.id,
@@ -21,10 +22,11 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
     availableCmEnvironments: string[];
     publications: Publication[];
     constructor(service: MappingService,
+                messageService: MessageService,
                 private webApplicationService: WebApplicationService,
                 private cmEnvironmentService: CmEnvironmentService,
                 private publicationService: PublicationService) {
-        super(service);
+        super(service, messageService);
     }
 
     ngOnInit() {

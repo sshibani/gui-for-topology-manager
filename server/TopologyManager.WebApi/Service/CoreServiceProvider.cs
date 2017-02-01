@@ -12,9 +12,18 @@ namespace TopologyManager.WebApi.Service
 {
     public class CoreServiceProvider
     {
-        public IEnumerable<Publication> LoadPublications()
+        private readonly TopologyManagerService _service;
+
+        public CoreServiceProvider()
         {
-            var client = Wrapper.GetCoreServiceWsHttpInstance("34.249.4.106", "administrator", "Tr1v1d3nt", string.Empty, CoreServiceInstance.SdlWeb8);
+            _service = new TopologyManagerService();
+        }
+
+        public IEnumerable<Publication> LoadPublications(string topoEnvId)
+        {
+            var topo = _service.Get(topoEnvId);
+
+            var client = Wrapper.GetCoreServiceWsHttpInstance(topo.CoreServiceEndpoint.Url, topo.CoreServiceEndpoint.UserName, topo.CoreServiceEndpoint.Password, topo.CoreServiceEndpoint.Domain, CoreServiceInstance.SdlWeb8);
 
             PublicationsFilterData filter = new PublicationsFilterData();
             XElement publications = client.GetSystemWideListXml(filter);
