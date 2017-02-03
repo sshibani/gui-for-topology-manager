@@ -36,6 +36,7 @@ export class EnvrionemtSelectionEditComponent implements OnInit {
         } else {
             this.topologyEnvironmentService.Put(this.model);
         }
+        this.modal.hide();
     }
     show(): void {
         this.modal.show();
