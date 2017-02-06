@@ -9,12 +9,12 @@ import { DeleteWindowComponent } from './../shared/popup/delete-window.component
 
 @Component({
     moduleId: module.id,
-    styleUrls: [ "environment.component.css" ],
     selector: 'environment-promobox',
-    templateUrl: 'environment-promobox.component.html',
+    styleUrls: [ "cdenvironment.component.css" ],
+    templateUrl: 'cdenvironment-promobox.component.html',
 
 })
-export class EnvironmentPromoboxComponent extends ComponentPromoboxBase<CdEnvironment> implements OnInit {
+export class CdEnvironmentPromoboxComponent extends ComponentPromoboxBase<CdEnvironment> implements OnInit {
     detailsPath: string = RouteConst.Environmentpath;
 
     constructor(service: EnvironmentService) {

@@ -21,10 +21,10 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
 import { EnvrionemtSelectionEditComponent } from './environment-selection/environment-selection-edit.component';
 
-import { EnvironmentComponent } from './environment/environment.component';
-import { EnvironmentOverviewComponent } from './environment/environment-overview.component';
-import { EnvironmentPromoboxComponent } from './environment/environment-promobox.component';
-import { EnvironmentEditComponent } from './environment/environment-edit.component';
+import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
+import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-overview.component';
+import { CdEnvironmentPromoboxComponent } from './cdenvironment/cdenvironment-promobox.component';
+import { CdEnvironmentEditComponent } from './cdenvironment/cdenvironment-edit.component';
 
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsitePromoboxComponent } from './website/website-promobox.component';
@@ -84,10 +84,10 @@ import { ContextService } from './services/context.service';
     TopologyTypeEditComponent,
     TopologyTypeComponent,
     NavigationComponent,
-    EnvironmentOverviewComponent,
-    EnvironmentPromoboxComponent,
-    EnvironmentEditComponent,
-    EnvironmentComponent,
+    CdEnvironmentOverviewComponent,
+    CdEnvironmentPromoboxComponent,
+    CdEnvironmentEditComponent,
+    CdEnvironmentComponent,
     WebsiteOverviewComponent,
     WebsitePromoboxComponent,
     WebsiteEditComponent,

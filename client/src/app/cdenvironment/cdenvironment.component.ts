@@ -11,11 +11,11 @@ import { WebsiteService } from './../services/website.service';
 @Component({
     moduleId: module.id,
     selector: 'env',
-    styleUrls: [ 'environment.component.css'],
-    templateUrl: 'environment.component.html',
+    styleUrls: [ 'cdenvironment.component.css'],
+    templateUrl: 'cdenvironment.component.html',
     providers: [ WebsiteService, EnvironmentService ]
 })
-export class EnvironmentComponent implements OnInit {
+export class CdEnvironmentComponent implements OnInit {
     title = "adsfa";
     cdid: string;
     websites: Website[];

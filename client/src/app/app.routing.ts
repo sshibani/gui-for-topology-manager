@@ -6,8 +6,8 @@ import { HasContextActivated } from './services/has-context-environment';
 import { MainComponent }      from './main/main.component';
 import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
 
-import { EnvironmentOverviewComponent } from './environment/environment-overview.component';
-import { EnvironmentComponent } from './environment/environment.component';
+import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-overview.component';
+import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
 
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsiteComponent } from './website/website.component';
@@ -21,8 +21,8 @@ import { TopologyTypeComponent } from './topologytype/topologytype.component';
 const appRoutes: Routes = [
     { path: '',  component: EnvironmentSelectionComponent, pathMatch: 'full' },
     { path: RouteConst.EnvironmentSelectionPath, component: EnvironmentSelectionComponent },
-    { path: RouteConst.EnvironmentOverviewPath, component: EnvironmentOverviewComponent, canActivate: [ HasContextActivated ] },
-    { path: RouteConst.Environmentpath + '/:id', component: EnvironmentComponent, canActivate: [ HasContextActivated ] },
+    { path: RouteConst.EnvironmentOverviewPath, component: CdEnvironmentOverviewComponent, canActivate: [ HasContextActivated ] },
+    { path: RouteConst.Environmentpath + '/:id', component: CdEnvironmentComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.WebsiteOverviewPath, component: WebsiteOverviewComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.WebsitePath + '/:id', component: WebsiteComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.WebApplicationOverviewPath, component: WebApplicationOverviewComponent, canActivate: [ HasContextActivated ] },

@@ -10,11 +10,11 @@ import { MessageService } from './../services/message.service';
 @Component({
     moduleId: module.id,
     selector: 'env',
-    styleUrls: [ 'environment.component.css'],
-    templateUrl: 'environment-overview.component.html',
+    styleUrls: [ 'cdenvironment.component.css'],
+    templateUrl: 'cdenvironment-overview.component.html',
     providers: [ EnvironmentService, TopologyTypeService ]
 })
-export class EnvironmentOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
+export class CdEnvironmentOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
     constructor(environmentService: EnvironmentService, messageService: MessageService) {
                     super(environmentService, messageService);
                  }
