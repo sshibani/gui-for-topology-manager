@@ -13,11 +13,11 @@ import {ComponentEditBase } from './../shared/bases/componentedit-base';
 @Component({
     moduleId: module.id,
     selector: 'env-edit',
-    styleUrls: [ 'environment.component.css'],
-    templateUrl: 'environment-edit.component.html',
+    styleUrls: [ 'cdenvironment.component.css'],
+    templateUrl: 'cdenvironment-edit.component.html',
     providers: [ ]
 })
-export class EnvironmentEditComponent extends ComponentEditBase<CdEnvironment> implements OnInit {
+export class CdEnvironmentEditComponent extends ComponentEditBase<CdEnvironment> implements OnInit {
     authenticationTypes = CdEnvironment.AuthenticationTypes;
     purposes: string[];
     constructor(service: EnvironmentService,
