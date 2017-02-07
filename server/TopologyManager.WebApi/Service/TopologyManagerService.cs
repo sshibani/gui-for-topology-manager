@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using TopologyManager.WebApi.Models;
 
-namespace System
+namespace TopologyManager.WebApi.Service
 {
     public class TopologyManagerService
     {
