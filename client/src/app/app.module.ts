@@ -26,6 +26,11 @@ import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-ov
 import { CdEnvironmentPromoboxComponent } from './cdenvironment/cdenvironment-promobox.component';
 import { CdEnvironmentEditComponent } from './cdenvironment/cdenvironment-edit.component';
 
+//import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
+import { CmEnvironmentOverviewComponent } from './cmenvironment/cmenvironment-overview.component';
+import { CmEnvironmentPromoboxComponent } from './cmenvironment/cmenvironment-promobox.component';
+import { CmEnvironmentEditComponent } from './cmenvironment/cmenvironment-edit.component';
+
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsitePromoboxComponent } from './website/website-promobox.component';
 import { WebsiteEditComponent } from './website/website-edit.component';
@@ -84,6 +89,9 @@ import { ContextService } from './services/context.service';
     TopologyTypeEditComponent,
     TopologyTypeComponent,
     NavigationComponent,
+    CmEnvironmentOverviewComponent,
+    CmEnvironmentPromoboxComponent,
+    CmEnvironmentEditComponent,
     CdEnvironmentOverviewComponent,
     CdEnvironmentPromoboxComponent,
     CdEnvironmentEditComponent,

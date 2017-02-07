@@ -1,0 +1,35 @@
+ <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">{{tabHeader}}</h4>
+            </div>
+            <div class="modal-body">
+             <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+                <div class="form-group" *ngIf="showIdField">
+                    <label>Id</label>
+                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
+                    <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
+                </div>
+                <div class="form-group">
+                    <label>WebsiteRootUrl</label>
+                    <input [(ngModel)]="model.WebsiteRootUrl" name="WebsiteRootUrl" placeholder="WebsiteRootUrl" required />
+                </div>
+                <div class="form-group">
+                    <label>UserName</label>
+                    <input [(ngModel)]="model.CoreServiceCredentials.UserName" placeholder="UserName" required name="UserName" />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" [(ngModel)]="model.CoreServiceCredentials.Password" placeholder="Password" required name="password" />
+                </div>
+
+                <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
+                <button type="button"  class="btn btn-success"  [disabled]="!editForm.form.valid" (click)="saveOrUpdate()" aria-label="Save">Save</button>
+             </form>
+            </div>
+        </div>
+    </div>

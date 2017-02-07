@@ -5,13 +5,13 @@
 </div>
 <div class="container">
     <div class="row">
-        <button type="button" class="btn btn-success pull-right"(click)="envEdit.show()">Add</button>
+        <button type="button" class="btn btn-success pull-right" (click)="envEdit.show()">Add</button>
         <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
     </div>
 </div>
-<cd-env-edit #envEdit></cd-env-edit>
+<cm-env-edit #envEdit></cm-env-edit>
 <div class="container">
     <div class="row">
-        <cd-environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></cd-environment-promobox>
+        <cm-environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></cm-environment-promobox>
     </div>
 </div>

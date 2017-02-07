@@ -9,7 +9,7 @@ import { DeleteWindowComponent } from './../shared/popup/delete-window.component
 
 @Component({
     moduleId: module.id,
-    selector: 'environment-promobox',
+    selector: 'cd-environment-promobox',
     styleUrls: [ "cdenvironment.component.css" ],
     templateUrl: 'cdenvironment-promobox.component.html',
 
