@@ -8,6 +8,7 @@ using TopologyManager.WebApi.Models;
 
 namespace TopologyManager.WebApi.Controllers
 {
+    [Authorize]
     public class TopologyEnvironmentController : ApiController
     {
         private readonly TopologyManagerService _service;
@@ -18,6 +19,8 @@ namespace TopologyManager.WebApi.Controllers
         }
 
         // GET api/values
+        [Authorize(Roles = "TopologyManager")]
+        //[Authorize(Users = "MTSUser")]
         public IEnumerable<TopologyEnvironment> Get()
         {
             var list = _service.LoadEnvironments();
