@@ -33,7 +33,7 @@
                     <label>CoreService Endpoint</label>
                     <input type="text" [(ngModel)]="model.CoreServiceEndpoint.Url" placeholder="Url" name="c-name" required />
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label>Domain</label>
                     <input type="text" [(ngModel)]="model.CoreServiceEndpoint.Domain" placeholder="Domain" name="c-domain"  />
                 </div>
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" [(ngModel)]="model.CoreServiceEndpoint.Password" placeholder="Password" name="c-password" required  />
-                </div>
+                </div>-->
                 <button type="button"  class="btn btn-success"  [disabled]="!editForm.form.valid" (click)="saveOrUpdate()" aria-label="Save">Save</button>
              </form>
             </div>

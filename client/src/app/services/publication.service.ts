@@ -31,7 +31,7 @@ export class PublicationService {
         if (this._observable) {
             return this._observable;
         } else {
-            this._observable = this._http.get(this._url, { headers: this._headers })
+            this._observable = this._http.get(this._url, { headers: this._headers, withCredentials: true })
                                             .map(this.extractData)
                                             .publishReplay(50)
                                             .refCount();
