@@ -63,12 +63,25 @@ export class TopologyEnvironmentService {
     public Put(data: TopologyEnvironment): void {
         let body = JSON.stringify(data);
         console.log("path");
-        this._http.put(this._url, body, { headers: this._headers, withCredentials: true })
+         let url = this._url + "/" + data.Name;
+        this._http.put(url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
                         if (res.status === 201) {
                             let m = res.json() as TopologyEnvironment;
                             this.createSubject.next(m);
+                        }
+                    })
+                    .catch(this.handleError);
+    }
+
+      public Delete(data: TopologyEnvironment): void {
+        let url = this._url + "/" + data.Name;
+        this._http.delete(url, { headers: this._headers, withCredentials: true })
+                    .toPromise()
+                    .then(res => {
+                        if (res.status === 200) {
+                            this.deleteSubject.next(data);
                         }
                     })
                     .catch(this.handleError);
