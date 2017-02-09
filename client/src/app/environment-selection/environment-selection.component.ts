@@ -35,4 +35,8 @@ export class EnvironmentSelectionComponent implements OnInit {
         let link = ['/' + RouteConst.EnvironmentOverviewPath];
         this.router.navigate(link, { skipLocationChange: true });
     }
+
+    public delete(data: TopologyEnvironment): void {
+        this.topologyEnvironmentService.Delete(data);
+    }
 }
