@@ -20,7 +20,13 @@ export class WebApplicationEditComponent extends ComponentEditBase<WebApplicatio
     ngOnInit() {
         //WebApplication can only be modified. the creation and deletion of it is managed through Website
         //TopologyManager Odata service will create and delete webapplications.
-        this.isNew = false;
-        this.tabHeader = "Edit webapplication (" + this.model.Id + ")";
+        if (this.model) {
+            this.isNew = false;
+            this.tabHeader = "Edit webapplication (" + this.model.Id + ")";
+        } else {
+            this.tabHeader = "Add WebApplication";
+            this.model = new WebApplication();
+            this.isNew = true;
+        }
     }
 }

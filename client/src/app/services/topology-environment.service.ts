@@ -51,7 +51,8 @@ export class TopologyEnvironmentService {
         this._http.post(this._url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
-                        if (res.status === 201) {
+                        console.log("t" + res);
+                        if (res.status === 200) {
                             let m = res.json() as TopologyEnvironment;
                             this.createSubject.next(m);
                         }
@@ -67,9 +68,9 @@ export class TopologyEnvironmentService {
         this._http.put(url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
-                        if (res.status === 201) {
+                        if (res.status === 200) {
                             let m = res.json() as TopologyEnvironment;
-                            this.createSubject.next(m);
+                            this.updateSubject.next(m);
                         }
                     })
                     .catch(this.handleError);
