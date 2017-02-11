@@ -19,7 +19,7 @@ export interface IServiceBase<T> {
     GetAll(): Observable<T[]>;
     Get(id: string): Observable<T>;
     Create(data: T): Observable<T>;
-    Delete(data: T): Observable<T>;
+    Delete(data: T): void;
     Update(data: T): Observable<T>;
 
     GetDeletedMessage(): Observable<T>;
@@ -54,7 +54,8 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         let topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
         this._environmentUrl = topologyEndPoint.Url + endPoint;
         this._headers = new Headers();
-        let authentication = topologyEndPoint.UserName + ":" + topologyEndPoint.Password;
+        // let authentication = topologyEndPoint.UserName + ":" + topologyEndPoint.Password;
+        // let authentication = "administrator:Tr1v1d3nt";
         //this._headers.append('Authorization', 'Basic ' + btoa(authentication));
         this._headers.append('Content-Type', 'application/json');
     }
@@ -92,7 +93,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, "@odata.type");
         let url = this._environmentUrl + "('" + data.Id + "')";
-        return this._http.patch(url, body, { headers: this._headers })
+        return this._http.patch(url, body, { headers: this._headers, withCredentials: true })
                         .map(res => {
                             if (res.status === 200) {
                                 let m = res.json() as T;
@@ -101,10 +102,12 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
                         })
                         .catch(this.handleError);
     }
-    public Delete(data: T): Observable<T> {
+
+    public Delete(data: T): void {
         let url = this._environmentUrl + "('" + data.Id + "')";
-        return this._http.delete(url, { headers: this._headers })
-                    .map(res => {
+        this._http.delete(url, { headers: this._headers, withCredentials: true })
+                    .toPromise()
+                    .then(res => {
                         if (res.status === 200) {
                             this.deleteSubject.next(data);
                         }

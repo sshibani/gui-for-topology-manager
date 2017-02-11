@@ -61,6 +61,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -102,6 +103,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attribute\TopologyAuthorizeAttribute.cs" />
     <Compile Include="Controllers\PublicationController.cs" />
     <Compile Include="Controllers\TopologyEnvironmentController.cs" />
     <Compile Include="Models\Publication.cs" />

@@ -16,19 +16,24 @@
       <h3>{{item.Name}}</h3>
       <button type="button" (click)="setCurrentEnvironment(item)">Select</button>
       <button type="edit" (click)="envSelectionEdit.show()">Edit</button>
+      <button type="delete" (click)="smModal.show()">Delete</button>
       <env-select-edit #envSelectionEdit [Model]="item"></env-select-edit>
-  </div>
+      <!-- delete window -->
+        <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title pull-left">Delete Item ({{item.Name}})?</h4>
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
+                            <button type="button" class="btn btn-success" (click)="delete(item)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     </div>
 </div>
-
-    <!--<accordion>
-        <accordion-group heading="Development"
-                        [panelClass]="customClass"
-                        [isOpen]="isFirstOpen">
-            This content is straight in the template.
-        </accordion-group>
-        <accordion-group heading="Development"
-                        [panelClass]="customClass"
-                        [isOpen]="isFirstOpen">
-            This content is straight in the template.
-        </accordion-group>
-    </accordion>-->

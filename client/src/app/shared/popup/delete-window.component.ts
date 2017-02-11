@@ -24,7 +24,6 @@ export class DeleteWindowComponent implements OnInit {
     }
 
     show(): void {
-        console.log("show k");
         this.modal.show();
     }
 }

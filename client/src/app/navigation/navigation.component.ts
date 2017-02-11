@@ -21,8 +21,9 @@ export class NavigationComponent implements OnInit {
        this.navItems = NavigationItem[2] = [
             new NavigationItem("Home", "main"),
             new NavigationItem("Select Environment", RouteConst.EnvironmentSelectionPath),
+            new NavigationItem("CM Environment", RouteConst.CmEnvironmentOverviewPath),
             new NavigationItem("Topology Types", RouteConst.TopologyTypeOverViewPath),
-            new NavigationItem("Environments", RouteConst.EnvironmentOverviewPath),
+            new NavigationItem("CD Environments", RouteConst.EnvironmentOverviewPath),
             new NavigationItem("Websites", RouteConst.WebsiteOverviewPath),
             new NavigationItem("WebApplications", RouteConst.WebApplicationOverviewPath),
             new NavigationItem("Mappings", RouteConst.MappingOverviewPath),
