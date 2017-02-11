@@ -9,6 +9,8 @@ import { EnvironmentSelectionComponent } from './environment-selection/environme
 import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-overview.component';
 import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
 
+import { CmEnvironmentOverviewComponent } from './cmenvironment/cmenvironment-overview.component';
+
 import { WebsiteOverviewComponent } from './website/website-overview.component';
 import { WebsiteComponent } from './website/website.component';
 
@@ -21,6 +23,7 @@ import { TopologyTypeComponent } from './topologytype/topologytype.component';
 const appRoutes: Routes = [
     { path: '',  component: EnvironmentSelectionComponent, pathMatch: 'full' },
     { path: RouteConst.EnvironmentSelectionPath, component: EnvironmentSelectionComponent },
+    { path: RouteConst.CmEnvironmentOverviewPath, component: CmEnvironmentOverviewComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.EnvironmentOverviewPath, component: CdEnvironmentOverviewComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.Environmentpath + '/:id', component: CdEnvironmentComponent, canActivate: [ HasContextActivated ] },
     { path: RouteConst.WebsiteOverviewPath, component: WebsiteOverviewComponent, canActivate: [ HasContextActivated ] },

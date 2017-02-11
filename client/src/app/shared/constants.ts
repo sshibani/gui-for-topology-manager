@@ -13,12 +13,9 @@ export class RouteConst {
     public static MappingOverviewPath = "mappings";
     public static MappingPath = "mapping";
 
+    public static CmEnvironmentOverviewPath = "cmenvironments";
+    public static CmEnvironmentPath = "cmenvironment";
 
     public static EnvironmentSelectionPath = "selectenvironment";
 
-}
-export class CommonConst {
-    //public static TopologyManagerBaseUrl = "data/";
-    public static TopologyManagerBaseUrl = "http://localhost:65171/api/";
-    //public static TopologyManagerBaseUrl = "/api/";
 }

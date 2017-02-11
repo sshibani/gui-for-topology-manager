@@ -18,8 +18,6 @@ export class CdEnvironment implements ISearchItem {
 }
 
 export class Credentials {
-    // ClientId: string;
-    // ClientSecret: string;
     AuthenticationType: string;
 
     ODatatype: string;

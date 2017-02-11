@@ -1,9 +1,9 @@
 <div *ngIf="model">
     <button type="button" class="btn btn-success"(click)="envEdit.show()">Edit</button>
     <div class="environment">
-        <environment-promobox [ShowActionButtons]="false" [Model]="model"></environment-promobox>
+        <cd-environment-promobox [ShowActionButtons]="false" [Model]="model"></cd-environment-promobox>
     </div>
-    <env-edit #envEdit [Model]="model"></env-edit>
+    <cd-env-edit #envEdit [Model]="model"></cd-env-edit>
 </div>
 
 <!--

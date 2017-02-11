@@ -5,10 +5,11 @@
 </div>
 <div class="container">
     <div class="row">
+        <button type="button" class="btn btn-success pull-right"(click)="webappedit.show()">Add</button>
         <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
     </div>
 </div>
-
+<webapplication-edit #webappedit></webapplication-edit>
 <div class="container">
     <div class="row">
         <webapplication-promobox *ngFor="let item of ViewCollection" [Model]="item"></webapplication-promobox>

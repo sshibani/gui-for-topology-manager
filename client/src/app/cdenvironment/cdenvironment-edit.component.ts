@@ -12,7 +12,7 @@ import {ComponentEditBase } from './../shared/bases/componentedit-base';
 
 @Component({
     moduleId: module.id,
-    selector: 'env-edit',
+    selector: 'cd-env-edit',
     styleUrls: [ 'cdenvironment.component.css'],
     templateUrl: 'cdenvironment-edit.component.html',
     providers: [ ]
