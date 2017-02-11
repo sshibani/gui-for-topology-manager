@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
-import { CommonConst } from './../shared/constants';
+import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
@@ -23,9 +23,8 @@ export class TopologyEnvironmentService {
 
     constructor(http: Http) {
         this._http = http;
-        this._url = CommonConst.TopologyManagerBaseUrl + "TopologyEnvironment";
+        this._url = environment.localEndPoint + "TopologyEnvironment/";
         this._headers = new Headers();
-        // this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
         this._headers.append('Content-Type', 'application/json');
     }
 
@@ -51,20 +50,18 @@ export class TopologyEnvironmentService {
         this._http.post(this._url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
-                        console.log("t" + res);
                         if (res.status === 200) {
                             let m = res.json() as TopologyEnvironment;
                             this.createSubject.next(m);
                         }
                     })
                     .catch(this.handleError);
-
     }
 
     public Put(data: TopologyEnvironment): void {
         let body = JSON.stringify(data);
         console.log("path");
-         let url = this._url + "/" + data.Name;
+         let url = this._url + data.Name;
         this._http.put(url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
@@ -77,7 +74,7 @@ export class TopologyEnvironmentService {
     }
 
       public Delete(data: TopologyEnvironment): void {
-        let url = this._url + "/" + data.Name;
+        let url = this._url + data.Name;
         this._http.delete(url, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {

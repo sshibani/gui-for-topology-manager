@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
-import { CommonConst } from './../shared/constants';
+import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
@@ -19,10 +19,8 @@ export class PublicationService {
     private _observable: Observable<Publication[]>;
     constructor(http: Http, contextService: ContextService) {
         this._http = http;
-        //this._environmentUrl = "assets/data/Publications";
-        this._url = CommonConst.TopologyManagerBaseUrl + "Publication/" + contextService.getContextEnvironment().Name;
+        this._url = environment.localEndPoint + "Publication/" + contextService.getContextEnvironment().Name;
         this._headers = new Headers();
-        // this._headers.append('Authorization', 'Basic ' + btoa('administrator:Tr1v1d3nt'));
         this._headers.append('Content-Type', 'application/json');
     }
 
