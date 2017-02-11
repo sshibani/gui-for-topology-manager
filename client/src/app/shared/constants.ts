@@ -19,7 +19,3 @@ export class RouteConst {
     public static EnvironmentSelectionPath = "selectenvironment";
 
 }
-export class CommonConst {
-    public static TopologyManagerBaseUrl = "http://34.248.38.95:99/api/";
-    //public static TopologyManagerBaseUrl = "/api/";
-}
