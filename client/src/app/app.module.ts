@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +11,7 @@ import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule
 
 import { AppRoutingModule } from './app.routing';
 
+import { GlobalExceptionHandler } from './shared/handlers/global-exception-handler';
 import { HasContextActivated } from './services/has-context-environment';
 
 // Main section
@@ -113,7 +114,8 @@ import { ContextService } from './services/context.service';
   providers: [
     MessageService,
     ContextService,
-    HasContextActivated
+    HasContextActivated,
+    { provide: ErrorHandler, useClass: GlobalExceptionHandler}
   ],
     bootstrap: [ AppComponent ]
 })
