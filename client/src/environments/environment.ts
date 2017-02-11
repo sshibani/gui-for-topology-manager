@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  localEndPoint: "http://123/"
+  localEndPoint: "http://34.250.163.233:99/api/"
 };
