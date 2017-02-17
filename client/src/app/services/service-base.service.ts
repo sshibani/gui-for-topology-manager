@@ -52,11 +52,17 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
 
     private setHttpHeaders(endPoint: string): void {
         let topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
-        this._environmentUrl = topologyEndPoint.Url + endPoint;
+        if (topologyEndPoint.Url.startsWith("/assets")) { //locall dev mode
+            this._environmentUrl = topologyEndPoint.Url + endPoint;
+        } else {
+            if (topologyEndPoint.Url.endsWith("/")) {
+                this._environmentUrl = topologyEndPoint.Url + "ttm201601/";
+            } else {
+                this._environmentUrl = topologyEndPoint.Url + "/ttm201601/";
+            }
+            this._environmentUrl = this._environmentUrl + endPoint;
+        }
         this._headers = new Headers();
-        // let authentication = topologyEndPoint.UserName + ":" + topologyEndPoint.Password;
-        // let authentication = "administrator:Tr1v1d3nt";
-        //this._headers.append('Authorization', 'Basic ' + btoa(authentication));
         this._headers.append('Content-Type', 'application/json');
     }
 

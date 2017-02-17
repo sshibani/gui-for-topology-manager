@@ -19,7 +19,7 @@ export class PublicationService {
     private _observable: Observable<Publication[]>;
     constructor(http: Http, contextService: ContextService) {
         this._http = http;
-        this._url = environment.localEndPoint + "Publication/" + contextService.getContextEnvironment().Name;
+        this._url = environment.localEndPoint + "Publication/" + contextService.getContextEnvironment().Id;
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');
     }

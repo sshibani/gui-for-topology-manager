@@ -12,12 +12,17 @@ namespace TopologyManager.WebApi.Attribute
     public class TopologyAuthorizeAttribute : AuthorizeAttribute
     {
         private readonly string _group;
+
         public TopologyAuthorizeAttribute()
         {
-            _group = ConfigurationManager.AppSettings["AuthorizeGroup"].ToString();
+            _group = ConfigurationManager.AppSettings["authorized-group"]?.ToString();
         }
+
         protected override bool IsAuthorized(HttpActionContext actionContext)
         {
+            if (_group.IsNullOrEmpty())
+                return true;
+
             var identity = actionContext.RequestContext.Principal.IsInRole(_group);
 
             return identity;
