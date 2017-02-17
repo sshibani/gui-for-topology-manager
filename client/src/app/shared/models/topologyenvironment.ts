@@ -1,4 +1,5 @@
 export class TopologyEnvironment {
+    Id: string;
     Name: string;
     CoreServiceEndpoint: EndPoint = new EndPoint();
     TopologyManagerEndpoint: EndPoint = new EndPoint();

@@ -6,18 +6,21 @@ using System.Net.Http;
 using System.Web.Http;
 using TopologyManager.WebApi.Attribute;
 using TopologyManager.WebApi.Models;
-using TopologyManager.WebApi.Service;
+using TopologyManager.WebApi.Providers.Contracts;
+using TopologyManager.WebApi.Services;
 
 namespace TopologyManager.WebApi.Controllers
 {
     [TopologyAuthorize]
     public class PublicationController : ApiController
     {
-        private readonly CoreServiceProvider _provider;
+        private readonly ICoreServiceProvider _coreServiceProvider;
 
-        public PublicationController()
+        public PublicationController(ICoreServiceProvider coreServiceProvider)
         {
-            _provider = new CoreServiceProvider();
+            coreServiceProvider.ThrowIfNull(nameof(coreServiceProvider));
+
+            _coreServiceProvider = coreServiceProvider;
         }
 
         // GET api/values
@@ -25,7 +28,7 @@ namespace TopologyManager.WebApi.Controllers
         public IEnumerable<Publication> Get(string id)
         {
             var identity = this.ActionContext.RequestContext.Principal.Identity;
-            var list = _provider.LoadPublications(id);
+            var list = _coreServiceProvider.LoadPublications(id);
             return list;
         }
     }

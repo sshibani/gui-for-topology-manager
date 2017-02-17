@@ -5,10 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using TopologyManager.WebApi.Models;
+using TopologyManager.WebApi.Services.Contracts;
 
-namespace TopologyManager.WebApi.Service
+namespace TopologyManager.WebApi.Services
 {
-    public class TopologyManagerService
+    public class FileBasedTopologyManagerService : ITopologyManagerService
     {
         public IList<TopologyEnvironment> LoadEnvironments()
         {
@@ -20,14 +21,14 @@ namespace TopologyManager.WebApi.Service
         public TopologyEnvironment Get(string id)
         {
             var list = this.LoadEnvironments();
-            return list.FirstOrDefault(e => e.Name.Equals(id, StringComparison.InvariantCultureIgnoreCase));
+            return list.FirstOrDefault(e => e.Id == Guid.Parse(id));
         }
 
         public bool Delete(string id)
         {
             var models = Load();
 
-            var model = models.FirstOrDefault(a => a.Name.Equals(id, StringComparison.InvariantCultureIgnoreCase));
+            var model = models.FirstOrDefault(e => e.Id == Guid.Parse(id));
             models.Remove(model);
             return Save(models);
         }
@@ -35,15 +36,16 @@ namespace TopologyManager.WebApi.Service
         public bool Update(string id, TopologyEnvironment model)
         {
             var models = Load();
-            models.Remove(models.FirstOrDefault(a => a.Name.Equals(id, StringComparison.InvariantCultureIgnoreCase)));
+            models.Remove(models.FirstOrDefault(e => e.Id == Guid.Parse(id)));
 
             models.Add(model);
             return Save(models);
         }
 
-        public bool Add(TopologyEnvironment model)
+        public bool Create(TopologyEnvironment model)
         {
             var models = Load();
+            model.Id = Guid.NewGuid();
 
             var modelExist = models.FirstOrDefault(a => a.Name.Equals(model.Name, StringComparison.InvariantCultureIgnoreCase));
             if (modelExist != null)
