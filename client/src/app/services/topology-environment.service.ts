@@ -23,7 +23,7 @@ export class TopologyEnvironmentService {
 
     constructor(http: Http) {
         this._http = http;
-        this._url = environment.localEndPoint + "TopologyEnvironment/";
+        this._url = environment.localEndPoint + "TopologyEnvironment";
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');
     }
@@ -61,7 +61,7 @@ export class TopologyEnvironmentService {
     public Put(data: TopologyEnvironment): void {
         let body = JSON.stringify(data);
         console.log("path");
-         let url = this._url + data.Name;
+         let url = this._url + "/" + data.Name;
         this._http.put(url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
@@ -74,7 +74,7 @@ export class TopologyEnvironmentService {
     }
 
       public Delete(data: TopologyEnvironment): void {
-        let url = this._url + data.Name;
+        let url = this._url + "/" + data.Name;
         this._http.delete(url, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {

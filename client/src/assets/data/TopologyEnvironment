@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Dev",
+    "Name": "Local",
     "CoreServiceEndpoint": {
       "Url": "http://localhost:100",
       "Domain": "",
@@ -8,7 +8,7 @@
       "Password": "Tr1v1d3nt"
     },
     "TopologyManagerEndpoint": {
-      "Url": "data/",
+      "Url": "/assets/data/",
       "Domain": null,
       "UserName": "administrator",
       "Password": "Tr1v1d3nt"
