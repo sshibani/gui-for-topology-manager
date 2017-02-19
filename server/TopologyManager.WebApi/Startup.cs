@@ -1,9 +1,16 @@
-﻿using Owin;
+﻿using Autofac;
+using Autofac.Integration.WebApi;
+using Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using TopologyManager.WebApi.Modules;
+using TopologyManager.WebApi.Providers;
+using TopologyManager.WebApi.Providers.Contracts;
+using TopologyManager.WebApi.Services;
+using TopologyManager.WebApi.Services.Contracts;
 
 namespace TopologyManager.WebApi
 {
@@ -21,7 +28,36 @@ namespace TopologyManager.WebApi
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            var container = this.BuildContainer();
+
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
+            config.MapHttpAttributeRoutes();
+
+            app.UseAutofacMiddleware(container);
+            app.UseAutofacWebApi(config);
             app.UseWebApi(config);
+        }
+
+        private ILifetimeScope BuildContainer()
+        {
+            var builder = new ContainerBuilder();
+
+            builder.RegisterApiControllers(typeof(Startup).Assembly);
+
+            builder.RegisterModule<LoggingModule>();
+
+            builder.RegisterType<FileBasedTopologyManagerService>()
+                .As<ITopologyManagerService>()
+                .SingleInstance();
+
+            builder.RegisterType<CoreServiceProvider>()
+                .As<ICoreServiceProvider>()
+                .WithParameter(new NamedParameter("userName", ConfigurationKeys.UserNameKey.GetConfigurationValue()))
+                .WithParameter(new NamedParameter("domain", ConfigurationKeys.Domain.GetConfigurationValue()))
+                .WithParameter(new NamedParameter("password", ConfigurationKeys.PasswordKey.GetConfigurationValue()))
+                .SingleInstance();
+
+            return builder.Build();
         }
     }
 }

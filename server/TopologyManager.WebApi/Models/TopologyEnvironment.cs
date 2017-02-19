@@ -7,6 +7,7 @@ namespace TopologyManager.WebApi.Models
 {
     public class TopologyEnvironment
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public EndPoint CoreServiceEndpoint { get; set; }
         public EndPoint TopologyManagerEndpoint { get; set; }
