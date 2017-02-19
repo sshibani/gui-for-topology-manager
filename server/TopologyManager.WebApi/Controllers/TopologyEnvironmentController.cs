@@ -4,20 +4,24 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 using TopologyManager.WebApi.Attribute;
 using TopologyManager.WebApi.Models;
-using TopologyManager.WebApi.Service;
+using TopologyManager.WebApi.Services;
+using TopologyManager.WebApi.Services.Contracts;
 
 namespace TopologyManager.WebApi.Controllers
 {
     [TopologyAuthorize]
     public class TopologyEnvironmentController : ApiController
     {
-        private readonly TopologyManagerService _service;
+        private readonly ITopologyManagerService _topologyManagerservice;
 
-        public TopologyEnvironmentController()
+        public TopologyEnvironmentController(ITopologyManagerService topologyManagerService)
         {
-            _service = new TopologyManagerService();
+            topologyManagerService.ThrowIfNull(nameof(topologyManagerService));
+
+            _topologyManagerservice = topologyManagerService;
         }
 
         // GET api/values
@@ -25,42 +29,43 @@ namespace TopologyManager.WebApi.Controllers
         //[Authorize(Users = "MTSUser")]
         public IEnumerable<TopologyEnvironment> Get()
         {
-            var list = _service.LoadEnvironments();
+            var list = _topologyManagerservice.LoadEnvironments();
             return list;
         }
 
         [TopologyAuthorize]
         public TopologyEnvironment Get(string id)
         {
-            return _service.Get(id);
+            return _topologyManagerservice.Get(id);
         }
 
         [TopologyAuthorize]
-        public HttpResponseMessage Put([FromBody] TopologyEnvironment entity, string id)
+        public IHttpActionResult Put([FromBody] TopologyEnvironment entity, string id)
         {
-            var result = _service.Update(id, entity);
+            var result = _topologyManagerservice.Update(id, entity);
             if (result)
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                return Content(HttpStatusCode.Created, entity);
             else
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                return BadRequest();
         }
 
         [TopologyAuthorize]
-        public HttpResponseMessage Post([FromBody] TopologyEnvironment entity)
+        [ResponseType(typeof(TopologyEnvironment))]
+        public IHttpActionResult Post([FromBody] TopologyEnvironment entity)
         {
-            var result = _service.Add(entity);
+            var result = _topologyManagerservice.Create(entity);
             if (result)
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                return Content(HttpStatusCode.Created, entity);
             else
-                return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                return BadRequest();
         }
 
         [TopologyAuthorize]
         public HttpResponseMessage Delete(string id)
         {
-            var result = _service.Delete(id);
+            var result = _topologyManagerservice.Delete(id);
             if (result)
-                return new HttpResponseMessage(HttpStatusCode.OK);
+                return new HttpResponseMessage(HttpStatusCode.NoContent);
             else
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
         }

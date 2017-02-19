@@ -50,7 +50,7 @@ export class TopologyEnvironmentService {
         this._http.post(this._url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
-                        if (res.status === 200) {
+                        if (res.status === 201) {
                             let m = res.json() as TopologyEnvironment;
                             this.createSubject.next(m);
                         }
@@ -61,7 +61,7 @@ export class TopologyEnvironmentService {
     public Put(data: TopologyEnvironment): void {
         let body = JSON.stringify(data);
         console.log("path");
-         let url = this._url + "/" + data.Name;
+         let url = this._url + "/" + data.Id;
         this._http.put(url, body, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
@@ -74,11 +74,11 @@ export class TopologyEnvironmentService {
     }
 
       public Delete(data: TopologyEnvironment): void {
-        let url = this._url + "/" + data.Name;
+        let url = this._url + "/" + data.Id;
         this._http.delete(url, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {
-                        if (res.status === 200) {
+                        if (res.status === 204) {
                             this.deleteSubject.next(data);
                         }
                     })
