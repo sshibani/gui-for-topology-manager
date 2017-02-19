@@ -15,11 +15,23 @@ namespace TopologyManager.WebApi.Providers
     public class CoreServiceProvider : ICoreServiceProvider
     {
         private readonly ITopologyManagerService _topologyManagerService;
+        private readonly string _domain;
+        private readonly string _password;
+        private readonly string _userName;
 
-        public CoreServiceProvider(ITopologyManagerService topologyManagerService)
+        public CoreServiceProvider(ITopologyManagerService topologyManagerService,
+                                   string domain,
+                                   string userName,
+                                   string password)
         {
             topologyManagerService.ThrowIfNull(nameof(topologyManagerService));
+            userName.ThrowIfNull(nameof(userName));
+            domain.ThrowIfNull(nameof(domain));
+            password.ThrowIfNull(nameof(password));
 
+            _userName = userName;
+            _domain = domain;
+            _password = password;
             _topologyManagerService = topologyManagerService;
         }
 
@@ -27,17 +39,15 @@ namespace TopologyManager.WebApi.Providers
         {
             var topo = _topologyManagerService.Get(topoEnvId);
 
-            var username = ConfigurationKeys.UserNameKey.GetConfigurationValue();
-            var password = ConfigurationKeys.PasswordKey.GetConfigurationValue();
-            var domain = ConfigurationKeys.Domain.GetConfigurationValue();
-
             var uri = new Uri(topo.CoreServiceEndpoint.Url);
 
-            var client = Wrapper.GetCoreServiceWsHttpInstance(uri.Host, username, password, domain, CoreServiceInstance.SdlWeb8);
+            var client = Wrapper.GetCoreServiceWsHttpInstance(uri.Host, _userName, _password, _domain, CoreServiceInstance.SdlWeb8);
             //var client = this.GetCoreServiceWsHttpInstance(topo.CoreServiceEndpoint.Url, CoreServiceInstance.SdlWeb8);
+
             PublicationsFilterData filter = new PublicationsFilterData();
             XElement publications = client.GetSystemWideListXml(filter);
             var list = new List<Publication>();
+
             foreach (XElement item in publications.DescendantNodes())
             {
                 var id = item.Attribute("ID").Value;

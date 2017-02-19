@@ -52,6 +52,9 @@ namespace TopologyManager.WebApi
 
             builder.RegisterType<CoreServiceProvider>()
                 .As<ICoreServiceProvider>()
+                .WithParameter(new NamedParameter("userName", ConfigurationKeys.UserNameKey.GetConfigurationValue()))
+                .WithParameter(new NamedParameter("domain", ConfigurationKeys.Domain.GetConfigurationValue()))
+                .WithParameter(new NamedParameter("password", ConfigurationKeys.PasswordKey.GetConfigurationValue()))
                 .SingleInstance();
 
             return builder.Build();
