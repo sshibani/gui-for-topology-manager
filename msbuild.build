@@ -19,4 +19,4 @@
 			<Output ItemName="OutputFiles" TaskParameter="TargetOutputs"/>
         </MSBuild>
 	</Target>
-</Project>
+</Project> 
