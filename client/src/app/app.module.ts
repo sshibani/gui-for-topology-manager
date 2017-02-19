@@ -50,7 +50,7 @@ import { TopologyTypePromoboxComponent } from './topologytype/topologytype-promo
 import { TopologyTypeEditComponent } from './topologytype/topologytype-edit.component';
 import { TopologyTypeComponent } from './topologytype/topologytype.component';
 
-import { GoToDirective } from './shared/attribute-directives/goto-directive';
+//import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
 
 
@@ -79,7 +79,7 @@ import { ContextService } from './services/context.service';
   ],
   declarations: [
     HighlightDirective,
-    GoToDirective,
+    //GoToDirective,
     EnvironmentSelectionComponent,
     EnvrionemtSelectionEditComponent,
     SearchComponent,

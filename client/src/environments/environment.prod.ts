@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  localEndPoint: "/api/"
+  localEndPoint: "/api/",
+  showDebugMessages: true
 };
