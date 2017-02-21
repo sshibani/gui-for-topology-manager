@@ -6,8 +6,6 @@ pull_requests:
 branches:
   only:
   - feature/CI
-install:
- - choco install msbuild.communitytasks -y
 configuration: Release
 assembly_info:
   patch: true
@@ -17,6 +15,7 @@ assembly_info:
   assembly_informational_version: '{version}'
 install:
  - ps: Install-Product node $Env:nodejs_version
+ - choco install msbuild.communitytasks -y
 # - npm install -g angular-cli
 # scripts to run before build
 before_build:
