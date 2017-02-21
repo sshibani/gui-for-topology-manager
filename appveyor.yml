@@ -1,6 +1,6 @@
 version: 0.0.1.{build}-alpha
 environment:
-  nodejs_version: "6.3.0"
+  nodejs_version: "6.9.5"
 pull_requests:
   do_not_increment_build_number: true
 branches:
@@ -16,7 +16,7 @@ assembly_info:
 install:
  - ps: Install-Product node $Env:nodejs_version
  - choco install msbuild.communitytasks -y
- - npm install -g angular-cli
+ - npm install -g @angular/cli
 # scripts to run before build
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%
