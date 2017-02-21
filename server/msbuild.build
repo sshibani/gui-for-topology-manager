@@ -39,7 +39,6 @@
 		<ItemGroup>
 	        <Sources Include="$(MsDeployPackageDir)**\*.*" />
 	    </ItemGroup>
-		<Message Text="Sources: $(Sources)" />
 		<Copy SourceFiles="@(Sources)"
                 DestinationFolder="$(OutputDir)%(RecursiveDir)" />
 	</Target>
