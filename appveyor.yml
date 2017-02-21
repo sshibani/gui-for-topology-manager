@@ -1,4 +1,6 @@
 version: 0.0.1.{build}-alpha
+environment:
+  nodejs_version: "6.3.0"
 pull_requests:
   do_not_increment_build_number: true
 branches:
@@ -12,12 +14,19 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 install:
-- choco install msbuild.communitytasks -y
+- ps: Install-Product node $Env:nodejs_version
+- npm install -g angular-cli
+# scripts to run before build
+before_build:
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - cd client
+  - npm install
+  - ng build --prod --output ..\build\
+  # back to original folder
+  - cd %APPVEYOR_BUILD_FOLDER%
 build:
-  project: build.msbuild
-  verbosity: normal
+#  project: build.msbuild
+#  verbosity: normal
 artifacts:
-- path: build/package/**/*.nupkg
-  name: NuGet Package
 - path: build/package/**/*.zip
   name: Zip Archive
