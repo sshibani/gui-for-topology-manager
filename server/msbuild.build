@@ -14,6 +14,7 @@
 		<CallTarget Targets="Publish" />
 		<Message Text="Publish complete."/>
 		<CallTarget Targets="Copy" />
+		<Message Text="Copy complete."/>
 		<CallTarget Targets="Zip" />
 	</Target>
 
@@ -36,7 +37,7 @@
         </MSBuild>
 	</Target>
 	<Target Name="Copy">
-
+		<Message Text="$(OutputDir)" />
 		<Copy SourceFiles="@(Sources)"
                 DestinationFolder="$(OutputDir)%(RecursiveDir)" />
 	</Target>
