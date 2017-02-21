@@ -37,7 +37,8 @@
         </MSBuild>
 	</Target>
 	<Target Name="Copy">
-		<Message Text="$(OutputDir)" />
+		<Message Text="$(MsDeployPackageDir)" />
+		<Message Text="$(Sources)" />
 		<Copy SourceFiles="@(Sources)"
                 DestinationFolder="$(OutputDir)%(RecursiveDir)" />
 	</Target>
