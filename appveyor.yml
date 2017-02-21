@@ -22,7 +22,7 @@ before_build:
   - cd %APPVEYOR_BUILD_FOLDER%
   - cd client  
   - npm install
-  - ng build --prod --output ..\build\
+  - ng build --prod --output-path=..\build\
   - cd ..\build
   - ls
   - cd ..\server
