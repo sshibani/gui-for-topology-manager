@@ -11,7 +11,7 @@
         <Sources Include="$(MsDeployPackageDir)**\*.*" />
     </ItemGroup>
 	<Target Name="All">	
-		<!--<CallTarget Targets="Publish" />-->
+		<CallTarget Targets="Publish" />
 		<Message Text="Publish complete."/>
 		<CallTarget Targets="Copy" />
 		<CallTarget Targets="Zip" />
