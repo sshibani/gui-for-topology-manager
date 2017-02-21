@@ -22,6 +22,7 @@ before_build:
   - cd client  
 #  - npm install
 #  - ng build --prod --output ..\build\
+  - cd ..\server
   - nuget restore
 build:
   project: server\msbuild.build
