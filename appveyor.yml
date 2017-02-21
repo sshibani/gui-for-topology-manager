@@ -27,7 +27,7 @@ before_build:
   - cd server 
   - ls
 build:
-  project: TopologyManager.WebApi.sln
+  project: server\TopologyManager.WebApi.sln
   verbosity: normal
 artifacts:
 - path: build/package/**/*.zip
