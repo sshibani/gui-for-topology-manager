@@ -6,6 +6,8 @@ pull_requests:
 branches:
   only:
   - feature/CI
+install:
+ - choco install msbuild.communitytasks -y
 configuration: Release
 assembly_info:
   patch: true
