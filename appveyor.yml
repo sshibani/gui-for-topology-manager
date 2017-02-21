@@ -25,8 +25,8 @@ before_build:
   # back to original folder
   - cd %APPVEYOR_BUILD_FOLDER%
 build:
-#  project: build.msbuild
-#  verbosity: normal
+  project: build.msbuild
+  verbosity: normal
 artifacts:
 - path: build/package/**/*.zip
   name: Zip Archive
