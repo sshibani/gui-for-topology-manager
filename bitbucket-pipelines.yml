@@ -7,5 +7,6 @@ pipelines:
           - node --version
           - npm --version
           - npm install -g angular-cli 
+          - cd client
           - npm install
           - ng build
