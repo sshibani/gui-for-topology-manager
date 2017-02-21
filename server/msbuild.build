@@ -38,7 +38,7 @@
 	</Target>
 	<Target Name="Copy">
 		<Message Text="$(MsDeployPackageDir)" />
-		<Message Text="$(Sources)" />
+		<Message Text="Sources: $(Sources)" />
 		<Copy SourceFiles="@(Sources)"
                 DestinationFolder="$(OutputDir)%(RecursiveDir)" />
 	</Target>
