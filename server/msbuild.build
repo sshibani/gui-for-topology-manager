@@ -42,6 +42,7 @@
 	</Target>
 
 	<Target Name="Zip">
+		<Message Text="$(OutputDir)" />
    	 	<CreateItem Include="$(OutputDir)\**\*.*" >
 		      <Output ItemName="ZipFiles" TaskParameter="Include"/>
 		  </CreateItem>
