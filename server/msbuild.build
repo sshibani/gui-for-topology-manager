@@ -7,9 +7,7 @@
 		<MsDeployPackageDir>$(MSBuildProjectDirectory)\TopologyManager.WebApi\obj\$(Configuration)\Package\PackageTmp\</MsDeployPackageDir>
 		<PackageDir>$(OutputDir)package\</PackageDir>
 	</PropertyGroup>
-    <ItemGroup>
-        <Sources Include="$(MsDeployPackageDir)**\*.*" />
-    </ItemGroup>
+    
 	<Target Name="All">	
 		<CallTarget Targets="Publish" />
 		<Message Text="Publish complete."/>
@@ -38,6 +36,9 @@
 	</Target>
 	<Target Name="Copy">
 		<Message Text="$(MsDeployPackageDir)" />
+		<ItemGroup>
+	        <Sources Include="$(MsDeployPackageDir)**\*.*" />
+	    </ItemGroup>
 		<Message Text="Sources: $(Sources)" />
 		<Copy SourceFiles="@(Sources)"
                 DestinationFolder="$(OutputDir)%(RecursiveDir)" />
