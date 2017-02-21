@@ -16,7 +16,7 @@ assembly_info:
 install:
  - ps: Install-Product node $Env:nodejs_version
  - choco install msbuild.communitytasks -y
-# - npm install -g angular-cli
+ - npm install -g @angular/cli
 # scripts to run before build
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%
