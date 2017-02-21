@@ -30,9 +30,7 @@ build:
   verbosity: normal
 after_build:
   - cd %APPVEYOR_BUILD_FOLDER%
-  - cd build
-  - ls
-  - cd bin
+  - cd server\TopologyManager.WebApi\obj\Release\Package\PackageTmp
   - ls
 artifacts:
 - path: build/package/**/*.zip
