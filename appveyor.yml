@@ -19,12 +19,13 @@ install:
 # scripts to run before build
 before_build:
   - cd %APPVEYOR_BUILD_FOLDER%
-  - ps: cd client  
+  - cd client  
 #  - npm install
 #  - ng build --prod --output ..\build\
   # back to original folder
-  - ps: cd ..
-  - ps: cd server  
+  - cd ..
+  - cd server 
+  - ls
 build:
   project: build.msbuild
   verbosity: normal
