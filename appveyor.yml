@@ -23,8 +23,6 @@ before_build:
   - cd client  
   - npm install
   - ng build --prod --output-path=..\build\
-  - cd ..\build
-  - ls
   - cd ..\server
   - nuget restore
 build:
