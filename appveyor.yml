@@ -27,7 +27,7 @@ before_build:
   - cd server 
   - ls
 build:
-  project: build.msbuild
+  project: msbuild.build
   verbosity: normal
 artifacts:
 - path: build/package/**/*.zip
