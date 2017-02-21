@@ -23,10 +23,8 @@ before_build:
 #  - npm install
 #  - ng build --prod --output ..\build\
   # back to original folder
-  - cd %APPVEYOR_BUILD_FOLDER%
-  - echo %CD%
+  - ps: cd ..
 build:
-  - echo: %CD%
   project: build.msbuild
   verbosity: normal
 artifacts:
