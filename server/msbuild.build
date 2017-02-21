@@ -4,7 +4,7 @@
 	<PropertyGroup>
 		<Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
 		<OutputDir>$(MSBuildProjectDirectory)\..\build\</OutputDir>
-		<MsDeployPackageDir>$(MSBuildProjectDirectory)\TopologyManager.WebApi\obj\Debug\Package\PackageTmp\</MsDeployPackageDir>
+		<MsDeployPackageDir>$(MSBuildProjectDirectory)\TopologyManager.WebApi\obj\$(Configuration)\Package\PackageTmp\</MsDeployPackageDir>
 		<PackageDir>$(OutputDir)package\</PackageDir>
 	</PropertyGroup>
     <ItemGroup>
