@@ -28,6 +28,12 @@ before_build:
 build:
   project: server\msbuild.build
   verbosity: normal
+after_build:
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - cd build
+  - ls
+  - cd bin
+  - ls
 artifacts:
 - path: build/package/**/*.zip
   name: Zip Archive
