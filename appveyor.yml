@@ -6,7 +6,7 @@ pull_requests:
 branches:
   only:
   - feature/CI
-configuration: Debug
+configuration: Release
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
