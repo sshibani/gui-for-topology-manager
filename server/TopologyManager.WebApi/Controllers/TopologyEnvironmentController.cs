@@ -27,16 +27,17 @@ namespace TopologyManager.WebApi.Controllers
         // GET api/values
         [TopologyAuthorize]
         //[Authorize(Users = "MTSUser")]
-        public IEnumerable<TopologyEnvironment> Get()
+        public HttpResponseMessage Get()
         {
             var list = _topologyManagerservice.LoadEnvironments();
-            return list;
+            return Request.CreateResponse(list);
         }
 
         [TopologyAuthorize]
-        public TopologyEnvironment Get(string id)
+        public HttpResponseMessage Get(string id)
         {
-            return _topologyManagerservice.Get(id);
+            var model = _topologyManagerservice.Get(id);
+            return Request.CreateResponse(model);
         }
 
         [TopologyAuthorize]
