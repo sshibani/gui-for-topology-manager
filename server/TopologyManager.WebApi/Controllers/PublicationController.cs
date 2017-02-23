@@ -25,11 +25,11 @@ namespace TopologyManager.WebApi.Controllers
 
         // GET api/values
         [TopologyAuthorize]
-        public IEnumerable<Publication> Get(string id)
+        public HttpResponseMessage Get(string id)
         {
             var identity = this.ActionContext.RequestContext.Principal.Identity;
             var list = _coreServiceProvider.LoadPublications(id);
-            return list;
+            return Request.CreateResponse(list);
         }
     }
 }
