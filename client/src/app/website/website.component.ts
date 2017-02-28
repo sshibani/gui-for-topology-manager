@@ -12,7 +12,7 @@ import { WebsiteService } from './../services/website.service';
     providers: [ WebsiteService ]
 })
 export class WebsiteComponent implements OnInit {
-    @Input("Model")
+    @Input('Model')
     model: Website;
 
     constructor(private service: WebsiteService,

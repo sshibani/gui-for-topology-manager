@@ -12,7 +12,7 @@ export class GlobalExceptionHandler implements ErrorHandler {
   }
 
   handleError(error) {
-    this.messageService.SendMessage("danger", error, 10000);
+    this.messageService.SendMessage('danger', error, 10000);
   }
 
 }

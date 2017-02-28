@@ -14,7 +14,7 @@ import { MessageService } from './../services/message.service';
     providers: [ WebApplicationService ]
 })
 export class WebApplicationOverviewComponent extends ComponentBase<WebApplication> implements OnInit {
-    title = "WebApplications";
+    title = 'WebApplications';
 
     constructor(webApplicationService: WebApplicationService, messageService: MessageService) {
         super(webApplicationService, messageService);

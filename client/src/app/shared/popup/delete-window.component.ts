@@ -8,7 +8,7 @@ import { ITopologyItem } from './../models/contracts/itopologyitem';
     templateUrl: 'delete-window.component.html'
 })
 export class DeleteWindowComponent implements OnInit {
-    @Input("Model")
+    @Input('Model')
     model: ITopologyItem;
     @Output()
     onDelete = new EventEmitter<ITopologyItem>();

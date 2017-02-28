@@ -12,10 +12,10 @@ import { MessageService } from './../../services/message.service';
 // }
 
 export abstract class ComponentPromoboxBase<T extends ITopologyItem> {
-    @Input("Model")
+    @Input('Model')
     model: T;
 
-    @Input("ShowActionButtons")
+    @Input('ShowActionButtons')
     showActionButtons: boolean = true;
 
     private _service: IServiceBase<T>;

@@ -7,7 +7,7 @@ import { TopologyEnvironmentService } from './../services/topology-environment.s
 @Component({
     moduleId: module.id,
     selector: 'env-select-edit',
-    styles: [ "environment-selection.component.css" ],
+    styles: [ 'environment-selection.component.css' ],
     templateUrl: 'environment-selection-edit.component.html',
     providers: [  ]
 })
@@ -21,11 +21,11 @@ export class EnvrionemtSelectionEditComponent implements OnInit {
     constructor(private topologyEnvironmentService: TopologyEnvironmentService) { }
     ngOnInit() {
         if (typeof this.model === 'undefined') {
-            this.tabHeader = "Create a new Topology Environment";
+            this.tabHeader = 'Create a new Topology Environment';
             this.model = new TopologyEnvironment();
             this.isNew = true;
         } else {
-            this.tabHeader = "Update Topology Environment (" + this.model.Name + ")";
+            this.tabHeader = 'Update Topology Environment (' + this.model.Name + ')';
             this.isNew = false;
         }
     }

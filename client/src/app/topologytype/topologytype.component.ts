@@ -7,12 +7,12 @@ import { TopologyTypeService } from './../services/topologytype.service';
 @Component({
     moduleId: module.id,
     selector: 'topologytype',
-    styleUrls: [ "topologytype.component.css" ],
+    styleUrls: [ 'topologytype.component.css' ],
     templateUrl: 'topologytype.component.html',
     providers: [ TopologyTypeService ]
 })
 export class TopologyTypeComponent implements OnInit {
-    @Input("Model")
+    @Input('Model')
     model: TopologyType;
 
     constructor(private service: TopologyTypeService,

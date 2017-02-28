@@ -13,7 +13,7 @@ import { TopologyType } from './../shared/models/topologytype';
     providers: [ TopologyTypeService]
 })
 export class TopologyTypeOverviewComponent extends ComponentBase<TopologyType> implements OnInit {
-    title = "TopologyType";
+    title = 'TopologyType';
     constructor(service: TopologyTypeService, messageService: MessageService) {
         super(service, messageService);
     }

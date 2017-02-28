@@ -17,7 +17,7 @@ import { HasContextActivated } from './services/has-context-environment';
 // Main section
 import { MainComponent } from './main/main.component';
 
-//Navigation
+// Navigation
 import { NavigationComponent } from './navigation/navigation.component';
 import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
 import { EnvrionemtSelectionEditComponent } from './environment-selection/environment-selection-edit.component';
@@ -27,7 +27,7 @@ import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-ov
 import { CdEnvironmentPromoboxComponent } from './cdenvironment/cdenvironment-promobox.component';
 import { CdEnvironmentEditComponent } from './cdenvironment/cdenvironment-edit.component';
 
-//import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
+// import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
 import { CmEnvironmentOverviewComponent } from './cmenvironment/cmenvironment-overview.component';
 import { CmEnvironmentPromoboxComponent } from './cmenvironment/cmenvironment-promobox.component';
 import { CmEnvironmentEditComponent } from './cmenvironment/cmenvironment-edit.component';
@@ -50,7 +50,7 @@ import { TopologyTypePromoboxComponent } from './topologytype/topologytype-promo
 import { TopologyTypeEditComponent } from './topologytype/topologytype-edit.component';
 import { TopologyTypeComponent } from './topologytype/topologytype.component';
 
-//import { GoToDirective } from './shared/attribute-directives/goto-directive';
+// import { GoToDirective } from './shared/attribute-directives/goto-directive';
 import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
 
 
@@ -79,7 +79,6 @@ import { ContextService } from './services/context.service';
   ],
   declarations: [
     HighlightDirective,
-    //GoToDirective,
     EnvironmentSelectionComponent,
     EnvrionemtSelectionEditComponent,
     SearchComponent,
