@@ -13,7 +13,7 @@ import { ContextService } from './context.service';
 export class EnvironmentService extends ServiceBase<CdEnvironment> {
 
     constructor(private http: Http, private router: Router,  private messageService: MessageService, private contextService: ContextService) {
-        super(http, router, contextService, messageService, "CdEnvironments");
+        super(http, router, contextService, messageService, 'CdEnvironments');
     }
 
     getCdEnvrinmentsTitle(): Observable<string[][]> {

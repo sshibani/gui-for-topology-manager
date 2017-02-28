@@ -25,16 +25,14 @@ export class CmEnvironmentEditComponent extends ComponentEditBase<CmEnvironment>
 
     ngOnInit() {
         if (this.model) {
-            this.tabHeader = "Edit CM Environment (" + this.model.Id + ")";
+            this.tabHeader = 'Edit CM Environment (' + this.model.Id + ')';
             this.isNew = false;
         } else {
             this.isNew = true;
-            this.tabHeader = "Add CM Environment";
+            this.tabHeader = 'Add CM Environment';
             this.model = new CmEnvironment();
             this.model.CoreServiceCredentials = new WindowsCredentials();
             this.showIdField = true;
         }
     }
-
-
 }

@@ -12,7 +12,7 @@ import { MessageService } from './message.service';
 export class WebApplicationService extends ServiceBase<WebApplication> {
 
     constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
-        super(http, router, contextService, messageService, "WebApplications");
+        super(http, router, contextService, messageService, 'WebApplications');
     }
 
     getWebApplicationTitles(): Observable<string[]> {

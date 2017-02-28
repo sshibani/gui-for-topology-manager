@@ -13,33 +13,33 @@ export class ExtensionPropertiesComponent implements OnInit, AfterViewInit {
     model: ExtensionProperties;
     @Output()
     onDelete = new EventEmitter<ExtensionProperties>();
-    @ViewChild("nameInput")
+    @ViewChild('nameInput')
     input: any;
     constructor() { }
 
     ngOnInit() {
-        if (typeof this.model.Name !== "undefined") {
+        if (typeof this.model.Name !== 'undefined') {
             this.selectModel = this.availableKeys.find(e => e === this.model.Name);
             if (typeof this.selectModel === 'undefined') {
-                this.selectModel = "custom";
+                this.selectModel = 'custom';
             }
         }
     }
 
     ngAfterViewInit() {
-         if (this.selectModel !== "custom") {
-            this.input.nativeElement.style.visibility = "hidden";
+         if (this.selectModel !== 'custom') {
+            this.input.nativeElement.style.visibility = 'hidden';
         }
     }
 
     onChangeExtensionKeys(type: any): void {
         console.log(type);
-        if (type === "custom") {
-            this.model.Name = "";
-            this.input.nativeElement.style.visibility = "visible";
+        if (type === 'custom') {
+            this.model.Name = '';
+            this.input.nativeElement.style.visibility = 'visible';
         } else {
             this.model.Name = type;
-            this.input.nativeElement.style.visibility = "hidden";
+            this.input.nativeElement.style.visibility = 'hidden';
         }
     }
 

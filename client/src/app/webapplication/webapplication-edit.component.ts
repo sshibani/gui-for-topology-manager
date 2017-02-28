@@ -8,7 +8,7 @@ import { MessageService } from './../services/message.service';
 @Component({
     moduleId: module.id,
     selector: 'webapplication-edit',
-    styleUrls: [ "webapplication.component.css" ],
+    styleUrls: [ 'webapplication.component.css' ],
     templateUrl: 'webapplication-edit.component.html'
 })
 export class WebApplicationEditComponent extends ComponentEditBase<WebApplication> implements OnInit {
@@ -22,9 +22,9 @@ export class WebApplicationEditComponent extends ComponentEditBase<WebApplicatio
         //TopologyManager Odata service will create and delete webapplications.
         if (this.model) {
             this.isNew = false;
-            this.tabHeader = "Edit webapplication (" + this.model.Id + ")";
+            this.tabHeader = 'Edit webapplication (' + this.model.Id + ')';
         } else {
-            this.tabHeader = "Add WebApplication";
+            this.tabHeader = 'Add WebApplication';
             this.model = new WebApplication();
             this.isNew = true;
         }

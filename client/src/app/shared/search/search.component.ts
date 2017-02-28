@@ -10,14 +10,14 @@ import { Website } from './../models/website';
     templateUrl: 'search.component.html'
 })
 export class SearchComponent implements OnInit {
-    title = "Search";
+    title = 'Search';
     operator: string = 'Middle';
     isCollapsed: boolean = true;
     isWebsite: boolean = false;
 
     @Output()
     onKeypress = new EventEmitter<ISearchItem[]>();
-    @Input("Collection")
+    @Input('Collection')
     collection: ISearchItem[];
 
     id: string = '';

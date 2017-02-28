@@ -28,14 +28,14 @@ export class CdEnvironmentEditComponent extends ComponentEditBase<CdEnvironment>
 
     ngOnInit() {
         if (this.model) {
-            this.tabHeader = "Edit Environment (" + this.model.Id + ")";
+            this.tabHeader = 'Edit Environment (' + this.model.Id + ')';
             this.isNew = false;
         } else {
             this.isNew = true;
-            this.tabHeader = "Add Environment";
+            this.tabHeader = 'Add Environment';
             this.model = new CdEnvironment();
             this.model.Credentials = new AnonymousCredentials();
-            this.model.DiscoveryEndpointUrl = "http://localhost:8082/discovery.svc";
+            this.model.DiscoveryEndpointUrl = 'http://localhost:8082/discovery.svc';
             this.showIdField = true;
         }
         this.getAvailableEnvironmentPurposes();
@@ -48,10 +48,10 @@ export class CdEnvironmentEditComponent extends ComponentEditBase<CdEnvironment>
 
     onChange(type: any) {
         switch (type) {
-            case "Anonymous":
+            case 'Anonymous':
                 this.model.Credentials = new AnonymousCredentials();
                 break;
-            case "OAuth":
+            case 'OAuth':
                 this.model.Credentials = new OAuthCredentials();
                 break;
             default:
