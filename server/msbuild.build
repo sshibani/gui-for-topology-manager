@@ -7,8 +7,8 @@
 		<MsDeployPackageDir>$(MSBuildProjectDirectory)\TopologyManager.WebApi\obj\$(Configuration)\Package\PackageTmp\</MsDeployPackageDir>
 		<PackageDir>$(OutputDir)package\</PackageDir>
 	</PropertyGroup>
-    
-	<Target Name="All">	
+
+	<Target Name="All">
 		<CallTarget Targets="Publish" />
 		<Message Text="Publish complete."/>
 		<CallTarget Targets="Copy" />
@@ -45,9 +45,9 @@
 
 	<Target Name="Zip">
 		<Message Text="$(OutputDir)" />
-   	 	<CreateItem Include="$(OutputDir)\**\*.*" >
+   	 	<CreateItem Include="$(OutputDir)\**\*.*" Exclude="$(OutputDir)\**\Tridion.ContentManager*.*">
 		      <Output ItemName="ZipFiles" TaskParameter="Include"/>
-		  </CreateItem>
+		</CreateItem>
 		<Zip Files="@(ZipFiles)" ZipFileName="$(PackageDir)TTMM.zip" WorkingDirectory="$(OutputDir)" />
 	</Target>
-</Project> 
+</Project>
