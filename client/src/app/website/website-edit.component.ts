@@ -25,11 +25,11 @@ export class WebsiteEditComponent extends ComponentEditBase<Website> implements 
     ngOnInit() {
         if (this.model) {
             this.isNew = false;
-            this.tabHeader = "Edit website (" + this.model.Id + ")";
+            this.tabHeader = 'Edit website (' + this.model.Id + ')';
         } else {
-            this.tabHeader = "Add Website";
+            this.tabHeader = 'Add Website';
             this.model = new Website();
-            this.model.BaseUrls = [ "" ];
+            this.model.BaseUrls = [ '' ];
             this.showIdField = true;
             this.isNew = true;
         }
@@ -43,7 +43,7 @@ export class WebsiteEditComponent extends ComponentEditBase<Website> implements 
     }
 
     addBaseUrl(): void {
-        this.model.BaseUrls.push("");
+        this.model.BaseUrls.push('');
     }
     deleteBaseUrl(data: string): void {
         this.model.BaseUrls = this.model.BaseUrls.filter(item => item !== data);

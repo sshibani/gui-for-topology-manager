@@ -19,7 +19,7 @@ export class PublicationService {
     private _observable: Observable<Publication[]>;
     constructor(http: Http, contextService: ContextService) {
         this._http = http;
-        this._url = environment.localEndPoint + "Publication/" + contextService.getContextEnvironment().Id;
+        this._url = environment.localEndPoint + 'Publication/' + contextService.getContextEnvironment().Id;
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');
     }
@@ -49,7 +49,7 @@ export class PublicationService {
     }
     private handleError(error: any): Promise<any> {
         console.error('An error occurred', error); // for demo purposes only
-        //this._messageService.SendMessage("error", error.message, 5000);
+        //this._messageService.SendMessage('error', error.message, 5000);
         return Promise.reject(error.message || error);
     }
 }

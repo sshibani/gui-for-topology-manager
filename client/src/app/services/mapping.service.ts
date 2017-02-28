@@ -12,6 +12,6 @@ import { MessageService } from './message.service';
 export class MappingService extends ServiceBase<Mapping> {
 
     constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
-        super(http, router, contextService, messageService, "Mappings");
+        super(http, router, contextService, messageService, 'Mappings');
     }
 }

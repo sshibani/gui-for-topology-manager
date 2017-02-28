@@ -9,16 +9,16 @@ export class ContextService {
 
     setContextEnvironment(data: TopologyEnvironment): void {
         this.contextEnvironment = data;
-        localStorage.setItem("environment", JSON.stringify(data));
+        localStorage.setItem('environment', JSON.stringify(data));
     }
 
     getContextEnvironment(): TopologyEnvironment {
-        this.contextEnvironment = JSON.parse(localStorage.getItem("environment"));
+        this.contextEnvironment = JSON.parse(localStorage.getItem('environment'));
         return this.contextEnvironment;
     }
 
     hasContext(): boolean {
-        this.contextEnvironment = JSON.parse(localStorage.getItem("environment"));
+        this.contextEnvironment = JSON.parse(localStorage.getItem('environment'));
         if(this.contextEnvironment) {
             return true;
         } else {

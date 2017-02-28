@@ -13,7 +13,7 @@ import { ContextService } from './context.service';
 export class CmEnvironmentService extends ServiceBase<CmEnvironment> {
 
   constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
-        super(http, router, contextService, messageService, "CmEnvironments");
+        super(http, router, contextService, messageService, 'CmEnvironments');
     }
 
     getCmEnvrinmentsIds(): Observable<string[]> {

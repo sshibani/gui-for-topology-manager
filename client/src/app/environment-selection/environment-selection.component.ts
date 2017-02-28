@@ -15,7 +15,7 @@ import { MessageService } from './../services/message.service';
     providers: [ TopologyEnvironmentService ]
 })
 export class EnvironmentSelectionComponent implements OnInit {
-    title = "Selection";
+    title = 'Selection';
     model: TopologyEnvironment[];
 
     private deleteSubscription: Subscription;
@@ -54,12 +54,12 @@ export class EnvironmentSelectionComponent implements OnInit {
 
     private setSubscribers(): void {
         this.deleteSubscription = this.topologyEnvironmentService.GetDeletedMessage().subscribe(value => {
-                                    console.log("del");
+                                    console.log('del');
                                     this.showMessage('success', `TopologyItem with Id: ${value.Name} deleted.`);
                                     this.model = this.model.filter(item => item !== value);
                                 });
         this.createSubscription = this.topologyEnvironmentService.GetCreateMessage().subscribe(value => {
-                                console.log("update");
+                                console.log('update');
                                 this.showMessage('success', `TopologyItem with Id: ${value.Name} created.`);
                                 this.model.push(value);
                             });

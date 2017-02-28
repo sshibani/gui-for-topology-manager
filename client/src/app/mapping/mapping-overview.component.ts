@@ -16,7 +16,7 @@ import { PublicationService } from './../services/publication.service';
     providers: [ MappingService, PublicationService, WebApplicationService, CmEnvironmentService  ]
 })
 export class MappingOverviewComponent extends ComponentBase<Mapping> implements OnInit {
-    title = "Mappings";
+    title = 'Mappings';
 
     constructor(mappingService: MappingService, messageService: MessageService) {
         super(mappingService, messageService);

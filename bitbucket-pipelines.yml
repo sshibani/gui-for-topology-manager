@@ -1,16 +1,12 @@
-# This is a sample build configuration for .NET Core.
-# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
-# Only use spaces to indent your .yml configuration.
-# -----
-# You can specify a custom docker image from Docker Hub as your build environment.
-image: mono
+image: node:6.3.0
+ 
 pipelines:
   default:
     - step:
-        script:
-            # Generate build number
-          - BUILD_NUMBER=`git log --oneline | wc -l`
-          - echo "Build number':' ${BUILD_NUMBER}"
-          - nuget restore
-           # Build solution
-          - MONO_IOMAP=case xbuild /t:Build /p:Configuration="Release" /p:Platform="Any CPU" server/TopologyManager.WebApi.sln
+        script: # Modify the commands below to build your repository.
+          - node --version
+          - npm --version
+          - npm install -g angular-cli 
+          - cd client
+          - npm install
+          - ng build

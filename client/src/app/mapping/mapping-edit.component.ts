@@ -13,7 +13,7 @@ import { MessageService } from './../services/message.service';
 @Component({
     moduleId: module.id,
     selector: 'mapping-edit',
-    styleUrls: [ "mapping.component.css" ],
+    styleUrls: [ 'mapping.component.css' ],
     templateUrl: 'mapping-edit.component.html',
     providers: []
 })
@@ -32,10 +32,10 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
     ngOnInit() {
         if (this.model) {
             this.isNew = false;
-            this.tabHeader = "Edit Mapping (" + this.model.Id + ")";
+            this.tabHeader = 'Edit Mapping (' + this.model.Id + ')';
             let d = new ExtensionProperties();
         } else {
-            this.tabHeader = "Add Mapping";
+            this.tabHeader = 'Add Mapping';
             this.model = new Mapping();
             this.model.ExtensionProperties = new Array<ExtensionProperties>();
             this.showIdField = true;

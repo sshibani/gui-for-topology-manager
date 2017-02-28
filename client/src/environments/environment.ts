@@ -7,5 +7,6 @@ export const environment = {
   production: false,
   //localEndPoint: "http://34.249.176.174:99/api/"
   //localEndPoint: "/assets/data/"
-  localEndPoint: "http://localhost:99/api/"
+  localEndPoint: "http://localhost:99/api/",
+  showDebugMessages: true
 };

@@ -1,9 +1,9 @@
-import { ModuleWithProviders }  from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RouteConst } from './shared/constants';
 import { HasContextActivated } from './services/has-context-environment';
-import { MainComponent }      from './main/main.component';
+import { MainComponent } from './main/main.component';
 import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
 
 import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-overview.component';
