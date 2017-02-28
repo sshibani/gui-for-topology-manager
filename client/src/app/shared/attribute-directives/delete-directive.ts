@@ -1,21 +1,21 @@
-import { Directive, ElementRef, Input, Renderer, HostListener, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
-import { ITopologyItem } from './../models/contracts/itopologyitem';
-import { IServiceBase } from './../../services/service-base.service';
+// import { Directive, ElementRef, Input, Renderer, HostListener, Output, EventEmitter } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { ITopologyItem } from './../models/contracts/itopologyitem';
+// import { IServiceBase } from './../../services/service-base.service';
 
-@Directive({ selector: '[DeleteItem]' })
-export class GoToDirective {
-    constructor() {  }
+// @Directive({ selector: '[DeleteItem]' })
+// export class GoToDirective {
+//     constructor() {  }
 
-    @Input('Delete') model: ITopologyItem;
-    @Input('Service') service: IServiceBase<ITopologyItem>;
-    @Output("ModelUpdate")
-    modelUpdate = new EventEmitter<boolean>();
+//     @Input('Delete') model: ITopologyItem;
+//     @Input('Service') service: IServiceBase<ITopologyItem>;
+//     @Output("ModelUpdate")
+//     modelUpdate = new EventEmitter<boolean>();
 
-    @HostListener("click") onClick() {
-        console.log("delete item");
-        this.service.Delete(this.model);
-           // .then(a => this.modelUpdate.emit(a));
-   }
+//     @HostListener("click") onClick() {
+//         console.log("delete item");
+//         this.service.Delete(this.model);
+//            // .then(a => this.modelUpdate.emit(a));
+//    }
 
-}
+// }

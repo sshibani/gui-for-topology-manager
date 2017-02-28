@@ -15,6 +15,7 @@
 static/
 public/
 deploy/**/*
+.sonarqube
 
 
 system-config.js*

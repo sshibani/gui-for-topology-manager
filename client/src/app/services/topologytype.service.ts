@@ -13,7 +13,7 @@ import { TopologyType } from './../shared/models/topologytype';
 export class TopologyTypeService extends ServiceBase<TopologyType> {
 
     constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
-        super(http, router, contextService, messageService, "CdTopologyTypes");
+        super(http, router, contextService, messageService, 'CdTopologyTypes');
     }
 
     getPurposes(): Observable<string[]> {

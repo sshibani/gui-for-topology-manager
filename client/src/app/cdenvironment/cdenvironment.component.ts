@@ -15,11 +15,12 @@ import { WebsiteService } from './../services/website.service';
     templateUrl: 'cdenvironment.component.html',
     providers: [ WebsiteService, EnvironmentService ]
 })
+
 export class CdEnvironmentComponent implements OnInit {
-    title = "adsfa";
+    title = 'CdEnvironment';
     cdid: string;
     websites: Website[];
-    @Input("Model")
+    @Input('Model')
     model: CdEnvironment;
 
     constructor(private environmentService: EnvironmentService,
@@ -29,7 +30,7 @@ export class CdEnvironmentComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
-             let id = params['id'];
+             const id = params['id'];
              this.cdid = id;
              this.environmentService.Get(id)
                 .subscribe(e => this.model = e);

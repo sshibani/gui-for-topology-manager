@@ -6,7 +6,7 @@ import { IServiceBase } from './../../services/service-base.service';
 import { MessageService } from './../../services/message.service';
 
 export abstract class ComponentEditBase<T extends ITopologyItem> {
-    @Input("Model")
+    @Input('Model')
     model: T;
     @ViewChild('lgModal')
     modal:any;
@@ -15,7 +15,6 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     showIdField: boolean = false;
     autoGenerateId: boolean = true;
     isNew: boolean = true;
-
 
     constructor(private service: IServiceBase<T>, private messageService: MessageService) { }
 
@@ -42,7 +41,6 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     handleError(e: any)
     {
         let error =  JSON.parse(e._body).error;
-        this.messageService.SendMessage("danger", error.code + " - " + error.message , 10000)
+        this.messageService.SendMessage('danger', error.code + ' - ' + error.message , 10000)
     }
-
 }

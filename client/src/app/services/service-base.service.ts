@@ -52,13 +52,13 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
 
     private setHttpHeaders(endPoint: string): void {
         let topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
-        if (topologyEndPoint.Url.startsWith("/assets")) { //locall dev mode
+        if (topologyEndPoint.Url.startsWith('/assets')) { //locall dev mode
             this._environmentUrl = topologyEndPoint.Url + endPoint;
         } else {
-            if (topologyEndPoint.Url.endsWith("/")) {
-                this._environmentUrl = topologyEndPoint.Url + "ttm201601/";
+            if (topologyEndPoint.Url.endsWith('/')) {
+                this._environmentUrl = topologyEndPoint.Url + 'ttm201601/';
             } else {
-                this._environmentUrl = topologyEndPoint.Url + "/ttm201601/";
+                this._environmentUrl = topologyEndPoint.Url + '/ttm201601/';
             }
             this._environmentUrl = this._environmentUrl + endPoint;
         }
@@ -84,7 +84,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
 
     public Create(data: T): Observable<T> {
         let body = JSON.stringify(data);
-        body = body.replace(/ODatatype/g, "@odata.type");
+        body = body.replace(/ODatatype/g, '@odata.type');
         console.log(body);
         return this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
                     .map(res => {
@@ -97,8 +97,8 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     }
     public Update(data: T): Observable<T> {
         let body = JSON.stringify(data);
-        body = body.replace(/ODatatype/g, "@odata.type");
-        let url = this._environmentUrl + "('" + data.Id + "')";
+        body = body.replace(/ODatatype/g, '@odata.type');
+        let url = this._environmentUrl + '(\'' + data.Id + '\')';
         return this._http.patch(url, body, { headers: this._headers, withCredentials: true })
                         .map(res => {
                             if (res.status === 200) {
@@ -110,7 +110,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     }
 
     public Delete(data: T): void {
-        let url = this._environmentUrl + "('" + data.Id + "')";
+        let url = this._environmentUrl + '(\'' + data.Id + '\')';
         this._http.delete(url, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {

@@ -12,7 +12,7 @@ import { Website } from './../shared/models/website';
 export class WebsiteService extends ServiceBase<Website> {
 
     constructor(private http: Http, private router: Router,private messageService: MessageService, private contextService: ContextService) {
-        super(http, router, contextService, messageService, "Websites");
+        super(http, router, contextService, messageService, 'Websites');
     }
 
     GetByCdEnvironmentId(id: string): Observable<Website[]> {
