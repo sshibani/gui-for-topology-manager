@@ -1,6 +1,10 @@
 version: 0.0.1.{build}-alpha
 environment:
   nodejs_version: "7.5.0"
+  nuget-user:
+    secure: +mXMc/KMOWfKKmSsClCe5Q==
+  nuget-password:
+    secure: oMmO/KTM/mS5HlnSgEeRoQ==
 pull_requests:
   do_not_increment_build_number: true
 branches:
@@ -13,11 +17,6 @@ assembly_info:
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
-environment:
-  nuget-user:
-    secure: +mXMc/KMOWfKKmSsClCe5Q==
-  nuget-password:
-    secure: oMmO/KTM/mS5HlnSgEeRoQ==
 install:
  - nuget sources add -Name Incentro -Source http://private-nuget.azurewebsites.net/nuget -UserName %nuget-user% -Password %nuget-password%
  - ps: Install-Product node $Env:nodejs_version
