@@ -27,7 +27,7 @@ before_build:
   - cd %APPVEYOR_BUILD_FOLDER%
   - cd client  
   - npm install
-  - npm run build-prod -- --output-path=..\build
+  - npm run build-prod -- --output-path=..\build --progress=false
   - cd ..\server
   - nuget restore
 build:
