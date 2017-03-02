@@ -14,10 +14,10 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 environment:
- nuget-user:
-  secure: +mXMc/KMOWfKKmSsClCe5Q==
- nuget-password:
-   secure: oMmO/KTM/mS5HlnSgEeRoQ==
+  nuget-user:
+    secure: +mXMc/KMOWfKKmSsClCe5Q==
+  nuget-password:
+    secure: oMmO/KTM/mS5HlnSgEeRoQ==
 install:
  - nuget sources add -Name Incentro -Source http://private-nuget.azurewebsites.net/nuget -UserName %nuget-user% -Password %nuget-password%
  - ps: Install-Product node $Env:nodejs_version
