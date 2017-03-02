@@ -111,6 +111,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Tridion.ContentManager.CoreService.Client, Version=8.1.0.1287, Culture=neutral, PublicKeyToken=ddfc895746e5ee6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tridion.CoreService.Client.8.1.1\lib\net45\Tridion.ContentManager.CoreService.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Tridion.Extensions.CoreService, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\tridion-extensions-coreservice.2.0.1\lib\Tridion.Extensions.CoreService.dll</HintPath>
       <Private>True</Private>
