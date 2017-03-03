@@ -9,6 +9,7 @@
 	</PropertyGroup>
 
 	<Target Name="All">
+		<CallTarget Targets="Test" />
 		<CallTarget Targets="Publish" />
 		<Message Text="Publish complete."/>
 		<CallTarget Targets="Copy" />
@@ -26,7 +27,12 @@
 			<Output ItemName="OutputFiles" TaskParameter="TargetOutputs"/>
         </MSBuild>
 	</Target>
-
+	<Target Name="Test">
+		<!-- Build the solution. -->
+		<MSBuild Projects="$(MSBuildProjectDirectory)\TopologyManager.WebApi.Test\TopologyManager.WebApi.Test.csproj" Targets="Package" Properties="Configuration=$(Configuration);" >
+			<Output ItemName="OutputFiles" TaskParameter="TargetOutputs"/>
+        </MSBuild>
+	</Target>
 
 	<Target Name="Publish">
 		<!-- Build the solution. -->
