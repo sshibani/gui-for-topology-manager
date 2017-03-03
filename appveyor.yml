@@ -28,6 +28,9 @@ before_build:
 build:
   project: server\msbuild.build
   verbosity: normal
+test:
+  assemblies:
+    - '**\*.test.dll'
 artifacts:
 - path: build/package/**/*.zip
   name: Zip Archive
