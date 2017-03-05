@@ -6,5 +6,5 @@
 [![Issue Count](https://codeclimate.com/github/sshibani/topology-manager-gui/badges/issue_count.svg)](https://codeclimate.com/github/sshibani/topology-manager-gui) 
 [![Test Coverage](https://codeclimate.com/github/sshibani/topology-manager-gui/badges/coverage.svg)](https://codeclimate.com/github/sshibani/topology-manager-gui/coverage)
 
-[![Dependency Status](https://david-dm.org/sshibani/topology-manager-gui.svg?path=client)](https://david-dm.org/sshibani/topology-manager-gui.svg?path=client) 
-[![devDependency Status](https://david-dm.org/sshibani/topology-manager-gui/dev-status.svg?path=client&type=dev)](https://david-dm.org/sshibani/topology-manager-gui.svg?path=client&type=dev1)
+[![Dependency Status](https://david-dm.org/sshibani/topology-manager-gui.svg?path=client)](https://david-dm.org/sshibani/topology-manager-gui?path=client) 
+[![devDependency Status](https://david-dm.org/sshibani/topology-manager-gui/dev-status.svg?path=client&type=dev)](https://david-dm.org/sshibani/topology-manager-gui?path=client&type=dev)
