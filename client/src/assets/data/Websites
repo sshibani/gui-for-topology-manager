@@ -1,292 +1,292 @@
 {
   "@odata.context":"http://localhost:81/ttm201501/$metadata#Websites","value":[
     {
-      "Id":"dev3st_tena_nu","ExtensionProperties":[
-        
+      "Id":"devst_prod1_nu","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tena.nu"
+        "http://devst.prod1.nu"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3lv_tork_ca","ExtensionProperties":[
-        
+      "Id":"devlv_prod2_ca","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://www.dev3lv.tork.ca"
+        "http://www.devlv.prod2.ca"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3st_tena_ca","ExtensionProperties":[
-        
+      "Id":"devst_prod1_ca","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tena.ca"
+        "http://devst.prod1.ca"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3sttenamaster_SAcom","ExtensionProperties":[
-        
+      "Id":"devstprod1master_SAcom","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tenamaster_sa.com"
+        "http://devst.prod1master_sa.com"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_tork_se","ExtensionProperties":[
-        
+      "Id":"devst_prod2_se","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tork.se"
+        "http://devst.prod2.se"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3lv_tork_co_uk","ExtensionProperties":[
-        
+      "Id":"devlv_prod2_co_uk","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tork.co.uk"
+        "http://devlv.prod2.co.uk"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3sttenaprofessionalcouk","ExtensionProperties":[
-        
+      "Id":"devstprod1professionalcouk","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tenaprofessional.co.uk"
+        "http://devst.prod1professional.co.uk"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_nana_fr","ExtensionProperties":[
-        
+      "Id":"devst_fr","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.nana.fr"
+        "http://devst.nana.fr"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3lv_tena_co_uk","ExtensionProperties":[
-        
+      "Id":"devlv_prod1_co_uk","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tena.co.uk"
+        "http://devlv.prod1.co.uk"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3st_femcare_local","ExtensionProperties":[
-        
+      "Id":"devst_prod3_local","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.femcare.local"
+        "http://devst.prod3.local"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_tena_de","ExtensionProperties":[
-        
+      "Id":"devst_prod1_de","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tena.de"
+        "http://devst.prod1.de"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_libresse_com","ExtensionProperties":[
-        
+      "Id":"devst_prod3_com","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.libresse.com","http://femcare.local"
+        "http://devst.prod3.com","http://prod3.local"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3lv_tena_nu","ExtensionProperties":[
-        
+      "Id":"devlv_prod1_nu","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tena.nu"
+        "http://devlv.prod1.nu"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3lvtenamastercom","ExtensionProperties":[
-        
+      "Id":"devlvprod1mastercom","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tenamaster.com"
+        "http://devlv.prod1master.com"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3lv_tork_nl","ExtensionProperties":[
-        
+      "Id":"devlv_prod2_nl","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://www.dev3lv.tork.nl"
+        "http://www.devlv.prod2.nl"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3lv_tenaprofessionals_us","ExtensionProperties":[
-        
+      "Id":"devlv_prod1professionals_us","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tenaprofessionals.us"
+        "http://devlv.prod1professionals.us"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3_tena_ca","ExtensionProperties":[
-        
+      "Id":"dev_prod1_ca","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tena.ca"
+        "http://devlv.prod1.ca"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3lv_tenaprofessionals_nu_vardpersonal","ExtensionProperties":[
-        
+      "Id":"devlv_prod1professionals_nu_vardpersonal","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tenaprofessionals.nu"
+        "http://devlv.prod1professionals.nu"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_tena_co_uk","ExtensionProperties":[
-        
+      "Id":"devst_prod1_co_uk","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tena.co.uk"
+        "http://devst.prod1.co.uk"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_tpwmaster_tena_com","ExtensionProperties":[
-        
+      "Id":"devst_tpwmaster_prod1_com","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tpwmaster.tena.com"
+        "http://devst.tpwmaster.prod1.com"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3liv_tena_de","ExtensionProperties":[
-        
+      "Id":"devliv_prod1_de","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://www.dev3liv.tena.de"
+        "http://www.devliv.prod1.de"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
       "Id":"Website2","ExtensionProperties":[
-        
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://www.torkdev.kr"
+        "http://www.prod2dev.kr"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3_torkusa_com","ExtensionProperties":[
-        
+      "Id":"dev_prod2usa_com","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.torkusa.com"
+        "http://devlv.prod2usa.com"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3st_tena_us_professionals","ExtensionProperties":[
-        
+      "Id":"devst_prod1_us_professionals","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tena.us"
+        "http://devst.prod1.us"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3LV_tork_ZA","ExtensionProperties":[
-        
+      "Id":"devLV_prod2_ZA","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://www.tork.za"
+        "http://www.prod2.za"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3st_tenaprofessionals_us","ExtensionProperties":[
-        
+      "Id":"devst_prod1professionals_us","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tenaprofessionals.us","http://tena.local"
+        "http://devst.prod1professionals.us","http://prod1.local"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_tork_co_uk","ExtensionProperties":[
-        
+      "Id":"devst_prod2_co_uk","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tork.co.uk"
+        "http://devst.prod2.co.uk"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
       "Id":"Website1","ExtensionProperties":[
-        
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tenamaster.com"
+        "http://devst.prod1master.com"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"devtenade","ExtensionProperties":[
-        
+      "Id":"devprod1de","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tena.de"
+        "http://devlv.prod1.de"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3lv_libresse_com","ExtensionProperties":[
-        
+      "Id":"devlv_prod3_com","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.libresse.com","https://femcare.local","https://localhost:44316","https://dev3lv.libresse.com"
+        "http://devlv.prod3.com","https://prod3.local","https://localhost:44316","https://devlv.prod3.com"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3_tork_se","ExtensionProperties":[
-        
+      "Id":"dev_prod2_se","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tork.se"
+        "http://devlv.prod2.se"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3lv_nana_fr","ExtensionProperties":[
-        
+      "Id":"devlv_fr","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.nana.fr"
+        "http://devlv.nana.fr"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
-      "Id":"dev3st_tork_nl","ExtensionProperties":[
-        
+      "Id":"devst_prod2_nl","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.tork.nl"
+        "http://devst.prod2.nl"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3_tena_de","ExtensionProperties":[
-        
+      "Id":"dev_prod1_de","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3.tena.de"
+        "http://dev.prod1.de"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3st_torkusa_com","ExtensionProperties":[
-        
+      "Id":"devst_prod2usa_com","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3st.torkusa.com"
+        "http://devst.prod2usa.com"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
-      "Id":"dev3lv_tpwmaster_tena_com","ExtensionProperties":[
-        
+      "Id":"devlv_tpwmaster_prod1_com","ExtensionProperties":[
+
       ],"ScopedRepositoryKeys":[
-        
+
       ],"BaseUrls":[
-        "http://dev3lv.tpwmaster.tena.com"
+        "http://devlv.tpwmaster.prod1.com"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     }
   ]

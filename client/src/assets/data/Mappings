@@ -5,183 +5,183 @@
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"4"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-161-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tena_ca_RootWebApp","RelativeUrl":"/fr/professionnels","PrimaryMappedUrl":"http://dev3st.tena.ca/fr/professionnels","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-161-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod1_ca_RootWebApp","RelativeUrl":"/fr/professionnels","PrimaryMappedUrl":"http://devst.prod1.ca/fr/professionnels","IsOffline":false
     },{
-      "Id":"FemCare_Master_Website_Live","ExtensionProperties":[
+      "Id":"prod3_Master_Website_Live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-203-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_libresse_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.libresse.com/","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-203-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod3_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.prod3.com/","IsOffline":false
     },{
       "Id":"tcm0_81_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"1"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-81-1","EnvironmentPurpose":"Live","WebApplicationId":"Website2_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://www.torkdev.kr/","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-81-1","EnvironmentPurpose":"Live","WebApplicationId":"Website2_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://www.prod2dev.kr/","IsOffline":false
     },{
       "Id":"tcm0_63_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-63-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tork_co_uk_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.tork.co.uk/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-63-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod2_co_uk_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.prod2.co.uk/","IsOffline":false
     },{
       "Id":"tcm0_129_1_staging","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"1"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-129-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tpwmaster_tena_com_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://dev3st.tpwmaster.tena.com/professionals","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-129-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_tpwmaster_prod1_com_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://devst.tpwmaster.prod1.com/professionals","IsOffline":false
     },{
       "Id":"tcm0_205_1_staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-205-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tenaprofessionals_us_RootWebApp","RelativeUrl":"/professionalsx","PrimaryMappedUrl":"http://dev3st.tenaprofessionals.us/professionalsx","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-205-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod1professionals_us_RootWebApp","RelativeUrl":"/professionalsx","PrimaryMappedUrl":"http://devst.prod1professionals.us/professionalsx","IsOffline":false
     },{
-      "Id":"TENA_Professional_DE_Live","ExtensionProperties":[
+      "Id":"prod1_Professional_DE_Live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-163-1","EnvironmentPurpose":"Live","WebApplicationId":"devtenade_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.tena.de/","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-163-1","EnvironmentPurpose":"Live","WebApplicationId":"devprod1de_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.prod1.de/","IsOffline":false
     },{
       "Id":"tcm0_102_1_staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-102-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tork_se_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.tork.se/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-102-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod2_se_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod2.se/","IsOffline":false
     },{
-      "Id":"TENA_Professional_UK_Staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-166-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3sttenaprofessionalcouk_rootwebapp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.tenaprofessional.co.uk/professionals/","IsOffline":false
+      "Id":"prod1_Professional_UK_Staging","ExtensionProperties":[
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-166-1","EnvironmentPurpose":"Staging","WebApplicationId":"devstprod1professionalcouk_rootwebapp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod1professional.co.uk/professionals/","IsOffline":false
     },{
       "Id":"tcm0_173_1_staging","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"4"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-173-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tena_nu_RootWebApp","RelativeUrl":"/vardpersonal","PrimaryMappedUrl":"http://dev3st.tena.nu/vardpersonal","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-173-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod1_nu_RootWebApp","RelativeUrl":"/vardpersonal","PrimaryMappedUrl":"http://devst.prod1.nu/vardpersonal","IsOffline":false
     },{
       "Id":"tcm0_193_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-193-1","EnvironmentPurpose":"Live","WebApplicationId":"devtenade_RootWebApp","RelativeUrl":"/maenner","PrimaryMappedUrl":"http://dev3lv.tena.de/maenner","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-193-1","EnvironmentPurpose":"Live","WebApplicationId":"devprod1de_RootWebApp","RelativeUrl":"/maenner","PrimaryMappedUrl":"http://devlv.prod1.de/maenner","IsOffline":false
     },{
       "Id":"Mapping1","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-189-1","EnvironmentPurpose":"Staging","WebApplicationId":"Website1_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.tenamaster.com/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-189-1","EnvironmentPurpose":"Staging","WebApplicationId":"Website1_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod1master.com/","IsOffline":false
     },{
-      "Id":"FemCare_Nana_Fr_Website_Staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-217-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_nana_fr_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.nana.fr/","IsOffline":false
+      "Id":"prod3_Fr_Website_Staging","ExtensionProperties":[
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-217-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_fr_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.nana.fr/","IsOffline":false
     },{
       "Id":"tcm0_63_1_staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-63-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tork_co_uk_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.tork.co.uk/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-63-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod2_co_uk_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod2.co.uk/","IsOffline":false
     },{
       "Id":"tcm0_76_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-76-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tork_ca_RootWebApp","RelativeUrl":"/fr","PrimaryMappedUrl":"http://www.dev3lv.tork.ca/fr","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-76-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod2_ca_RootWebApp","RelativeUrl":"/fr","PrimaryMappedUrl":"http://www.devlv.prod2.ca/fr","IsOffline":false
     },{
       "Id":"tcm0_159_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-159-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3_tena_ca_RootWebApp","RelativeUrl":"/en/professionals","PrimaryMappedUrl":"http://dev3lv.tena.ca/en/professionals","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-159-1","EnvironmentPurpose":"Live","WebApplicationId":"dev_prod1_ca_RootWebApp","RelativeUrl":"/en/professionals","PrimaryMappedUrl":"http://devlv.prod1.ca/en/professionals","IsOffline":false
     },{
       "Id":"tcm0_159_1_staging","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"4"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-159-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tena_ca_RootWebApp","RelativeUrl":"/en/professionals","PrimaryMappedUrl":"http://dev3st.tena.ca/en/professionals","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-159-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod1_ca_RootWebApp","RelativeUrl":"/en/professionals","PrimaryMappedUrl":"http://devst.prod1.ca/en/professionals","IsOffline":false
     },{
       "Id":"tcm0_129_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"1"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-129-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tpwmaster_tena_com_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://dev3lv.tpwmaster.tena.com/professionals","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-129-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_tpwmaster_prod1_com_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://devlv.tpwmaster.prod1.com/professionals","IsOffline":false
     },{
       "Id":"tcm0_97_1_staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-97-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tork_nl_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.tork.nl/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-97-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod2_nl_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod2.nl/","IsOffline":false
     },{
       "Id":"tcm0_173_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-173-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tena_nu_RootWebApp","RelativeUrl":"/vardpersonal","PrimaryMappedUrl":"http://dev3lv.tena.nu/vardpersonal","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-173-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod1_nu_RootWebApp","RelativeUrl":"/vardpersonal","PrimaryMappedUrl":"http://devlv.prod1.nu/vardpersonal","IsOffline":false
     },{
       "Id":"tcm0_161_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-161-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3_tena_ca_RootWebApp","RelativeUrl":"/fr/professionnels","PrimaryMappedUrl":"http://dev3lv.tena.ca/fr/professionnels","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-161-1","EnvironmentPurpose":"Live","WebApplicationId":"dev_prod1_ca_RootWebApp","RelativeUrl":"/fr/professionnels","PrimaryMappedUrl":"http://devlv.prod1.ca/fr/professionnels","IsOffline":false
     },{
       "Id":"tcm0_131_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"2"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-131-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tenaprofessionals_us_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://dev3lv.tenaprofessionals.us/professionals","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-131-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod1professionals_us_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://devlv.prod1professionals.us/professionals","IsOffline":false
     },{
-      "Id":"FemCare_Master_Website_Preview","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-202-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_femcare_local_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.femcare.local/","IsOffline":false
+      "Id":"prod3_Master_Website_Preview","ExtensionProperties":[
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-202-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod3_local_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod3.local/","IsOffline":false
     },{
-      "Id":"FemCare_Master_Website_Staging","ExtensionProperties":[
+      "Id":"prod3_Master_Website_Staging","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"4"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-203-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_libresse_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.libresse.com/","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-203-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod3_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod3.com/","IsOffline":false
     },{
-      "Id":"TENA_Men_Master_Website_ENUK_Live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-189-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lvtenamastercom_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.tenamaster.com/","IsOffline":false
+      "Id":"prod1_Men_Master_Website_ENUK_Live","ExtensionProperties":[
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-189-1","EnvironmentPurpose":"Live","WebApplicationId":"devlvprod1mastercom_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.prod1master.com/","IsOffline":false
     },{
       "Id":"tcm0_97_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-97-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tork_nl_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://www.dev3lv.tork.nl/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-97-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod2_nl_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://www.devlv.prod2.nl/","IsOffline":false
     },{
-      "Id":"tena_men_SA_master_staging_","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-196-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3sttenamaster_SAcom_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.tenamaster_sa.com/","IsOffline":false
+      "Id":"prod1_men_SA_master_staging_","ExtensionProperties":[
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-196-1","EnvironmentPurpose":"Staging","WebApplicationId":"devstprod1master_SAcom_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod1master_sa.com/","IsOffline":false
     },{
       "Id":"tcm0_198_1_Live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-198-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3liv_tena_de_RootWebApp","RelativeUrl":"/fachkraefte","PrimaryMappedUrl":"http://www.dev3liv.tena.de/fachkraefte","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-198-1","EnvironmentPurpose":"Live","WebApplicationId":"devliv_prod1_de_RootWebApp","RelativeUrl":"/fachkraefte","PrimaryMappedUrl":"http://www.devliv.prod1.de/fachkraefte","IsOffline":false
     },{
       "Id":"tcm0_191_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-191-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tena_co_uk_RootWebApp","RelativeUrl":"/men","PrimaryMappedUrl":"http://dev3lv.tena.co.uk/men","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-191-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod1_co_uk_RootWebApp","RelativeUrl":"/men","PrimaryMappedUrl":"http://devlv.prod1.co.uk/men","IsOffline":false
     },{
       "Id":"tcm0_193_1_staging","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-193-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tena_de_RootWebApp","RelativeUrl":"/maenner","PrimaryMappedUrl":"http://dev3st.tena.de/maenner","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-193-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod1_de_RootWebApp","RelativeUrl":"/maenner","PrimaryMappedUrl":"http://devst.prod1.de/maenner","IsOffline":false
     },{
       "Id":"tcm0_73_1_staging","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"1"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-73-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_torkusa_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3st.torkusa.com/","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-73-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod2usa_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devst.prod2usa.com/","IsOffline":false
     },{
-      "Id":"FemCare_Nana_Fr_Website_Live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-217-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_nana_fr_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.nana.fr/","IsOffline":false
+      "Id":"prod3_Fr_Website_Live","ExtensionProperties":[
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-217-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_fr_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.nana.fr/","IsOffline":false
     },{
       "Id":"tcm0_75_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-75-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3lv_tork_ca_RootWebApp","RelativeUrl":"/en","PrimaryMappedUrl":"http://www.dev3lv.tork.ca/en","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-75-1","EnvironmentPurpose":"Live","WebApplicationId":"devlv_prod2_ca_RootWebApp","RelativeUrl":"/en","PrimaryMappedUrl":"http://www.devlv.prod2.ca/en","IsOffline":false
     },{
       "Id":"tcm0_214_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-214-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3LV_tork_ZA_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://www.tork.za/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-214-1","EnvironmentPurpose":"Live","WebApplicationId":"devLV_prod2_ZA_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://www.prod2.za/","IsOffline":false
     },{
       "Id":"tcm0_73_1_live","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"1"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-73-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3_torkusa_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.torkusa.com/","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-73-1","EnvironmentPurpose":"Live","WebApplicationId":"dev_prod2usa_com_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.prod2usa.com/","IsOffline":false
     },{
       "Id":"tcm0_102_1_live","ExtensionProperties":[
-        
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-102-1","EnvironmentPurpose":"Live","WebApplicationId":"dev3_tork_se_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://dev3lv.tork.se/","IsOffline":false
+
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-102-1","EnvironmentPurpose":"Live","WebApplicationId":"dev_prod2_se_RootWebApp","RelativeUrl":"/","PrimaryMappedUrl":"http://devlv.prod2.se/","IsOffline":false
     },{
       "Id":"tcm0_131_1_staging","ExtensionProperties":[
         {
           "Name":"AudienceManager-SynchronizationTarget","Value":"4"
         }
-      ],"CmEnvironmentId":"TridioncmDev3a_DB502","PublicationId":"tcm:0-131-1","EnvironmentPurpose":"Staging","WebApplicationId":"dev3st_tenaprofessionals_us_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://dev3st.tenaprofessionals.us/professionals","IsOffline":false
+      ],"CmEnvironmentId":"Tridioncm_Local","PublicationId":"tcm:0-131-1","EnvironmentPurpose":"Staging","WebApplicationId":"devst_prod1professionals_us_RootWebApp","RelativeUrl":"/professionals","PrimaryMappedUrl":"http://devst.prod1professionals.us/professionals","IsOffline":false
     }
   ]
 }

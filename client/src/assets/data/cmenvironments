@@ -1,9 +1,9 @@
 { "@odata.context":"http://localhost:81/ttm201501/$metadata#CmEnvironments","value":[
     {
-      "Id":"TridioncmDev3a_DB502","ExtensionProperties":[
+      "Id":"Tridioncm_Local","ExtensionProperties":[
 
-      ],"CoreServiceRootUrl":"net.tcp://localhost:2660","WebsiteRootUrl":"http://dev3cm.sca.com:80","CoreServiceCredentials":{
-        "@odata.type":"#Tridion.TopologyManager.Client.WindowsServiceCredentials","AuthenticationType":"Windows","UserName":"DMZ3\\svctridionmts","Password":null
+      ],"CoreServiceRootUrl":"net.tcp://localhost:2660","WebsiteRootUrl":"http://my-tridion-cm:80","CoreServiceCredentials":{
+        "@odata.type":"#Tridion.TopologyManager.Client.WindowsServiceCredentials","AuthenticationType":"Windows","UserName":"domain\\mtsuser","Password":null
       }
     }
   ]
