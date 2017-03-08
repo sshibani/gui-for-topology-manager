@@ -7,13 +7,17 @@
      [collapse]="isCollapsed"
      class="card card-block card-header">
   <div class="well well-lg">
-     <div class="container">
+     <!--<div class="container">
         <label class="btn btn-primary" [(ngModel)]="operator" btnRadio="AND">AND</label>
         <label class="btn btn-primary" [(ngModel)]="operator"  btnRadio="OR">OR</label>
     </div>
-    <br/>
+    <br/>-->
     <div class="conatiner">
-        <div class="search--id">
+        <div class="search">
+            <label>Search </label>
+            <input (keyup)="OnSearch($event)" placeholder="any field"/>
+        </div>
+        <!--<div class="search--id">
             <label>Id: </label>
             <input (keyup)="OnId($event)" placeholder="Id"/>
         </div>
@@ -24,7 +28,7 @@
         <div *ngIf="isWebsite" class="search--baseurl">
             <label>Base Url's: </label>
             <input (keyup)="OnBaseUrl($event)" placeholder="Base Url"/>
-        </div>
+        </div>-->
     </div>
     </div>
 </div>
