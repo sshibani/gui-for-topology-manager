@@ -1,5 +1,5 @@
 {
-  "name": "topology-client-gui",
+  "name": "gui-for-topology-manager",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},

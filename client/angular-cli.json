@@ -1,7 +1,8 @@
 {
   "project": {
     "version": "1.0.0-beta.26",
-    "name": "topology-client-gui"
+    "name": "G4TM",
+    "description": "GUI for Topology Manager"
   },
   "apps": [
     {
