@@ -5,6 +5,8 @@
 		<Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
 		<OutputDir>$(MSBuildProjectDirectory)\..\build\</OutputDir>
 		<MsDeployPackageDir>$(MSBuildProjectDirectory)\TopologyManager.WebApi\obj\$(Configuration)\Package\PackageTmp\</MsDeployPackageDir>
+		<InstallScriptDir>$(MSBuildProjectDirectory)\..\install-scripts\</InstallScriptDir>
+		<PackageName>G4TM.zip</PackageName>
 		<PackageDir>$(OutputDir)package\</PackageDir>
 	</PropertyGroup>
 
@@ -13,6 +15,7 @@
 		<CallTarget Targets="Publish" />
 		<Message Text="Publish complete."/>
 		<CallTarget Targets="Copy" />
+		<CallTarget Targets="CopyInstallScripts" />
 		<Message Text="Copy complete."/>
 		<CallTarget Targets="Zip" />
 	</Target>
@@ -49,11 +52,20 @@
                 DestinationFolder="$(OutputDir)%(RecursiveDir)" />
 	</Target>
 
+	<Target Name="CopyInstallScripts">
+		<Message Text="CopyInstallScripts Started" />
+		<ItemGroup>
+	        <Sources Include="$(InstallScriptDir)**\*.*" />
+	    </ItemGroup>
+		<Copy SourceFiles="@(Sources)"
+                DestinationFolder="$(OutputDir)%(RecursiveDir)" />
+	</Target>
+
 	<Target Name="Zip">
 		<Message Text="$(OutputDir)" />
    	 	<CreateItem Include="$(OutputDir)\**\*.*" Exclude="$(OutputDir)\**\Tridion.ContentManager*.*">
 		      <Output ItemName="ZipFiles" TaskParameter="Include"/>
 		</CreateItem>
-		<Zip Files="@(ZipFiles)" ZipFileName="$(PackageDir)TTMM.zip" WorkingDirectory="$(OutputDir)" />
+		<Zip Files="@(ZipFiles)" ZipFileName="$(PackageDir)$(PackageName)" WorkingDirectory="$(OutputDir)" />
 	</Target>
 </Project>
