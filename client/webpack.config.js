@@ -25,64 +25,64 @@ const config = {
 
 
 module.exports = {
-  "devtool": "source-map",
-  "resolve": {
-    "extensions": [
+  devtool: "source-map",
+  resolve: {
+    extensions: [
       ".ts",
       ".js",
       ".scss"
     ],
-    "modules": [
+    modules: [
       "./node_modules"
     ]
   },
-  "resolveLoader": {
-    "modules": [
+  resolveLoader: {
+    modules: [
       "./node_modules"
     ]
   },
   entry: {
-    "main": [
+    main: [
       'webpack-dev-server/client?http://0.0.0.0:4200',
       "./src\\main.ts",
       "./src\\scss-base\\main.scss"
     ]
   },
-  "output": {
-    "path": path.join(process.cwd(), config.paths._base),
-    "filename": path.join(config.paths.js, "[name].bundle.js"),
-    "chunkFilename": path.join(config.paths.js, "[id].chunk.js")
+  output: {
+    path: path.join(process.cwd(), config.paths._base),
+    filename: path.join(config.paths.js, "[name].bundle.js"),
+    chunkFilename: path.join(config.paths.js, "[id].chunk.js")
   },
-  "module": {
-    "rules": [
+  module: {
+    rules: [
       {
-        "enforce": "pre",
-        "test": /\.js$/,
-        "loader": "source-map-loader",
-        "exclude": [
+        enforce: "pre",
+        test:  /\.js$/,
+        loader:  "source-map-loader",
+        exclude: [
           /\/node_modules\//
         ]
       },
       {
-        "test": /\.json$/,
-        "loader": "json-loader"
+        test:  /\.json$/,
+        loader:  "json-loader"
       },
       {
-        "test": /\.html$/,
-        "loader": "raw-loader"
+        test:  /\.html$/,
+        loader:  "raw-loader"
       },
       {
-        "test": /\.(eot|svg)$/,
-        "loader": "file-loader?name=[name].[hash:20].[ext]"
+        test:  /\.(eot|svg)$/,
+        loader:  "file-loader?name=[name].[hash:20].[ext]"
       },
       {
-        "test": /\.(jpg|png|gif|otf|ttf|woff|woff2|cur|ani)$/,
-        "loader": "url-loader?name=[name].[hash:20].[ext]&limit=10000"
+        test:  /\.(jpg|png|gif|otf|ttf|woff|woff2|cur|ani)$/,
+        loader:  "url-loader?name=[name].[hash:20].[ext]&limit=10000"
       },
       {
-        "exclude": [],
-        "test": /\.css$/,
-        "loaders": [
+        exclude: [],
+        test:  /\.css$/,
+        loaders:  [
           "exports-loader?module.exports.toString()",
           "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
           "postcss-loader"
@@ -99,9 +99,9 @@ module.exports = {
         ])
       },
       {
-        "exclude": [],
-        "test": /\.less$/,
-        "loaders": [
+        exclude: [],
+        test:  /\.less$/,
+        loaders:  [
           "exports-loader?module.exports.toString()",
           "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
           "postcss-loader",
@@ -109,9 +109,9 @@ module.exports = {
         ]
       },
       {
-        "exclude": [],
-        "test": /\.styl$/,
-        "loaders": [
+        exclude: [],
+        test:  /\.styl$/,
+        loaders:  [
           "exports-loader?module.exports.toString()",
           "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
           "postcss-loader",
@@ -119,22 +119,22 @@ module.exports = {
         ]
       },
       {
-        "test": /\.ts$/,
-        "loader": "@ngtools/webpack"
+        test:  /\.ts$/,
+        loader:  "@ngtools/webpack"
       }
     ]
   },
-  "plugins": [
+  plugins: [
     new NoEmitOnErrorsPlugin(),
     new GlobCopyWebpackPlugin({
-      "patterns": [
+      patterns: [
         "assets",
         "favicon.ico"
       ],
-      "globOptions": {
-        "cwd": "D:\\dev\\angular\\topology\\client\\src",
-        "dot": true,
-        "ignore": "**/.gitkeep"
+      globOptions: {
+        cwd: "D:\\dev\\angular\\topology\\client\\src",
+        dot: true,
+        ignore: "**/.gitkeep"
       }
     }),
     new ProgressPlugin(),
@@ -168,13 +168,13 @@ module.exports = {
     }),
     new BaseHrefWebpackPlugin({}),
     new CommonsChunkPlugin({
-      "name": "inline",
-      "minChunks": null
+      name: "inline",
+      minChunks: null
     }),
     new CommonsChunkPlugin({
-      "name": "vendor",
-      "minChunks": (module) => module.resource && module.resource.startsWith(nodeModules),
-      "chunks": [
+      name: "vendor",
+      minChunks: (module) => module.resource && module.resource.startsWith(nodeModules),
+      chunks: [
         "main"
       ]
     }),
@@ -183,9 +183,9 @@ module.exports = {
       allChunks: true,
     }),
     new LoaderOptionsPlugin({
-      "sourceMap": false,
-      "options": {
-        "postcss": [
+      sourceMap: false,
+      options: {
+        postcss: [
           autoprefixer(),
           postcssUrl({"url": (URL) => {
             // Only convert absolute URLs, which CSS-Loader won't process into require().
@@ -197,27 +197,27 @@ module.exports = {
             return `/${baseHref || ''}/${deployUrl || ''}/${URL}`.replace(/\/\/+/g, '/');
         }})
         ],
-        "sassLoader": {
-          "sourceMap": false,
-          "includePaths": []
+        sassLoader: {
+          sourceMap: false,
+          includePaths: []
         },
-        "lessLoader": {
-          "sourceMap": false
+        lessLoader: {
+          sourceMap: false
         },
-        "context": ""
+        context: ""
       }
     }),
     new AotPlugin({
-      "mainPath": "main.ts",
-      "hostReplacementPaths": {
+      mainPath: "main.ts",
+      hostReplacementPaths: {
         "environments\\environment.ts": "environments\\environment.ts"
       },
-      "exclude": [],
-      "tsConfigPath": "src\\tsconfig.json",
-      "skipCodeGeneration": true
+      exclude: [],
+      tsConfigPath: "src\\tsconfig.json",
+      skipCodeGeneration: true
     })
   ],
-  "node": {
+  node: {
     "fs": "empty",
     "global": true,
     "crypto": "empty",
