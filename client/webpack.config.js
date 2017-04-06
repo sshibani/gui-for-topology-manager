@@ -132,7 +132,7 @@ module.exports = {
         "favicon.ico"
       ],
       globOptions: {
-        cwd: "D:\\dev\\angular\\topology\\client\\src",
+        cwd: process.cwd() + "/src",
         dot: true,
         ignore: "**/.gitkeep"
       }
