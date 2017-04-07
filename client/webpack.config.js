@@ -1,10 +1,8 @@
 const webpackConfigAssign = require('webpack-config-assign');
  
-
-
 module.exports = function(env) {
   const baseConfig = require('./config/webpack.config.base');
-  const devConfig = require('./config/webpack.config.dev');
+  const devConfig  = require('./config/webpack.config.dev');
   const prodConfig = require('./config/webpack.config.prod');
 
   let config = {};
@@ -14,7 +12,5 @@ module.exports = function(env) {
     config = devConfig;
   }
 
-   //config = env.development ? devConfig : prodConfig;
- 
   return webpackConfigAssign(baseConfig, config);
 };
