@@ -15,8 +15,9 @@ export abstract class ComponentPromoboxBase<T extends ITopologyItem> {
     @Input('Model')
     model: T;
 
+    // tslint:disable-next-line:no-input-rename
     @Input('ShowActionButtons')
-    showActionButtons: boolean = true;
+    showActionButtons = true;
 
     private _service: IServiceBase<T>;
     constructor(service: IServiceBase<T>) {

@@ -11,38 +11,38 @@ import { Website } from './../models/website';
 })
 export class SearchComponent implements OnInit {
     title = 'Search';
-    operator: string = 'Middle';
-    isCollapsed: boolean = true;
-    isWebsite: boolean = false;
+    operator = 'Middle';
+    isCollapsed = true;
+    isWebsite = false;
 
     @Output()
     onKeypress = new EventEmitter<ISearchItem[]>();
     @Input('Collection')
     collection: ISearchItem[];
 
-    id: string = '';
-    environmentPurpose: string = '';
+    id = '';
+    environmentPurpose = '';
     constructor() { }
 
     ngOnInit() { }
 
      OnSearch(event: any): void {
-        let list = this.collection;
+        const list = this.collection;
         const s = event.target.value.toLowerCase();
         console.log(s);
-        var result = this.collection.filter(function(o) {
+        const result = this.collection.filter(function(o) {
             return Object.keys(o).some(function(k) {
-                return o[k].toString().toLowerCase().indexOf(s) != -1;
-            })
+                return o[k].toString().toLowerCase().indexOf(s) !== -1;
+            });
         });
         this.onKeypress.emit(result);
      }
 
-    public collapsed(event:any):void {
+    public collapsed(event: any): void {
         console.log(event);
     }
 
-    public expanded(event:any):void {
+    public expanded(event: any): void {
         console.log(event);
     }
 }

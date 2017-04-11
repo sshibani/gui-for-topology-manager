@@ -13,7 +13,7 @@ export class DeleteWindowComponent implements OnInit {
     @Output()
     onDelete = new EventEmitter<ITopologyItem>();
     @ViewChild('smModal')
-    modal:any;
+    modal: any;
 
     constructor() { }
 

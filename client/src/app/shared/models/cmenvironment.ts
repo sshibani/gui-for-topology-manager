@@ -10,7 +10,7 @@ export class CmEnvironment  implements ITopologyItem {
     ODatatype: string;
 
     constructor() {
-        this.ODatatype = "#Tridion.TopologyManager.Client.CmEnvironmentData";
+        this.ODatatype = '#Tridion.TopologyManager.Client.CmEnvironmentData';
     }
 }
 
@@ -19,6 +19,6 @@ export class WindowsCredentials extends Credentials {
     UserName: string;
     Password: string;
     constructor() {
-        super("Windows",  "#Tridion.TopologyManager.Client.WindowsServiceCredentials");
+        super('Windows',  '#Tridion.TopologyManager.Client.WindowsServiceCredentials');
     }
 }

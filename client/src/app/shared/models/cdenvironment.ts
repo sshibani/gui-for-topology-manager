@@ -2,6 +2,7 @@ import { WebApplication } from './webapplication';
 import { ISearchItem } from './contracts/itopologyitem';
 
 export class CdEnvironment implements ISearchItem {
+    static AuthenticationTypes: string[] = [ 'Anonymous', 'OAuth' ];
     Id: string;
     EnvironmentPurpose: string;
     DiscoveryEndpointUrl: string;
@@ -11,10 +12,8 @@ export class CdEnvironment implements ISearchItem {
     ODatatype: string;
 
     constructor() {
-        this.ODatatype = "#Tridion.TopologyManager.Client.CdEnvironmentData";
+        this.ODatatype = '#Tridion.TopologyManager.Client.CdEnvironmentData';
     }
-
-    static AuthenticationTypes: string[] = [ "Anonymous", "OAuth" ];
 }
 
 export class Credentials {
@@ -31,12 +30,12 @@ export class OAuthCredentials extends Credentials {
     ClientId: string;
     ClientSecret: string;
     constructor() {
-        super("OAuth",  "#Tridion.TopologyManager.Client.OAuthServiceCredentials");
+        super('OAuth',  '#Tridion.TopologyManager.Client.OAuthServiceCredentials');
     }
 }
 
 export class AnonymousCredentials extends Credentials {
     constructor() {
-        super("Anonymous",  "#Tridion.TopologyManager.Client.AnonymousServiceCredentials");
+        super('Anonymous',  '#Tridion.TopologyManager.Client.AnonymousServiceCredentials');
     }
 }
