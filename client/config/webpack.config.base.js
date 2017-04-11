@@ -16,7 +16,6 @@ const entryPoints = ["inline","polyfills","sw-register","vendor","main"];
 const baseHref = undefined;
 const deployUrl = undefined;
 
-
 const ENVIRONMENT = process.env.NODE_ENV
 
 const debug = _debug('app:webpack:base')
@@ -66,7 +65,7 @@ module.exports = {
         test:  /\.js$/,
         loader:  "source-map-loader",
         exclude: [
-          /\/node_modules\//
+          /node_modules/
         ]
       },
       {
