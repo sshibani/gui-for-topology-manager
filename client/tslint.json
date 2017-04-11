@@ -6,7 +6,7 @@
     "callable-types": true,
     "class-name": true,
     "comment-format": [
-      true,
+      false,
       "check-space"
     ],
     "curly": true,
@@ -46,7 +46,7 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": true,
+    "no-inferrable-types": [true, "ignore-params"],
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
@@ -98,18 +98,18 @@
       "check-type"
     ],
 
-    "directive-selector": [true, "attribute", "app", "camelCase"],
-    "component-selector": [true, "element", "app", "kebab-case"],
+    "directive-selector": [false, "attribute", "app", "camelCase"],
+    "component-selector": [false, "element", "app", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
+    "no-input-rename": false,
+    "no-output-rename": false,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "no-access-missing-member": true,
+    "no-access-missing-member": false,
     "templates-use-public": true,
     "invoke-injectable": true
   }

@@ -5,12 +5,13 @@ export class HighlightDirective {
     private _el;
     private _renderer;
     private _defaultColor = 'red';
+    @Input('BackgroundHighlight') highlightColor: string;
+
     constructor(el: ElementRef, renderer: Renderer) {
         this._el = el;
         this._renderer = renderer;
     }
 
-    @Input('BackgroundHighlight') highlightColor : string;
 
     @HostListener('mouseenter') onMouseEnter() {
         this.highlight(this.highlightColor || this._defaultColor);

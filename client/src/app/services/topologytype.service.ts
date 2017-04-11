@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Response, Http } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 
 import { ServiceBase } from './service-base.service';
@@ -12,7 +12,10 @@ import { TopologyType } from './../shared/models/topologytype';
 @Injectable()
 export class TopologyTypeService extends ServiceBase<TopologyType> {
 
-    constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
+    constructor(private http: Http,
+                private router: Router,
+                private messageService: MessageService,
+                private contextService: ContextService) {
         super(http, router, contextService, messageService, 'CdTopologyTypes');
     }
 

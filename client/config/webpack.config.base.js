@@ -16,7 +16,6 @@ const entryPoints = ["inline","polyfills","sw-register","vendor","main"];
 const baseHref = undefined;
 const deployUrl = undefined;
 
-
 const ENVIRONMENT = process.env.NODE_ENV
 
 const debug = _debug('app:webpack:base')
@@ -62,11 +61,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.ts$/,
+        enforce: 'pre',
+        loader: 'tslint-loader',
+        options: { /* Loader options go here */ }
+      },
+      {
         enforce: "pre",
         test:  /\.js$/,
         loader:  "source-map-loader",
         exclude: [
-          /\/node_modules\//
+          /node_modules/
         ]
       },
       {
@@ -195,9 +200,9 @@ module.exports = {
           autoprefixer(),
           postcssUrl({"url": (URL) => {
             // Only convert absolute URLs, which CSS-Loader won't process into require().
-            if (!URL.startsWith('/')) {
-                return URL;
-            }
+            //if (!URL.startsWith('/')) {
+            //    return URL;
+            //}
             // Join together base-href, deploy-url and the original URL.
             // Also dedupe multiple slashes into single ones.
             return `/${baseHref || ''}/${deployUrl || ''}/${URL}`.replace(/\/\/+/g, '/');

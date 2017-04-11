@@ -33,7 +33,7 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
         if (this.model) {
             this.isNew = false;
             this.tabHeader = 'Edit Mapping (' + this.model.Id + ')';
-            let d = new ExtensionProperties();
+            const d = new ExtensionProperties();
         } else {
             this.tabHeader = 'Add Mapping';
             this.model = new Mapping();
@@ -63,7 +63,7 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
     }
 
     addExtensionProperties(): void {
-        let newExt = new ExtensionProperties();
+        const newExt = new ExtensionProperties();
         this.model.ExtensionProperties.push(newExt);
     }
 
@@ -73,7 +73,7 @@ export class MappingEditComponent extends ComponentEditBase<Mapping> implements 
     }
 
      onChange(id: any) {
-       let publication = this.publications.find(p => p.Id === id);
+       const publication = this.publications.find(p => p.Id === id);
        if (typeof publication.RelativeUrl !== 'undefined') {
            this.model.RelativeUrl = publication.RelativeUrl;
        }

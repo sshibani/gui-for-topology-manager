@@ -16,6 +16,6 @@ export class Mapping implements ISearchItem {
     ODatatype: string;
 
     constructor() {
-        this.ODatatype = "#Tridion.TopologyManager.Client.MappingData";
+        this.ODatatype = '#Tridion.TopologyManager.Client.MappingData';
     }
 }

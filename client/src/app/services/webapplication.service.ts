@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Response, Http } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 import { ServiceBase } from './service-base.service';
 import { ContextService } from './context.service';
@@ -11,7 +11,10 @@ import { MessageService } from './message.service';
 @Injectable()
 export class WebApplicationService extends ServiceBase<WebApplication> {
 
-    constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
+    constructor(private http: Http,
+                private router: Router,
+                private messageService: MessageService,
+                private contextService: ContextService) {
         super(http, router, contextService, messageService, 'WebApplications');
     }
 

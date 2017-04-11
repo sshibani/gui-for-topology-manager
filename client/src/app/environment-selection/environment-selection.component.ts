@@ -21,7 +21,6 @@ export class EnvironmentSelectionComponent implements OnInit {
     private deleteSubscription: Subscription;
     private createSubscription: Subscription;
 
-    //model: any;
     constructor(private topologyEnvironmentService: TopologyEnvironmentService,
                 private contextService: ContextService,
                 private router: Router,
@@ -40,7 +39,7 @@ export class EnvironmentSelectionComponent implements OnInit {
         console.log(data);
         this.contextService.setContextEnvironment(data);
 
-        let link = ['/' + RouteConst.EnvironmentOverviewPath];
+        const link = ['/' + RouteConst.EnvironmentOverviewPath];
         this.router.navigate(link, { skipLocationChange: true });
     }
 
