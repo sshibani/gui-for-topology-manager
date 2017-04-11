@@ -62,7 +62,7 @@
       ],"ScopedRepositoryKeys":[
 
       ],"BaseUrls":[
-        "http://devst.nana.fr"
+        "http://devst.mybrand.fr"
       ],"CdEnvironmentId":"CdEnvironment2","EnvironmentPurpose":"Staging"
     },{
       "Id":"devlv_prod1_co_uk","ExtensionProperties":[
@@ -254,7 +254,7 @@
       ],"ScopedRepositoryKeys":[
 
       ],"BaseUrls":[
-        "http://devlv.nana.fr"
+        "http://devlv.mybrand.fr"
       ],"CdEnvironmentId":"CdEnvironment1","EnvironmentPurpose":"Live"
     },{
       "Id":"devst_prod2_nl","ExtensionProperties":[

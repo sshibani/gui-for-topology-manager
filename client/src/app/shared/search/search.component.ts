@@ -38,29 +38,6 @@ export class SearchComponent implements OnInit {
         this.onKeypress.emit(result);
      }
 
-    // OnId(event: any): void {
-    //     console.log(event.target.value);
-    //     this.id = event.target.value.toLowerCase();
-    //     this.filter();
-    // }
-
-    // OnEnvironmentPurpose(event: any): void {
-    //     console.log(event.target.value);
-    //     this.environmentPurpose = event.target.value.toLowerCase();
-    //     this.filter();
-    // }
-
-    // filter(): void {
-    //     let list = this.collection;
-    //     if (this.id !== '') {
-    //         list = list.filter(item => item.Id.toLowerCase().includes(this.id));
-    //     }
-    //     if (this.environmentPurpose !== '') {
-    //         list = list.filter(item => item.EnvironmentPurpose.toLowerCase().includes(this.environmentPurpose));
-    //     }
-    //     this.onKeypress.emit(list);
-    // }
-
     public collapsed(event:any):void {
         console.log(event);
     }
