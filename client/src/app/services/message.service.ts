@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import { Message } from './../shared/models/message';
@@ -12,7 +12,7 @@ export class MessageService {
     constructor() {}
 
     public SendMessage(type: string, msg: string, timeOut: number) {
-        let message = new Message(type, msg, timeOut);
+        const message = new Message(type, msg, timeOut);
         this.subject.next(message);
     }
 

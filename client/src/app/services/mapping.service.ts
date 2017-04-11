@@ -11,7 +11,10 @@ import { MessageService } from './message.service';
 @Injectable()
 export class MappingService extends ServiceBase<Mapping> {
 
-    constructor(private http: Http, private router: Router, private messageService: MessageService, private contextService: ContextService) {
+    constructor(private http: Http,
+                private router: Router,
+                private messageService: MessageService,
+                private contextService: ContextService) {
         super(http, router, contextService, messageService, 'Mappings');
     }
 }

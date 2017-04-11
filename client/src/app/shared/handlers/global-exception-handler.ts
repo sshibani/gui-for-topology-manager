@@ -16,13 +16,3 @@ export class GlobalExceptionHandler implements ErrorHandler {
   }
 
 }
-
-// @NgModule({
-//   providers: [
-//     {
-//       provide: ErrorHandler,
-//       useClass: GlobalExceptionHandler
-//     }
-//   ]
-// })
-// export class AppModule { }

@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { RouteConst } from './../shared/constants';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/publishReplay';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import { ContextService } from './../services/context.service';
@@ -51,8 +52,8 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
 
 
     private setHttpHeaders(endPoint: string): void {
-        let topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
-        if (topologyEndPoint.Url.startsWith('/assets')) { //locall dev mode
+        const topologyEndPoint = this._contextService.getContextEnvironment().TopologyManagerEndpoint;
+        if (topologyEndPoint.Url.startsWith('/assets')) { // locall dev mode
             this._environmentUrl = topologyEndPoint.Url + endPoint;
         } else {
             if (topologyEndPoint.Url.endsWith('/')) {
@@ -89,7 +90,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         return this._http.post(this._environmentUrl, body, { headers: this._headers, withCredentials: true })
                     .map(res => {
                         if (res.status === 201) {
-                            let m = res.json() as T;
+                            const m = res.json() as T;
                             this.createSubject.next(m);
                         }
                     })
@@ -98,11 +99,11 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     public Update(data: T): Observable<T> {
         let body = JSON.stringify(data);
         body = body.replace(/ODatatype/g, '@odata.type');
-        let url = this._environmentUrl + '(\'' + data.Id + '\')';
+        const url = this._environmentUrl + '(\'' + data.Id + '\')';
         return this._http.patch(url, body, { headers: this._headers, withCredentials: true })
                         .map(res => {
                             if (res.status === 200) {
-                                let m = res.json() as T;
+                                const m = res.json() as T;
                                 this.updateSubject.next(m);
                             }
                         })
@@ -110,7 +111,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
     }
 
     public Delete(data: T): void {
-        let url = this._environmentUrl + '(\'' + data.Id + '\')';
+        const url = this._environmentUrl + '(\'' + data.Id + '\')';
         this._http.delete(url, { headers: this._headers, withCredentials: true })
                     .toPromise()
                     .then(res => {

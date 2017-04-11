@@ -19,7 +19,7 @@ export class ContextService {
 
     hasContext(): boolean {
         this.contextEnvironment = JSON.parse(localStorage.getItem('environment'));
-        if(this.contextEnvironment) {
+        if (this.contextEnvironment) {
             return true;
         } else {
             return false;

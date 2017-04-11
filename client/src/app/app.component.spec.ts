@@ -9,9 +9,7 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        NavigationComponent,
-        MessageComponent
+        AppComponent
       ],
     });
     TestBed.compileComponents();
