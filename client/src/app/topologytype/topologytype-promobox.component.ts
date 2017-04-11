@@ -19,5 +19,4 @@ export class TopologyTypePromoboxComponent extends ComponentPromoboxBase<Topolog
 
     ngOnInit() { }
 
-
 }

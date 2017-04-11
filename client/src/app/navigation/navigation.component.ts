@@ -6,7 +6,7 @@ import { RouteConst } from './../shared/constants';
 
 @Component({
     moduleId: module.id,
-    selector: 'nav-container',
+    selector: 'app-nav-container',
     templateUrl: 'navigation.component.html'
 })
 export class NavigationComponent implements OnInit {

@@ -9,12 +9,12 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
     @Input('Model')
     model: T;
     @ViewChild('lgModal')
-    modal:any;
+    modal: any;
 
     tabHeader: string;
-    showIdField: boolean = false;
-    autoGenerateId: boolean = true;
-    isNew: boolean = true;
+    showIdField = false;
+    autoGenerateId = true;
+    isNew = true;
 
     constructor(private service: IServiceBase<T>, private messageService: MessageService) { }
 
@@ -38,9 +38,8 @@ export abstract class ComponentEditBase<T extends ITopologyItem> {
         return index;
     }
 
-    handleError(e: any)
-    {
-        let error =  JSON.parse(e._body).error;
-        this.messageService.SendMessage('danger', error.code + ' - ' + error.message , 10000)
+    handleError(e: any) {
+        const error =  JSON.parse(e._body).error;
+        this.messageService.SendMessage('danger', error.code + ' - ' + error.message , 10000);
     }
 }

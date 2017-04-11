@@ -8,6 +8,6 @@ export class TopologyType  implements ITopologyItem {
     ODatatype: string;
 
     constructor() {
-        this.ODatatype = "#Tridion.TopologyManager.Client.CdTopologyTypeData";
+        this.ODatatype = '#Tridion.TopologyManager.Client.CdTopologyTypeData';
     }
 }

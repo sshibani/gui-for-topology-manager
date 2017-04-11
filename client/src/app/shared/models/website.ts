@@ -8,6 +8,6 @@ export class Website implements ISearchItem {
     ODatatype: string;
 
     constructor() {
-        this.ODatatype = "#Tridion.TopologyManager.Client.WebsiteData";
+        this.ODatatype = '#Tridion.TopologyManager.Client.WebsiteData';
     }
 }

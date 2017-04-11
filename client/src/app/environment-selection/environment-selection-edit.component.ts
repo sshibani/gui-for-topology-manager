@@ -15,7 +15,7 @@ export class EnvrionemtSelectionEditComponent implements OnInit {
     @Input('Model')
     model: TopologyEnvironment;
     @ViewChild('lgModal')
-    modal:any;
+    modal: any;
     tabHeader: string;
     isNew: boolean;
     constructor(private topologyEnvironmentService: TopologyEnvironmentService) { }
