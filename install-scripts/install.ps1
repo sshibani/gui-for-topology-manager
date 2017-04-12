@@ -5,17 +5,23 @@
  # Change Date: 07-03-2017
  # Product Scope: TopologyManager GUI
  ######################################################################################
-
+<#
+.PARAMETER DatabaseServer
+    Database Server name. Default is '(local)'
+#>
 Param(
-  [Parameter(Mandatory=$true, HelpMessage="IIS website name? (Default=topology-manager-gui)")]
-  [string]$ApplicationName,
-  [Parameter(Mandatory=$true, HelpMessage="IIS PortNumber? (Default=4012)")]
-  [string]$portNumbder,
-  [Parameter(Mandatory=$true, HelpMessage="CoreService user. (domain\username)")]
-  [string]$userName,
-  [Parameter(Mandatory=$true, HelpMessage="CoreService password.")]
-  [securestring]$password
+    [Parameter(Mandatory=$true, HelpMessage="IIS website name? (Default=topology-manager-gui)")]
+    [string]$ApplicationName,
+    [Parameter(Mandatory=$true, HelpMessage="IIS PortNumber? (Default=4012)")]
+    [string]$portNumbder,
+    [Parameter(Mandatory=$true, HelpMessage="CoreService domain.")]
+    [string]$CoreService_Domain,
+    [Parameter(Mandatory=$true, HelpMessage="CoreService user.")]
+    [string]$CoreService_UserName,
+    [Parameter(Mandatory=$true, HelpMessage="CoreService password.")]
+    [securestring]$password
 )
+
 
 Import-Module WebAdministration
 
@@ -104,8 +110,6 @@ function UpdateWebConfig()
     $webconfigPath = Join-Path (Get-Item -Path ".\") "\web.config"
     [xml]$webconfig = Get-Content $webconfigPath;
 
-    $dvsu = $userName -split '\\'
-
     $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password)
     $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
@@ -113,8 +117,8 @@ function UpdateWebConfig()
     $userNameNode =  $webconfig.configuration.appSettings.SelectSingleNode("add[@key = 'username']")
     $passwordNode = $webconfig.configuration.appSettings.SelectSingleNode("add[@key = 'password']")
 
-    $domainNode.SetAttribute('value',  $dvsu[0])
-    $userNameNode.SetAttribute('value', $dvsu[1])
+    $domainNode.SetAttribute('value',  $CoreService_Domain)
+    $userNameNode.SetAttribute('value', $CoreService_UserName)
     $passwordNode.SetAttribute('value', $UnsecurePassword)
 
     $xmlToSave = Format-XML -xml $webconfig
