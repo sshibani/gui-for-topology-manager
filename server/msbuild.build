@@ -63,7 +63,7 @@
 
 	<Target Name="Zip">
 		<Message Text="$(OutputDir)" />
-   	 	<CreateItem Include="$(OutputDir)\**\*.*" Exclude="$(OutputDir)\**\Tridion.ContentManager*.*">
+   	 	<CreateItem Include="$(OutputDir)\**\*.*" Exclude="$(OutputDir)\**\Tridion.ContentManager*.*;$(OutputDir)\env.json">
 		      <Output ItemName="ZipFiles" TaskParameter="Include"/>
 		</CreateItem>
 		<Zip Files="@(ZipFiles)" ZipFileName="$(PackageDir)$(PackageName)" WorkingDirectory="$(OutputDir)" />
