@@ -19,11 +19,15 @@
 
 * [Installation](#installation)
 * [Usage](#usage)
+* [Development](#development)
 * [License](#license)
 
 
 ## Installation
 
+## Usage
+
+## Development
 
 ## License
 
