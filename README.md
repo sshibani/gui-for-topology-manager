@@ -1,13 +1,13 @@
 # GUI For Topology Manager (G4TM)
 
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/github/sshibani/gui-for-topology-manager?branch=develop&svg=true&passingText=develop)](https://ci.appveyor.com/project/sshibani/gui-for-topology-manager)
+[![AppVeyor][appveyor-badge-dev]][appveyor-badge-dev-url]
 
-[![Code Climate](https://codeclimate.com/github/cloudfoundry/membrane.png)](https://codeclimate.com/github/sshibani/topology-manager-gui/)
-[![Issue Count](https://codeclimate.com/github/sshibani/topology-manager-gui/badges/issue_count.svg)](https://codeclimate.com/github/sshibani/topology-manager-gui) 
-[![Test Coverage](https://codeclimate.com/github/sshibani/topology-manager-gui/badges/coverage.svg)](https://codeclimate.com/github/sshibani/topology-manager-gui/coverage)
+[![Code Climate][code-climate-badge]][code-climate-badge-url]
+[![Issue Count][code-climate-issue-badge]][code-climate-issue-badge-url]
+[![Test Coverage][code-climate-test-badge]][code-climate-test-badge-url]
 
-[![Dependency Status](https://david-dm.org/sshibani/topology-manager-gui.svg?path=client)](https://david-dm.org/sshibani/topology-manager-gui?path=client) 
-[![devDependency Status](https://david-dm.org/sshibani/topology-manager-gui/dev-status.svg?path=client&type=dev)](https://david-dm.org/sshibani/topology-manager-gui?path=client&type=dev)
+[![Dependency Status][david-badge]][david-badge-url] 
+[![devDependency Status][david-badge-dev]][david-badge-dev-url]
 
 ## Prerequisites
 
@@ -43,3 +43,19 @@
 ## License
 
 Apache License 2.0
+
+
+[appveyor-badge-dev]: https://ci.appveyor.com/api/projects/status/github/sshibani/gui-for-topology-manager?branch=develop&svg=true&passingText=develop
+[appveyor-badge-dev-url]: https://ci.appveyor.com/project/sshibani/gui-for-topology-manager
+
+[david-badge-dev]: https://david-dm.org/sshibani/topology-manager-gui/dev-status.svg?path=client&type=dev
+[david-badge-dev-url]: https://david-dm.org/sshibani/topology-manager-gui?path=client&type=dev
+[david-badge]: https://david-dm.org/sshibani/topology-manager-gui.svg?path=client
+[david-badge-url]: https://david-dm.org/sshibani/topology-manager-gui?path=client
+
+[code-climate-badge]: https://codeclimate.com/github/cloudfoundry/membrane.png
+[code-climate-badge-url]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/
+[code-climate-issue-badge]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/badges/issue_count.svg
+[code-climate-issue-badge-url]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/badges/issue_count.svg
+[code-climate-test-badge]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/badges/coverage.svg
+[code-climate-test-badge-url]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/coverage
