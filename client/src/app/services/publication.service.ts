@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
-import { environment } from './../../environments/environment';
+//import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/publishReplay';
@@ -19,7 +19,7 @@ export class PublicationService {
     private _observable: Observable<Publication[]>;
     constructor(http: Http, contextService: ContextService) {
         this._http = http;
-        this._url = environment.localEndPoint + 'Publication/' + contextService.getContextEnvironment().Id;
+        this._url = process.env.API_URL + 'Publication/' + contextService.getContextEnvironment().Id;
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');
     }

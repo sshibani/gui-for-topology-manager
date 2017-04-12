@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Headers, Response, Http } from '@angular/http';
-import { environment } from './../../environments/environment';
+// import { environment } from './../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
@@ -23,7 +23,7 @@ export class TopologyEnvironmentService {
 
     constructor(http: Http) {
         this._http = http;
-        this._url = environment.localEndPoint + 'TopologyEnvironment';
+        this._url = process.env.API_URL + 'TopologyEnvironment';
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');
     }
