@@ -56,6 +56,6 @@ Apache License 2.0
 [code-climate-badge]: https://codeclimate.com/github/cloudfoundry/membrane.png
 [code-climate-badge-url]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/
 [code-climate-issue-badge]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/badges/issue_count.svg
-[code-climate-issue-badge-url]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/badges/issue_count.svg
+[code-climate-issue-badge-url]: https://codeclimate.com/github/sshibani/topology-manager-gui
 [code-climate-test-badge]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/badges/coverage.svg
 [code-climate-test-badge-url]: https://codeclimate.com/github/sshibani/gui-for-topology-manager/coverage
