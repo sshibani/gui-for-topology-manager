@@ -13,7 +13,7 @@
 	<Target Name="All">
 		<CallTarget Targets="Test" />
 		<CallTarget Targets="Publish" />
-		<Message Text="Publish complete."/>
+		<Message Text="Publish s."/>
 		<CallTarget Targets="Copy" />
 		<CallTarget Targets="CopyInstallScripts" />
 		<Message Text="Copy complete."/>
