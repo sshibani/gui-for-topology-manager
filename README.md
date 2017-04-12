@@ -1,6 +1,6 @@
 # GUI For Topology Manager (G4TM)
 
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/github/sshibani/topology-manager-gui?branch=develop&svg=true&passingText=develop)](https://ci.appveyor.com/project/sshibani/gui-for-topology-manager)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/github/sshibani/gui-for-topology-manager?branch=develop&svg=true&passingText=develop)](https://ci.appveyor.com/project/sshibani/gui-for-topology-manager)
 
 [![Code Climate](https://codeclimate.com/github/cloudfoundry/membrane.png)](https://codeclimate.com/github/sshibani/topology-manager-gui/)
 [![Issue Count](https://codeclimate.com/github/sshibani/topology-manager-gui/badges/issue_count.svg)](https://codeclimate.com/github/sshibani/topology-manager-gui) 
@@ -24,6 +24,17 @@
 
 
 ## Installation
+
+1. Download the [latest](https://github.com/sshibani/gui-for-topology-manager/releases) release package.
+2. Unzip the package. 
+3. Open a Powershell window and execute the `install.ps1` in the root of the packge. 
+
+```
+.\install.ps1 -ApplicationName ....
+``` 
+
+4. 
+
 
 ## Usage
 
