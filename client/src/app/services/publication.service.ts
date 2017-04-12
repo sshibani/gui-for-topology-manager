@@ -19,6 +19,7 @@ export class PublicationService {
     private _observable: Observable<Publication[]>;
     constructor(http: Http, contextService: ContextService) {
         this._http = http;
+        // process.env.API_URL is configured on the environment specific webpack.config
         this._url = process.env.API_URL + 'Publication/' + contextService.getContextEnvironment().Id;
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');

@@ -1,5 +1,6 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
+const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
 
 const env = {
   production: true,

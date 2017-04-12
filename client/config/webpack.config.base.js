@@ -139,7 +139,6 @@ module.exports = {
     new NoEmitOnErrorsPlugin(),
     new GlobCopyWebpackPlugin({
       patterns: [
-        "assets",
         "favicon.ico"
       ],
       globOptions: {
