@@ -12,7 +12,7 @@
 ## Prerequisites
 
  * IIS 9.0 and higher
- * IIS URL Rewrite 2.0(#https://www.iis.net/downloads/microsoft/url-rewrite)
+ * [IIS URL Rewrite 2.0](https://www.iis.net/downloads/microsoft/url-rewrite)
  * .Net framework 4.6 and higher
 
 ## Table of Contents
