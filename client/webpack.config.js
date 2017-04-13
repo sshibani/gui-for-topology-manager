@@ -6,7 +6,7 @@ module.exports = function(env) {
   const prodConfig = require('./config/webpack.config.prod');
 
   let config = {};
-  if(typeof env != "undefined" && env.production)  {
+  if(typeof env !== "undefined" && env.production)  {
     config = prodConfig;
   } else {
     config = devConfig;
