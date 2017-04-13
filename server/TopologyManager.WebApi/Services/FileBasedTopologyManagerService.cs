@@ -78,6 +78,16 @@ namespace TopologyManager.WebApi.Services
         private List<TopologyEnvironment> Load()
         {
             var path = System.Web.Hosting.HostingEnvironment.MapPath("/env.json");
+
+            if (!File.Exists(path))
+            {
+                // Create a file to write to.
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    sw.WriteLine("");
+                }
+            }
+
             var file = File.ReadAllText(path);
 
             List<TopologyEnvironment> mapping;
