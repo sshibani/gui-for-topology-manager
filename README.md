@@ -11,9 +11,9 @@
 
 ## Prerequisites
 
- * IIS 9.0 and higher
+ * IIS 9.0 or higher
  * [IIS URL Rewrite 2.0](https://www.iis.net/downloads/microsoft/url-rewrite)
- * .Net framework 4.6 and higher
+ * .Net framework 4.6 or higher
 
 ## Table of Contents
 
@@ -30,10 +30,10 @@
 3. Open a Powershell window and execute the `install.ps1` in the root of the packge. 
 
 ```
-.\install.ps1 -ApplicationName ....
+.\install.ps1 -ApplicationName MyTopologManager -portNumbder 8822 -CoreService_Domain mydomain -CoreService_UserName admin
 ``` 
 
-4. 
+4. Update Web.config 
 
 
 ## Usage

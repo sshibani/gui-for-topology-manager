@@ -19,7 +19,7 @@ Param(
     [Parameter(Mandatory=$true, HelpMessage="CoreService user.")]
     [string]$CoreService_UserName,
     [Parameter(Mandatory=$true, HelpMessage="CoreService password.")]
-    [securestring]$password
+    [securestring]$CoreService_password
 )
 
 
@@ -110,7 +110,7 @@ function UpdateWebConfig()
     $webconfigPath = Join-Path (Get-Item -Path ".\") "\web.config"
     [xml]$webconfig = Get-Content $webconfigPath;
 
-    $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($password)
+    $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($CoreService_password)
     $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
     $domainNode = $webconfig.configuration.appSettings.SelectSingleNode("add[@key = 'domain']")
