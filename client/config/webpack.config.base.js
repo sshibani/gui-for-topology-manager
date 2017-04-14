@@ -58,6 +58,7 @@ module.exports = {
     filename: path.join(config.paths.js, "[name].bundle.js"),
     chunkFilename: path.join(config.paths.js, "[id].chunk.js")
   },
+ 
   module: {
     rules: [
       {
