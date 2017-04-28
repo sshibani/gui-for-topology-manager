@@ -1,17 +1,12 @@
-<div class="container">
-    <div class="row">
-        <h1>{{title}}</h1>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <button type="button" class="btn btn-success pull-right" (click)="envEdit.show()">Add</button>
-        <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-    </div>
-</div>
-<cm-env-edit #envEdit></cm-env-edit>
-<div class="container">
-    <div class="row">
-        <cm-environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></cm-environment-promobox>
-    </div>
+<div class="row">
+  <div class="col-md-12">
+      <h1>{{title}}</h1>
+
+      <button type="button" class="btn btn-success pull-right" (click)="envEdit.show()">Add</button>
+      <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
+
+      <cm-env-edit #envEdit></cm-env-edit>
+
+      <cm-environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></cm-environment-promobox>
+  </div>
 </div>

@@ -1,7 +1,62 @@
-@import './_base.scss';
 @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import 'base';
+@import 'helper';
+@import 'sidebar';
 
 body {
-    font: 100% $font-stack;
-    color: $primary-color;
+  font: 14px $font-stack;
+  line-height: 1.5;
+  color: $primary-color;
+  background-color: #fff;
+}
+
+
+.list-group-item {
+    &:hover {
+        background-color: #e0e3e5;
+    }
+}
+
+.env-selection {
+    &:hover {
+        cursor:pointer;
+    }
+}
+
+.btn-edit {
+    margin: 3px;
+}
+
+.page-wrapper {
+  position: inherit;
+  margin: 50px 0 0 240px;
+  padding: 20px 0 60px;
+  min-height: 100vh;
+  background: #edf1f5;
+}
+
+.fix-header .navbar-static-top {
+  position: fixed;
+  z-index: 1010;
+  border: 0;
+}
+.navbar-header {
+  width: 100%;
+  background: #2f323e;
+}
+.navbar-default {
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  top: 0;
+}
+
+.top-left-part {
+  background: #fff;
+  width: 240px;
+  float: left;
+  border-right: 1px solid rgba(0,0,0,.08);
+}
+.navbar-top-links > li > a {
+  color: #ffffff !important;
 }

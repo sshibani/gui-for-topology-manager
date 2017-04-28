@@ -6,7 +6,7 @@ const env = {
   production: false,
   // localEndPoint: "http://34.249.176.174:99/api/"
   // localEndPoint: "/assets/data/"
-  localEndPoint: 'http://localhost:99/api/',
+  localEndPoint: 'http://g4tm.azurewebsites.net/api/',
   showDebugMessages: true
 }
 

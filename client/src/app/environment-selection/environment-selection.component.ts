@@ -15,7 +15,7 @@ import { MessageService } from './../services/message.service';
     providers: [ TopologyEnvironmentService ]
 })
 export class EnvironmentSelectionComponent implements OnInit {
-    title = 'Selection';
+    title = 'Select an environment';
     model: TopologyEnvironment[];
 
     private deleteSubscription: Subscription;
