@@ -147,6 +147,7 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="env.json" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
