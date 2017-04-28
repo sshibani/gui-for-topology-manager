@@ -11,9 +11,9 @@
 
 ## Prerequisites
 
- * IIS 9.0 or higher
+ * IIS 8.5
  * [IIS URL Rewrite 2.0](https://www.iis.net/downloads/microsoft/url-rewrite)
- * .Net framework 4.6 or higher
+
 
 ## Table of Contents
 
@@ -25,6 +25,8 @@
 
 ## Installation
 
+# G4TM
+
 1. Download the [latest](https://github.com/sshibani/gui-for-topology-manager/releases) release package.
 2. Unzip the package. 
 3. Open a Powershell window and execute the `install.ps1` in the root of the packge. 
@@ -33,8 +35,39 @@
 .\install.ps1 -ApplicationName MyTopologManager -portNumbder 8822 -CoreService_Domain mydomain -CoreService_UserName admin
 ``` 
 
-4. Update Web.config 
+# TopologyManager 
 
+1. Open rdp session to the Tridion Content mangaer server.
+2. Browse to `%TRIDION_HOME%\TopologyManager\web`
+3. Update web.config the following code blocks and replace the `##G4TM_URL##` with the url that you have used to install G4TM. i.e. `http://g4tm:88`
+
+```
+<system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="SpecificRewrite" stopProcessing="true">
+          <match url="/*" />
+          <conditions>
+            <add input="{REQUEST_METHOD}" pattern="^OPTIONS" />
+          </conditions>
+          <action type="CustomResponse" statusCode="200" />
+        </rule>
+      </rules>
+    </rewrite>
+    ....
+</system.webServer>
+<httpProtocol>
+    <customHeaders>
+        <add name="Access-Control-Request-Headers" value="Content-Type,Authorization" />
+        <add name="Access-Control-Allow-Headers" value="Content-Type,Authorization" />
+        <add name="Access-Control-Allow-Origin" value="##G4TM_URL##" />
+        <add name="Access-Control-Allow-Credentials" value="true" />
+        <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, PATCH, DELETE, OPTIONS" />
+    </customHeaders>
+</httpProtocol>
+```
+4. Save web.config
+5. Run IISreset.
 
 ## Usage
 
