@@ -5,3 +5,20 @@ body {
     font: 100% $font-stack;
     color: $primary-color;
 }
+
+
+div.list-group-item {
+    &:hover {       
+        background-color: #e0e3e5;
+    }
+}
+
+.env-selection {
+    &:hover {
+        cursor:pointer;
+    }
+}
+
+.btn-edit {
+    margin: 3px;
+}

@@ -10,8 +10,6 @@
     </div>
 </div>
 <website-edit #websiteEdit> </website-edit>
-<div class="container">
-    <div class="row">
-        <website-promobox *ngFor="let item of ViewCollection" [Model]="item"></website-promobox>
-    </div>
+<div class="list-group">
+     <website-promobox *ngFor="let item of ViewCollection" [Model]="item"></website-promobox>
 </div>

@@ -1,39 +1,64 @@
-<div class="container">
+<!--<h1 class="page-header">{{title}}</h1>-->
+<!--<div class="container">
     <div class="row">
-        <h1>{{title}}</h1>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <button type="button" class="btn btn-success pull-right"(click)="envSelectEdit.show()">Add</button>
       </div>
-</div>
-<env-select-edit #envSelectEdit></env-select-edit>
+</div>-->
 
-<div class="container">
-  <h2>Select an environment</h2>
-  <div class="row" *ngFor="let item of model">
-      <h3>{{item.Name}}</h3>
-      <button type="button" (click)="setCurrentEnvironment(item)">Select</button>
-      <button type="edit" (click)="envSelectionEdit.show()">Edit</button>
-      <button type="delete" (click)="smModal.show()">Delete</button>
-      <env-select-edit #envSelectionEdit [Model]="item"></env-select-edit>
-      <!-- delete window -->
-        <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title pull-left">Delete Item ({{item.Name}})?</h4>
-                            <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
-                            <button type="button" class="btn btn-success" (click)="delete(item)">Delete</button>
-                        </div>
+<button type="button" class="btn btn-success pull-right"(click)="envSelectEdit.show()">Add</button>
+<env-select-edit #envSelectEdit></env-select-edit>
+<h2>{{title}}</h2>
+<div class="list-group">
+<div class="list-group-item clearfix" *ngFor="let item of model" > 
+    <div class="col-sm-9 h5 env-selection" (click)="setCurrentEnvironment(item)">{{item.Name}}</div>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-small btn-sm btn-edit pull-right" (click)="smModal.show()">
+             <span class="glyphicon glyphicon-trash"></span>
+        </button>
+        <button type="button" class="btn btn-small btn-sm btn-edit pull-right" (click)="envSelectionEdit.show()">
+            <span class="glyphicon glyphicon-pencil"></span> 
+        </button>
+    </div>
+     <env-select-edit #envSelectionEdit [Model]="item"></env-select-edit>
+   
+    <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title pull-left">Delete Item ({{item.Name}})?</h4>
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
+                    <button type="button" class="btn btn-success" (click)="delete(item)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</div>
+    <!--<h3>{{item.Name}}</h3>
+    <button type="button" (click)="setCurrentEnvironment(item)">Select</button>
+    <button type="edit" (click)="envSelectionEdit.show()">Edit</button>
+    <button type="delete" (click)="smModal.show()">Delete</button>
+    <env-select-edit #envSelectionEdit [Model]="item"></env-select-edit>
+    
+   
+    <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title pull-left">Delete Item ({{item.Name}})?</h4>
+                        <button type="button" class="close pull-right" aria-label="Close" (click)="smModal.hide()">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-warning" aria-label="Close" (click)="smModal.hide()">Cancel</button>
+                        <button type="button" class="btn btn-success" (click)="delete(item)">Delete</button>
                     </div>
                 </div>
             </div>
-     </div>
-</div>
+        </div>
+    </div>-->
