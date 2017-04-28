@@ -37,7 +37,7 @@
 
 # TopologyManager 
 
-1. Open rdp session to the Tridion Content mangaer server.
+1. Open rdp session to the Tridion Content manager server.
 2. Browse to `%TRIDION_HOME%\TopologyManager\web`
 3. Update web.config the following code blocks and replace the `##G4TM_URL##` with the url that you have used to install G4TM. i.e. `http://g4tm:88`
 
@@ -67,7 +67,7 @@
 </httpProtocol>
 ```
 4. Save web.config
-5. Run IISreset.
+5. Run `iisreset`.
 
 ## Usage
 
