@@ -53,6 +53,9 @@ module.exports = {
       "./src\\scss-base\\main.scss"
     ]
   },
+  stats: {
+    chunck: false
+  },
   output: {
     path: path.join(process.cwd(), config.paths._base),
     filename: path.join(config.paths.js, "[name].bundle.js"),
@@ -148,7 +151,6 @@ module.exports = {
         ignore: "**/.gitkeep"
       }
     }),
-    new ProgressPlugin(),
     new HtmlWebpackPlugin({
       "template": "./src\\index.html",
       "filename": "./index.html",
@@ -238,5 +240,6 @@ module.exports = {
     "module": false,
     "clearImmediate": false,
     "setImmediate": false
-  }
+  },
+  
 };
