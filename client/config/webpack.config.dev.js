@@ -1,5 +1,6 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
+const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
 
 const env = {
@@ -25,11 +26,12 @@ module.exports = {
         ignore: "**/.gitkeep"
       }
     }),
-     new DefinePlugin({
-        'process.env': {
-          'API_URL': JSON.stringify(env.localEndPoint),
-          'production': env.production
-        }
-     })
+    new ProgressPlugin(),
+    new DefinePlugin({
+      'process.env': {
+        'API_URL': JSON.stringify(env.localEndPoint),
+        'production': env.production
+      }
+    })
    ],
 };
