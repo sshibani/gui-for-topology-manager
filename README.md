@@ -25,7 +25,7 @@
 
 ## Installation
 
-# G4TM
+### G4TM
 
 1. Download the [latest](https://github.com/sshibani/gui-for-topology-manager/releases) release package.
 2. Unzip the package. 
@@ -35,7 +35,7 @@
 .\install.ps1 -ApplicationName MyTopologManager -portNumbder 8822 -CoreService_Domain mydomain -CoreService_UserName admin
 ``` 
 
-# TopologyManager 
+### TopologyManager 
 
 1. Open rdp session to the Tridion Content manager server.
 2. Browse to `%TRIDION_HOME%\TopologyManager\web`
