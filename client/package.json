@@ -4,7 +4,6 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "ng": "ng",
     "build": "webpack",
     "build:prod": "webpack -p --env.production=true",
     "start": "webpack-dev-server --host 127.0.0.1 --port 4200",
