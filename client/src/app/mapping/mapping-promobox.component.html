@@ -1,39 +1,41 @@
-     <div *ngIf="model"  class="col-sm-6 ">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h4>
-                Mapping ({{model.Id}})
-                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="mappingEdit.show()">Edit</button>
-                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="deleteItem.show()">Delete</button>
-                </h4>
-
-            </div>
-            <div class="panel-body">
-            <dl class="dl-horizontal">
-                <dt>CmEnvironmentId</dt>
-                <dd>{{model.CmEnvironmentId}}</dd>
-                <dt>PublicationId</dt>
-                <dd>{{model.PublicationId}}</dd>
-                <dt>EnvironmentPurpose</dt>
-                <dd>{{model.EnvironmentPurpose}}</dd>
-                 <dt>WebApplicationId</dt>
-                <dd>{{model.WebApplicationId}}</dd>
-                 <dt>RelativeUrl</dt>
-                <dd>{{model.RelativeUrl}}</dd>
-                 <dt>PrimaryMappedUrl</dt>
-                <dd>{{model.PrimaryMappedUrl}}</dd>
-                 <dt>IsOffline</dt>
-                <dd>{{model.IsOffline}}</dd>
-            </dl>
-
-            <ul class="list-group">
-                <li *ngFor="let c of model.ExtensionProperties" class="list-group-item">
-                    <label>{{c.Name}}</label>
-                    <span>{{c.Value}}</span>
-                </li>
-            </ul>
-            </div>
+<div *ngIf="model" class="col-sm-6 ">
+  <div class="panel panel-default panel-orange">
+    <div class="panel-heading">
+      <h4>
+        Mapping ({{model.Id}})
+        <div class="btn-group pull-right" role="group" aria-label="Add remove buttons">
+          <button *ngIf="showActionButtons" type="button" class="icon-button" (click)="mappingEdit.show()"><span class="glyphicon glyphicon-pencil"></span></button>
+          <button *ngIf="showActionButtons" type="button" class="icon-button" (click)="deleteItem.show()"><span class="glyphicon glyphicon-remove"></span></button>
         </div>
-    <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
-    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+      </h4>
+
+    </div>
+    <div class="panel-body">
+      <dl class="dl-horizontal">
+        <dt>CmEnvironmentId</dt>
+        <dd>{{model.CmEnvironmentId}}</dd>
+        <dt>PublicationId</dt>
+        <dd>{{model.PublicationId}}</dd>
+        <dt>EnvironmentPurpose</dt>
+        <dd>{{model.EnvironmentPurpose}}</dd>
+        <dt>WebApplicationId</dt>
+        <dd>{{model.WebApplicationId}}</dd>
+        <dt>RelativeUrl</dt>
+        <dd>{{model.RelativeUrl}}</dd>
+        <dt>PrimaryMappedUrl</dt>
+        <dd>{{model.PrimaryMappedUrl}}</dd>
+        <dt>IsOffline</dt>
+        <dd>{{model.IsOffline}}</dd>
+      </dl>
+
+      <ul class="list-group">
+        <li *ngFor="let c of model.ExtensionProperties" class="list-group-item">
+          <label>{{c.Name}}</label>
+          <span>{{c.Value}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
+  <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
 </div>

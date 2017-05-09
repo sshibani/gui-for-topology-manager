@@ -1,7 +1,10 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css';
 @import 'base';
 @import 'helper';
 @import 'sidebar';
+
 
 body {
   font: 14px $font-stack;
@@ -9,7 +12,9 @@ body {
   color: $primary-color;
   background-color: #fff;
 }
-
+h1, h2, h3 {
+  text-transform: uppercase;
+}
 
 .list-group-item {
     &:hover {
@@ -32,7 +37,7 @@ body {
   margin: 50px 0 0 240px;
   padding: 20px 0 60px;
   min-height: 100vh;
-  background: #edf1f5;
+  background: #f2f2f2;
 }
 
 .fix-header .navbar-static-top {
@@ -59,4 +64,62 @@ body {
 }
 .navbar-top-links > li > a {
   color: #ffffff !important;
+}
+.icon-button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 0;
+    background: transparent;
+}
+.navbar-default .navbar-brand {
+  color: #ff5d00;
+}
+
+.navbar-default .navbar-text {
+  color: #fff;
+}
+
+.navbar-header {
+  background: #ff5d00;
+}
+
+.btn-outline {
+  border: 1px solid #756b66;
+  background-color: transparent;
+  background: transparent;
+  background-image: none;
+  color: #785b66;
+  text-transform: uppercase;
+}
+
+.btn-orange {
+  border-color: #ff5d00;
+  color: #ff5d00;
+}
+.btn-orange:hover, .btn-orange:focus {
+  border-color: #756b66;
+  color: #756b66;
+}
+.panel-orange {
+  >.panel-heading {
+    background-image: none;
+    background-color: #fff;
+    border: none;
+    color: $primary-color;
+
+    h4 {
+      border-bottom: 1px solid $orange;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.dl-horizontal dt {
+  text-align: left;
+}
+
+.mb-3 {
+  margin-bottom: 36px;
 }

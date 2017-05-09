@@ -1,7 +1,6 @@
 <div class="row">
   <div class="col-md-12">
-      <h1>{{title}}</h1>
-      <button type="button" class="btn btn-success pull-right"(click)="envEdit.show()">Add</button>
+      <h1 class="mb-3">{{title}}</h1>
       <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
       <cd-env-edit #envEdit></cd-env-edit>
       <div class="row">
