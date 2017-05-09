@@ -11,10 +11,10 @@
   <div class="list-group-item clearfix" *ngFor="let item of model">
     <div class="col-sm-9 h5 env-selection" (click)="setCurrentEnvironment(item)">{{item.Name}}</div>
     <div class="col-sm-3">
-      <button type="button" class="btn btn-small btn-sm btn-edit pull-right" (click)="smModal.show()">
+      <button type="button" class="btn btn-link pull-right" (click)="smModal.show()">
              <span class="glyphicon glyphicon-trash"></span>
         </button>
-      <button type="button" class="btn btn-small btn-sm btn-edit pull-right" (click)="envSelectionEdit.show()">
+      <button type="button" class="btn btn-link pull-right" (click)="envSelectionEdit.show()">
             <span class="glyphicon glyphicon-pencil"></span>
         </button>
     </div>
