@@ -23,8 +23,8 @@
                     </div>
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Base Urls</h3>
-                            <button type="button" class="icon-pencil pull-right" (click)="addBaseUrl()">Add</button>
+                            <h3 class="panel-title">Base Urls <button type="button" class="icon-pencil pull-right" (click)="addBaseUrl()">Add</button></h3>
+
                         </div>
                         <ul class="list-group">
                             <li *ngFor="let baseUrl of model.BaseUrls; let i = index; trackBy:customTrackBy;" class="list-group-item">
