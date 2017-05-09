@@ -15,6 +15,7 @@ import { MessageService } from './../services/message.service';
     providers: [ EnvironmentService, TopologyTypeService ]
 })
 export class CdEnvironmentOverviewComponent extends ComponentBase<CdEnvironment> implements OnInit {
+    title = 'CdEnvironments';
     constructor(environmentService: EnvironmentService, messageService: MessageService) {
                     super(environmentService, messageService);
                  }
