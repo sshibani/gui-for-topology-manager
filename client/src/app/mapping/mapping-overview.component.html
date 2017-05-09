@@ -6,7 +6,8 @@
       <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 
       <mapping-edit #mappingEdit></mapping-edit>
-
-      <mapping-promobox *ngFor="let item of ViewCollection" [Model]="item"></mapping-promobox>
+      <div class="row">
+        <mapping-promobox *ngFor="let item of ViewCollection" [Model]="item"></mapping-promobox>
+      </div>
   </div>
 </div>

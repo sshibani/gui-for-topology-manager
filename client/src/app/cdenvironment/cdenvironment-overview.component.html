@@ -4,6 +4,8 @@
       <button type="button" class="btn btn-success pull-right"(click)="envEdit.show()">Add</button>
       <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
       <cd-env-edit #envEdit></cd-env-edit>
-      <cd-environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></cd-environment-promobox>
+      <div class="row">
+        <cd-environment-promobox BackgroundHighlight="lightblue" *ngFor="let item of ViewCollection" [Model]="item"></cd-environment-promobox>
+      </div>
   </div>
 </div>

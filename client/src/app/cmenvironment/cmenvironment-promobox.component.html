@@ -1,21 +1,23 @@
-     <div *ngIf="model"  class="col-sm-6 ">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <strong>CmEnvironment ({{model.Id}})</strong>
-                <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="envEdit.show()">Edit</button>
-                <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
-            </div>
-            <dl class="dl-horizontal">
-                <dt>WebsiteRootUrl</dt>
-                <dd>{{model.WebsiteRootUrl}}</dd>
-                 <dt>CoreServiceRootUrl</dt>
-                <dd>{{model.CoreServiceRootUrl}}</dd>
-                <dt>Authentication Type</dt>
-                <dd>{{model.CoreServiceCredentials.AuthenticationType}}</dd>
-                <dt *ngIf="model.CoreServiceCredentials.UserName">UserName</dt>
-                <dd *ngIf="model.CoreServiceCredentials.UserName">{{model.CoreServiceCredentials.UserName}}</dd>
-            </dl>
-        </div>
+<div class="row">
+  <div *ngIf="model" class="col-sm-6 ">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <strong>CmEnvironment ({{model.Id}})</strong>
+        <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="envEdit.show()">Edit</button>
+        <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+      </div>
+      <dl class="dl-horizontal">
+        <dt>WebsiteRootUrl</dt>
+        <dd>{{model.WebsiteRootUrl}}</dd>
+        <dt>CoreServiceRootUrl</dt>
+        <dd>{{model.CoreServiceRootUrl}}</dd>
+        <dt>Authentication Type</dt>
+        <dd>{{model.CoreServiceCredentials.AuthenticationType}}</dd>
+        <dt *ngIf="model.CoreServiceCredentials.UserName">UserName</dt>
+        <dd *ngIf="model.CoreServiceCredentials.UserName">{{model.CoreServiceCredentials.UserName}}</dd>
+      </dl>
+    </div>
     <cm-env-edit #envEdit [Model]="model"></cm-env-edit>
     <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+  </div>
 </div>

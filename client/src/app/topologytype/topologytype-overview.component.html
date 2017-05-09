@@ -6,7 +6,8 @@
       <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
 
       <topologytype-edit #topoEdit></topologytype-edit>
-
+      <div class="row">
         <topologytype-promobox *ngFor="let item of ViewCollection" [Model]="item"></topologytype-promobox>
+      </div>
   </div>
 </div>
