@@ -1,11 +1,14 @@
 <div class="row">
   <div *ngIf="model" class="col-sm-6 ">
-    <div class="panel panel-success">
+    <div class="panel panel-primary">
       <div class="panel-heading">
-        <strong>CmEnvironment ({{model.Id}})</strong>
-        <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="envEdit.show()">Edit</button>
-        <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+        <h4>
+        CmEnvironment ({{model.Id}})
+        <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="envEdit.show()">Edit</button>
+        <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="deleteItem.show()">Delete</button>
+        </h4>
       </div>
+      <div class="panel-body">
       <dl class="dl-horizontal">
         <dt>WebsiteRootUrl</dt>
         <dd>{{model.WebsiteRootUrl}}</dd>
@@ -16,6 +19,7 @@
         <dt *ngIf="model.CoreServiceCredentials.UserName">UserName</dt>
         <dd *ngIf="model.CoreServiceCredentials.UserName">{{model.CoreServiceCredentials.UserName}}</dd>
       </dl>
+      </div>
     </div>
     <cm-env-edit #envEdit [Model]="model"></cm-env-edit>
     <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>

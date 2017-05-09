@@ -1,10 +1,14 @@
      <div *ngIf="model"  class="col-sm-6 ">
-        <div class="panel panel-success">
+        <div class="panel panel-primary">
             <div class="panel-heading">
-                <strong>Mapping ({{model.Id}})</strong>
-                <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="mappingEdit.show()">Edit</button>
-                <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+                <h4>
+                Mapping ({{model.Id}})
+                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="mappingEdit.show()">Edit</button>
+                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="deleteItem.show()">Delete</button>
+                </h4>
+
             </div>
+            <div class="panel-body">
             <dl class="dl-horizontal">
                 <dt>CmEnvironmentId</dt>
                 <dd>{{model.CmEnvironmentId}}</dd>
@@ -21,12 +25,14 @@
                  <dt>IsOffline</dt>
                 <dd>{{model.IsOffline}}</dd>
             </dl>
+
             <ul class="list-group">
                 <li *ngFor="let c of model.ExtensionProperties" class="list-group-item">
                     <label>{{c.Name}}</label>
                     <span>{{c.Value}}</span>
                 </li>
             </ul>
+            </div>
         </div>
     <mapping-edit #mappingEdit [Model]="model"></mapping-edit>
     <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
