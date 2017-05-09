@@ -1,27 +1,32 @@
-<!--<div *ngIf="model" class="col-sm-6 ">
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <strong>Website ({{model.Id}})</strong>
-            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="websiteEdit.show()">Edit</button>
-            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+<div class="row">
+    <div *ngIf="model" class="col-sm-6 ">
+         <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>
+                 Website ({{model.Id}})
+                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="websiteEdit.show()">Edit</button>
+                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="deleteItem.show()">Delete</button>
+                </h4>
+            </div>
+             <div class="panel-body">
+                <dl class="dl-horizontal">
+                    <dt>CdEnvironmentId</dt>
+                    <dd>{{model.CdEnvironmentId}}</dd>
+                    <dt>EnvironmentPurpose</dt>
+                    <dd>{{model.EnvironmentPurpose}}</dd>
+                    <span *ngFor="let baseUrl of model.BaseUrls">
+                        <dt>BaseUrl: </dt>
+                        <dd>{{baseUrl}}<dd>
+                    </span>
+                </dl>
+            </div>
+           
         </div>
-        <dl class="dl-horizontal">
-
-            <dt>CdEnvironmentId</dt>
-            <dd>{{model.CdEnvironmentId}}</dd>
-            <dt>EnvironmentPurpose</dt>
-            <dd>{{model.EnvironmentPurpose}}</dd>
-            <span *ngFor="let baseUrl of model.BaseUrls">
-                <dt>BaseUrl: </dt>
-                <dd>{{baseUrl}}<dd>
-            </span>
-        </dl>
+        <website-edit #websiteEdit [Model]="model"></website-edit>
+        <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
     </div>
-    <website-edit #websiteEdit [Model]="model"></website-edit>
-    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
-</div>-->
-
-
+</div>
+<!--
 <div *ngIf="model"  class="list-group-item clearfix" >
     <website-edit #websiteEdit [Model]="model"></website-edit>
     <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
@@ -44,4 +49,4 @@
             <span class="glyphicon glyphicon-pencil"></span>
         </button>
     </div>
-</div>
+</div>-->
