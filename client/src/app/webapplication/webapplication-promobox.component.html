@@ -1,10 +1,13 @@
 <div *ngIf="model" class="col-sm-6 ">
-    <div class="panel panel-success">
+    <div class="panel panel-primary">
         <div class="panel-heading">
-            <strong>WebApplication ({{model.Id}})</strong>
-            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="webappedit.show()">Edit</button>
+            <h4>
+            WebApplication ({{model.Id}})
+            <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="webappedit.show()">Edit</button>
+            </h4>
             <!--<button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>-->
         </div>
+        <div class="panel-body">
         <dl class="dl-horizontal">
             <dt>WebsiteId</dt>
             <dd>{{model.WebsiteId}}</dd>
@@ -13,6 +16,7 @@
             <dt>ContextUrl</dt>
             <dd>{{model.ContextUrl}}</dd>
         </dl>
+        </div>
     </div>
     <webapplication-edit #webappedit [Model]="model"></webapplication-edit>
 </div>
