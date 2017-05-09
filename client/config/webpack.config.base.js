@@ -49,16 +49,16 @@ module.exports = {
   entry: {
     main: [
       'webpack-dev-server/client?http://0.0.0.0:4200',
-      "./src\\main.ts",
-      "./src\\scss-base\\main.scss"
+      "./src/main.ts",
+      "./src/scss-base/main.scss"
     ]
   },
   output: {
     path: path.join(process.cwd(), config.paths._base),
-    filename: path.join(config.paths.js, "[name].bundle.js"),
-    chunkFilename: path.join(config.paths.js, "[id].chunk.js")
+    filename: path.join("[name].bundle.js"),
+    chunkFilename: path.join("[id].chunk.js")
   },
- 
+
   module: {
     rules: [
       {
@@ -150,7 +150,7 @@ module.exports = {
     }),
     new ProgressPlugin(),
     new HtmlWebpackPlugin({
-      "template": "./src\\index.html",
+      "template": "./src/index.html",
       "filename": "./index.html",
       "hash": false,
       "inject": true,
@@ -190,7 +190,7 @@ module.exports = {
       ]
     }),
     new ExtractTextPlugin({
-       filename: path.join(config.paths.css, '[name].bundle.css'),
+       filename: path.join('[name].bundle.css'),
       allChunks: true,
     }),
     new LoaderOptionsPlugin({
@@ -221,10 +221,10 @@ module.exports = {
     new AotPlugin({
       mainPath: "main.ts",
       hostReplacementPaths: {
-        "environments\\environment.ts": "environments\\environment.ts"
+        "environments/environment.ts": "environments/environment.ts"
       },
       exclude: [],
-      tsConfigPath: "src\\tsconfig.json",
+      tsConfigPath: "src/tsconfig.json",
       skipCodeGeneration: true
     })
   ],
