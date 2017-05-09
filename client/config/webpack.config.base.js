@@ -6,6 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const postcssUrl = require('postcss-url');
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const { NoEmitOnErrorsPlugin, LoaderOptionsPlugin } = require('webpack');
 const { GlobCopyWebpackPlugin, BaseHrefWebpackPlugin } = require('@angular/cli/plugins/webpack');
 const { CommonsChunkPlugin } = require('webpack').optimize;
@@ -25,7 +27,8 @@ const config = {
   paths: {
     _base: "/dist",
     js: "/js",
-    css: "/css"
+    css: "/css",
+    src: "src"
   }
 }
 
@@ -55,8 +58,8 @@ module.exports = {
   },
   output: {
     path: path.join(process.cwd(), config.paths._base),
-    filename: path.join("[name].bundle.js"),
-    chunkFilename: path.join("[id].chunk.js")
+    filename: path.join(config.paths.js, "[name].bundle.js"),
+    chunkFilename: path.join(config.paths.js, "[id].chunk.js")
   },
 
   module: {
@@ -85,11 +88,15 @@ module.exports = {
       },
       {
         test:  /\.(eot|svg)$/,
-        loader:  "file-loader?name=[name].[hash:20].[ext]"
+        loader:  "file-loader?name=./fonts/[name].[hash:20].[ext]"
       },
       {
-        test:  /\.(jpg|png|gif|otf|ttf|woff|woff2|cur|ani)$/,
-        loader:  "url-loader?name=[name].[hash:20].[ext]&limit=10000"
+        test:  /\.(otf|ttf|woff|woff2|cur|ani)$/,
+        loader:  "url-loader?name=./fonts/[name].[hash:20].[ext]&limit=10000"
+      },
+      {
+        test:  /\.(jpg|png|gif)$/,
+        loader:  "file-loader?name=./img/[name].[hash:20].[ext]&limit=10000"
       },
       {
         exclude: [],
@@ -103,7 +110,7 @@ module.exports = {
       {
         exclude: [],
         test: /\.scss$|\.sass$/,
-        loaders: ExtractTextPlugin.extract([
+        loaders:  ExtractTextPlugin.extract([
           "exports-loader?module.exports.toString()",
           "css-loader?{\"sourceMap\":false,\"importLoaders\":1}",
           "postcss-loader",
@@ -138,16 +145,10 @@ module.exports = {
   },
   plugins: [
     new NoEmitOnErrorsPlugin(),
-    new GlobCopyWebpackPlugin({
-      patterns: [
-        "favicon.ico"
-      ],
-      globOptions: {
-        cwd: process.cwd() + "/src",
-        dot: true,
-        ignore: "**/.gitkeep"
-      }
-    }),
+    new CopyWebpackPlugin([
+      { from: path.join(config.paths.src, 'favicon.ico') },
+      { from: 'node_modules/bootstrap/fonts', to: 'fonts' }
+    ]),
     new ProgressPlugin(),
     new HtmlWebpackPlugin({
       "template": "./src/index.html",
@@ -190,7 +191,7 @@ module.exports = {
       ]
     }),
     new ExtractTextPlugin({
-       filename: path.join('[name].bundle.css'),
+      filename: path.join(config.paths.css, '[name].bundle.css'),
       allChunks: true,
     }),
     new LoaderOptionsPlugin({
