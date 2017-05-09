@@ -19,7 +19,7 @@ export class EnvrionemtSelectionNavComponent implements OnInit {
     navItem: NavigationItem;
     subscription: Subscription;
 
-    constructor(private contextService: ContextService) { 
+    constructor(private contextService: ContextService) {
          this.subscription = this.contextService.getCurrentEnvironment().subscribe(m => {
            console.log(m);
            this.currentEnvironment = m.Name;
