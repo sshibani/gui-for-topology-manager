@@ -1,6 +1,7 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
 const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = {
   production: false,
@@ -15,16 +16,9 @@ module.exports = {
     path: path.join(process.cwd(), "dist"),
   },
    plugins: [
-     new GlobCopyWebpackPlugin({
-      patterns: [
-        "assets"
-      ],
-      globOptions: {
-        cwd: process.cwd() + "/src",
-        dot: true,
-        ignore: "**/.gitkeep"
-      }
-    }),
+     new CopyWebpackPlugin([
+      { from: path.join('src', 'assets'), to: 'assets' },
+    ]),
      new DefinePlugin({
         'process.env': {
           'API_URL': JSON.stringify(env.localEndPoint),
