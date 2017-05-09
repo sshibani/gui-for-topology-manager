@@ -1,9 +1,9 @@
 <div *ngIf="model" class="col-sm-6 ">
-    <div class="panel panel-primary">
+    <div class="panel panel-default panel-orange">
         <div class="panel-heading">
             <h4>
             WebApplication ({{model.Id}})
-            <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="webappedit.show()">Edit</button>
+            <button *ngIf="showActionButtons" type="button" class="icon-button pull-right" (click)="webappedit.show()"><span class="glyphicon glyphicon-pencil"></span></button>
             </h4>
             <!--<button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>-->
         </div>

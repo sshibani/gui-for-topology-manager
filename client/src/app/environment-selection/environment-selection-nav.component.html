@@ -2,7 +2,7 @@
     <h4 class="navbar-text">{{currentEnvironment}}</h4>
     <ul class="nav navbar-nav navbar-right navbar-top-links">
       <li>
-        <a routerLink="{{navItem.path}}" routerLinkActive="active" [skipLocationChange]="true">{{navItem.title}} </a>
+        <a routerLink="{{navItem.path}}" routerLinkActive="active" [skipLocationChange]="true"><span class="glyphicon glyphicon-globe"></span> {{navItem.title}} </a>
       </li>
     </ul>
 </div>

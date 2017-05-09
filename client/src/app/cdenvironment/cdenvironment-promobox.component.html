@@ -1,11 +1,12 @@
      <div *ngIf="model"  class="col-sm-6 ">
-        <div class="panel panel-primary">
+        <div class="panel panel-default panel-orange">
             <div class="panel-heading">
                 <h4>
                   CdEnvironment ({{model.Id}})
-
-                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="envEdit.show()">Edit</button>
-                <button *ngIf="showActionButtons" type="button" class="btn btn-default pull-right btn-sm" (click)="deleteItem.show()">Delete</button>
+                <div class="btn-group pull-right" role="group" aria-label="Add remove buttons">
+                  <button *ngIf="showActionButtons" type="button" class="icon-button" (click)="envEdit.show()"><span class="glyphicon glyphicon-pencil"></span></button>
+                  <button *ngIf="showActionButtons" type="button" class="icon-button" (click)="deleteItem.show()"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
                 </h4>
             </div>
             <div class="panel-body">
