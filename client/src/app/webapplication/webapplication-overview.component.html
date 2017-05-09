@@ -6,8 +6,9 @@
     <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection"></search>
 
     <webapplication-edit #webappedit></webapplication-edit>
-
-    <webapplication-promobox *ngFor="let item of ViewCollection" [Model]="item"></webapplication-promobox>
+    <div class="row">
+      <webapplication-promobox *ngFor="let item of ViewCollection" [Model]="item"></webapplication-promobox>
+    </div>
   </div>
 </div>
 
