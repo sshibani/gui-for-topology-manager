@@ -21,6 +21,7 @@ import { MainComponent } from './main/main.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
 import { EnvrionemtSelectionEditComponent } from './environment-selection/environment-selection-edit.component';
+import { EnvrionemtSelectionNavComponent } from './environment-selection/environment-selection-nav.component';
 
 import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
 import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-overview.component';
@@ -81,6 +82,7 @@ import { ContextService } from './services/context.service';
     HighlightDirective,
     EnvironmentSelectionComponent,
     EnvrionemtSelectionEditComponent,
+    EnvrionemtSelectionNavComponent,
     SearchComponent,
     AppComponent,
     MainComponent,
