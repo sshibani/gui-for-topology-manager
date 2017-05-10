@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <form (ngSubmit)="onSubmit()" #editForm="ngForm">
                     <div class="form-group" *ngIf="showIdField">
-                        <label>Id</label>
+                        <label class="col-2 col-form-label">Id</label>
                         <input type="text" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
                         <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
                     </div>
@@ -28,8 +28,8 @@
                         </div>
                         <ul class="list-group">
                             <li *ngFor="let baseUrl of model.BaseUrls; let i = index; trackBy:customTrackBy;" class="list-group-item">
-                                <label>Base Url</label>
-                                <input  type="text" id="baseUrl" [(ngModel)]="model.BaseUrls[i]" name="baseUrl{{i}}" required placeholder="BaseUrl" />
+                                <label class="col-2 col-form-label">Base Url</label>
+                                <input  class="form-control" type="text" id="baseUrl" [(ngModel)]="model.BaseUrls[i]" name="baseUrl{{i}}" required placeholder="BaseUrl" />
                                 <button *ngIf="!showActionButtons && i != 0" (click)="deleteBaseUrl(baseUrl)" class="badge" aria-hidden="true">&times;</button>
                             </li>
                         </ul>
