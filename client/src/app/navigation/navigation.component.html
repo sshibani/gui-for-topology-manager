@@ -1,5 +1,9 @@
-<tabset>
-  <tab *ngFor="let item of navItems">
-    <template tabHeading><a routerLink="{{item.path}}" [skipLocationChange]="true">{{item.title}}</a></template>
-  </tab>
-</tabset>
+<div class="navbar-default" role="navigation">
+  <div class="sidebar-nav">
+    <ul class="nav in">
+      <li *ngFor="let item of navItems">
+        <a routerLink="{{item.path}}" routerLinkActive="active" [skipLocationChange]="true">{{item.title}} </a>
+      </li>
+    </ul>
+  </div>
+</div>

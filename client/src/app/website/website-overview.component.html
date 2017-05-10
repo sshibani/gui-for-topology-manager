@@ -1,17 +1,13 @@
-<div class="container">
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="mb-3">{{title}}</h1>
+
+    <button type="button" class="btn btn-outline btn-orange pull-right" (click)="websiteEdit.show()">Add</button>
+    <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection"></search>
+
+    <website-edit #websiteEdit> </website-edit>
     <div class="row">
-        <h1>{{title}}</h1>
+      <website-promobox *ngFor="let item of ViewCollection" [Model]="item"></website-promobox>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <button type="button" class="btn btn-success pull-right"(click)="websiteEdit.show()">Add</button>
-        <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-    </div>
-</div>
-<website-edit #websiteEdit> </website-edit>
-<div class="container">
-    <div class="row">
-        <website-promobox *ngFor="let item of ViewCollection" [Model]="item"></website-promobox>
-    </div>
+  </div>
 </div>

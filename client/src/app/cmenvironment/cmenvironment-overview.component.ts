@@ -15,6 +15,7 @@ import { MessageService } from './../services/message.service';
     providers: [ CmEnvironmentService]
 })
 export class CmEnvironmentOverviewComponent extends ComponentBase<CmEnvironment> implements OnInit {
+    title = 'CmEnvironments';
     constructor(environmentService: CmEnvironmentService, messageService: MessageService) {
                     super(environmentService, messageService);
                  }
