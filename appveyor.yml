@@ -1,4 +1,4 @@
-version: 0.0.1.{build}-alpha
+version: 0.0.1.{build}
 environment:
   nodejs_version: "7.5.0"
   nuget-user:
@@ -9,7 +9,6 @@ pull_requests:
   do_not_increment_build_number: true
 branches:
   only:
-  - develop
   - master
 configuration: Release
 assembly_info:
@@ -46,7 +45,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: jnOdjl7XtHQRIdu8N62H7Lo30OOjtDpV9VtnCBmgd+7hVrnqu71dPMQ4mKSSHHQj # your encrypted token from GitHub
-  artifact: build/package/**/*.zip            # upload all NuGet packages to release assets
+  artifact: /.*\.zip/         
   draft: false
   prerelease: false
   on:
