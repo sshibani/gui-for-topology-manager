@@ -1,6 +1,7 @@
 # GUI For Topology Manager (G4TM)
 
 [![AppVeyor][appveyor-badge-dev]][appveyor-badge-dev-url]
+[![AppVeyor][appveyor-badge-master]][appveyor-badge-dev-url]
 
 [![Code Climate][code-climate-badge]][code-climate-badge-url]
 [![Issue Count][code-climate-issue-badge]][code-climate-issue-badge-url]
@@ -81,6 +82,7 @@ Apache License 2.0
 
 
 [appveyor-badge-dev]: https://ci.appveyor.com/api/projects/status/github/sshibani/gui-for-topology-manager?branch=develop&svg=true&passingText=develop
+[appveyor-badge-master]: https://ci.appveyor.com/api/projects/status/github/sshibani/gui-for-topology-manager?branch=master&svg=true&passingText=master
 [appveyor-badge-dev-url]: https://ci.appveyor.com/project/sshibani/gui-for-topology-manager
 
 [david-badge-dev]: https://david-dm.org/sshibani/topology-manager-gui/dev-status.svg?path=client&type=dev
