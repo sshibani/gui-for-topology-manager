@@ -1,17 +1,13 @@
-<div class="container">
-    <div class="row">
-        <h1>{{title}}</h1>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <button type="button" class="btn btn-success pull-right"(click)="mappingEdit.show()">Add</button>
-        <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
-    </div>
-</div>
-<mapping-edit #mappingEdit></mapping-edit>
-<div class="container">
-    <div class="row">
+<div class="row">
+  <div class="col-md-12">
+      <h1 class="mb-3">{{title}}</h1>
+
+      <button type="button" class="btn btn-outline btn-orange pull-right"(click)="mappingEdit.show()">Add</button>
+      <search (onKeypress)="ViewUpdate($event)" [Collection]="Collection" ></search>
+
+      <mapping-edit #mappingEdit></mapping-edit>
+      <div class="row">
         <mapping-promobox *ngFor="let item of ViewCollection" [Model]="item"></mapping-promobox>
-    </div>
+      </div>
+  </div>
 </div>
