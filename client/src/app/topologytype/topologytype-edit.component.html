@@ -20,14 +20,18 @@
                     </div>
                      <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Environment Purposes</h3>
-                            <button type="button" class="icon-pencil pull-right" (click)="addPurpose()">Add</button>
+                            <h3 class="panel-title">Environment Purposes <button type="button" class="icon-pencil pull-right" (click)="addPurpose()">Add</button></h3>
+
                         </div>
                         <ul class="list-group">
                             <li *ngFor="let purpose of model.EnvironmentPurposes; let i = index; trackBy:customTrackBy;" class="list-group-item">
-                                <label>Purpose</label>
-                                <input type="text" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" name="purpose{{i}}"  required />
+                                <div class="row form-group">
+                                <label class="col-md-2 col-form-label">Purpose</label>
+                                <div class="col-md-9">
+                                  <input type="text" class="form-control" [(ngModel)]="model.EnvironmentPurposes[i]" placeholder="Purpose" name="purpose{{i}}"  required />
+                                </div>
                                 <button *ngIf="!showActionButtons && i !== 0" (click)="deletePurpose(purpose)" class="badge" aria-hidden="true">&times;</button>
+                                </div>
                             </li>
                         </ul>
 

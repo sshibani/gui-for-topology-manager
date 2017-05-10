@@ -1,13 +1,14 @@
 const path = require('path');
 const { DefinePlugin } = require('webpack');
 const ProgressPlugin = require('webpack/lib/ProgressPlugin');
-const { GlobCopyWebpackPlugin } = require('@angular/cli/plugins/webpack');
+
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = {
   production: false,
   // localEndPoint: "http://34.249.176.174:99/api/"
   // localEndPoint: "/assets/data/"
-  localEndPoint: 'http://localhost:99/api/',
+  localEndPoint: 'http://g4tm.azurewebsites.net/api/',
   showDebugMessages: true
 }
 
@@ -16,16 +17,9 @@ module.exports = {
     path: path.join(process.cwd(), "dist"),
   },
    plugins: [
-     new GlobCopyWebpackPlugin({
-      patterns: [
-        "assets"
-      ],
-      globOptions: {
-        cwd: process.cwd() + "/src",
-        dot: true,
-        ignore: "**/.gitkeep"
-      }
-    }),
+     new CopyWebpackPlugin([
+      { from: path.join('src', 'assets'), to: 'assets' },
+    ]),
     new ProgressPlugin(),
     new DefinePlugin({
       'process.env': {
