@@ -9,9 +9,11 @@
             </div>
             <div class="modal-body">
                 <form (ngSubmit)="onSubmit()" #editForm="ngForm">
-                    <div class="form-group">
-                        <label>ContextUrl</label>
-                        <input type="text" [(ngModel)]="model.ContextUrl" name="contexualUrl" required placeholder="ContextUrl"/>
+                    <div class="form-group row">
+                        <label class="col-md-2 col-form-label">ContextUrl</label>
+                        <div class="col-md-10">
+                        <input class="form-control" type="text" [(ngModel)]="model.ContextUrl" name="contexualUrl" required placeholder="ContextUrl"/>
+                        </div>
                     </div>
                     <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
                     <button type="button" class="btn btn-success"  [disabled]="!editForm.form.valid"  (click)="saveOrUpdate()" aria-label="Save">Save</button>
