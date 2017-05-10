@@ -152,7 +152,6 @@ module.exports = {
       { from: path.join(config.paths.src, 'favicon.ico') },
       { from: 'node_modules/bootstrap/fonts', to: 'fonts' }
     ]),
-    new ProgressPlugin(),
     new HtmlWebpackPlugin({
       "template": "./src/index.html",
       "filename": "./index.html",
