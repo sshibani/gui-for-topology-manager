@@ -39,3 +39,15 @@ test:
 artifacts:
 - path: build/package/**/*.zip
   name: Zip Archive
+deploy:
+  release: G4TM-v$(appveyor_build_version)
+  description: ''
+  provider: GitHub
+  auth_token:
+    secure: jnOdjl7XtHQRIdu8N62H7Lo30OOjtDpV9VtnCBmgd+7hVrnqu71dPMQ4mKSSHHQj # your encrypted token from GitHub
+  artifact: build/package/**/*.zip            # upload all NuGet packages to release assets
+  draft: false
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
+    appveyor_repo_tag: true        # deploy on tag push only
