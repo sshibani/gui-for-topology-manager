@@ -9,41 +9,55 @@
             </div>
             <div class="modal-body">
              <form (ngSubmit)="onSubmit()" #editForm="ngForm">
-                <div class="form-group" *ngIf="showIdField">
-                    <label>Id</label>
-                    <input type="text" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
+                <div class="form-group row" *ngIf="showIdField">
+                    <label class="col-md-2 col-form-label">Id</label>
+                    <div class="col-md-9">
+                    <input type="text" class="form-control" [(ngModel)]="model.Id" placeholder="Id" name="id" [disabled]="autoGenerateId"/>
                     <input type="checkbox" [disabled]="!autoGenerateId" [checked]="autoGenerateId" (click)="autoGenerateId = !autoGenerateId" />
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>EnvironmentPurpose</label>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">EnvironmentPurpose</label>
+                    <div class="col-md-9">
                     <select class="form-control" id="purposes" name="purpose"
                             [(ngModel)]="model.EnvironmentPurpose" required >
                         <option *ngFor="let c of purposes" [value]="c">{{c}}</option>
                     </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>DiscoveryEndpointUrl</label>
-                    <input [(ngModel)]="model.DiscoveryEndpointUrl" name="discoveryEndPoint" placeholder="DiscoveryEndpointUrl" required />
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">DiscoveryEndpointUrl</label>
+                    <div class="col-md-9">
+                    <input  class="form-control" [(ngModel)]="model.DiscoveryEndpointUrl" name="discoveryEndPoint" placeholder="DiscoveryEndpointUrl" required />
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>IsOffline</label>
-                    <input  type="checkbox" [(ngModel)]="model.IsOffline" placeholder="IsOffline" name="isofline"  />
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">IsOffline</label>
+                    <div class="col-md-9">
+                    <input type="checkbox" [(ngModel)]="model.IsOffline" placeholder="IsOffline" name="isofline"  />
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>AuthenticationType</label>
+                <div class="form-group row">
+                    <label class="col-md-2 col-form-label">AuthenticationType</label>
+                    <div class="col-md-9">
                     <select class="form-control" id="authenticationtypes" (change)="onChange($event.target.value)"
                             [(ngModel)]="model.Credentials.AuthenticationType" required name="authentication" >
                         <option *ngFor="let type of authenticationTypes" [value]="type">{{type}}</option>
                     </select>
+                    </div>
                 </div>
                 <div *ngIf="model.Credentials.AuthenticationType && model.Credentials.AuthenticationType != 'Anonymous'">
-                       <div class="form-group">
-                            <label>ClientId</label>
-                            <input [(ngModel)]="model.Credentials.ClientId" placeholder="ClientId" required name="clientid" />
+                       <div class="form-group row">
+                            <label class="col-md-2 col-form-label">ClientId</label>
+                            <div class="col-md-9">
+                            <input class="form-control" [(ngModel)]="model.Credentials.ClientId" placeholder="ClientId" required name="clientid" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>ClientSecret</label>
-                            <input [(ngModel)]="model.Credentials.ClientSecret" placeholder="ClientSecret" required name="secret" />
+                        <div class="form-group row">
+                            <label class="col-md-2 col-form-label">ClientSecret</label>
+                            <div class="col-md-9">
+                            <input class="form-control" [(ngModel)]="model.Credentials.ClientSecret" placeholder="ClientSecret" required name="secret" />
+                            </div>
                         </div>
                 </div>
                 <!--<button type="button" (click)="lgModal.hide()" aria-label="Close">Close</button>-->
