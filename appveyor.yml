@@ -40,7 +40,7 @@ artifacts:
 - path: build/package/**/*.zip
   name: Zip Archive
 deploy:
-  release: G4TM-v$(appveyor_build_version)
+  release: v$(appveyor_build_version)
   description: ''
   provider: GitHub
   auth_token:
