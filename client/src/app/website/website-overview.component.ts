@@ -15,7 +15,7 @@ import { EnvironmentService } from './../services/environment.service';
     providers: [ WebsiteService, EnvironmentService ]
 })
 export class WebsiteOverviewComponent extends ComponentBase<Website> implements OnInit {
-    title = 'Website';
+    title = 'Websites';
 
     constructor(websiteService: WebsiteService,  messageService: MessageService) {
         super(websiteService, messageService);

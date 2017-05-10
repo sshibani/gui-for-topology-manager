@@ -1,0 +1,23 @@
+.sidebar {
+  background: #fff;
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+  z-index: 1001;
+  position: fixed;
+  width: 240px;
+  padding-top: 0;
+  height: 100%;
+  transition: .05s ease-in;
+  li {
+    a {
+      color: #54667a;
+      padding: 15px 35px 15px 20px;
+      display: block;
+      border-left: 3px solid #fff;
+      &.active {
+        color: #54667a;
+        border-color: $orange;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -42,8 +42,8 @@
 
                     <div class="panel panel-success">
                         <div class="panel-heading">
-                            <h3 class="panel-title">ExtensionProperties</h3>
-                            <button type="button" class="icon-pencil pull-right" (click)="addExtensionProperties()">Add</button>
+                            <h3 class="panel-title">ExtensionProperties <button type="button" class="icon-pencil pull-right" (click)="addExtensionProperties()">Add</button></h3>
+
                         </div>
                         <extension-properties *ngFor="let item of model.ExtensionProperties;"
                                             [Model]="item"

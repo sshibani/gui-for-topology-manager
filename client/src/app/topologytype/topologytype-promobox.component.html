@@ -1,27 +1,33 @@
 <div *ngIf="model" class="col-sm-6 ">
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            <strong>TopologyType ({{model.Id}})</strong>
-            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="topologyEdit.show()">Edit</button>
-            <button *ngIf="showActionButtons" type="button" class="icon-pencil pull-right" (click)="deleteItem.show()">Delete</button>
+  <div class="panel panel-default panel-orange">
+    <div class="panel-heading">
+      <h4>
+        TopologyType ({{model.Id}})
+        <div class="btn-group pull-right" role="group" aria-label="Add remove buttons">
+          <button *ngIf="showActionButtons" type="button" class="icon-button" (click)="topologyEdit.show()"><span class="glyphicon glyphicon-pencil"></span></button>
+          <button *ngIf="showActionButtons" type="button" class="icon-button" (click)="deleteItem.show()"><span class="glyphicon glyphicon-remove"></span></button>
         </div>
-        <dl class="dl-horizontal">
-            <dt>Name</dt>
-            <dd>{{model.Name}}</dd>
-        </dl>
-        <div class="panel panel-success">
-        <div class="panel-heading">
-            <h3 class="panel-title">Environment Purposes</h3>
-        </div>
-            <ul class="list-group">
-                <li *ngFor="let env of model.EnvironmentPurposes" class="list-group-item">
-                    <span>{{env}}</span>
-                </li>
-            </ul>
-        </div>
+      </h4>
     </div>
-    <topologytype-edit #topologyEdit [Model]="model"></topologytype-edit>
-    <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
+    <div class="panel-body">
+      <dl class="dl-horizontal">
+        <dt>Name</dt>
+        <dd>{{model.Name}}</dd>
+      </dl>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Environment Purposes</h3>
+        </div>
+        <ul class="list-group">
+          <li *ngFor="let env of model.EnvironmentPurposes" class="list-group-item">
+            <span>{{env}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <topologytype-edit #topologyEdit [Model]="model"></topologytype-edit>
+  <delete-item #deleteItem [Model]="model" (onDelete)="delete($event)"></delete-item>
 </div>
 
 

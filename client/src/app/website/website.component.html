@@ -1,5 +1,7 @@
 <div *ngIf="model">
     <button type="button" class="btn btn-success"(click)="websiteEdit.show()">Edit</button>
-    <website-promobox [ShowActionButtons]="false" [Model]="model"></website-promobox>
+    <div class="row">
+      <website-promobox [ShowActionButtons]="false" [Model]="model"></website-promobox>
+    </div>
     <website-edit #websiteEdit [Model]="model"></website-edit>
 </div>
