@@ -56,11 +56,11 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
         if (topologyEndPoint.Url.startsWith('/assets')) { // locall dev mode
             this._environmentUrl = topologyEndPoint.Url + endPoint;
         } else {
-            if (topologyEndPoint.Url.endsWith('/')) {
-                this._environmentUrl = topologyEndPoint.Url + 'ttm201601/';
-            } else {
-                this._environmentUrl = topologyEndPoint.Url + '/ttm201601/';
-            }
+            // if (topologyEndPoint.Url.endsWith('/')) {
+            //     this._environmentUrl = topologyEndPoint.Url + 'ttm201601/';
+            // } else {
+            //     this._environmentUrl = topologyEndPoint.Url + '/ttm201601/';
+            // }
             this._environmentUrl = this._environmentUrl + endPoint;
         }
         this._headers = new Headers();
