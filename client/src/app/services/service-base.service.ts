@@ -61,7 +61,7 @@ export abstract class ServiceBase<T extends ITopologyItem> implements IServiceBa
             // } else {
             //     this._environmentUrl = topologyEndPoint.Url + '/ttm201601/';
             // }
-            this._environmentUrl = this._environmentUrl + endPoint;
+            this._environmentUrl = topologyEndPoint.Url + endPoint;
         }
         this._headers = new Headers();
         this._headers.append('Content-Type', 'application/json');
