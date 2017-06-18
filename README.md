@@ -58,7 +58,6 @@
       </rules>
     </rewrite>
     ....
-</system.webServer>
 <httpProtocol>
     <customHeaders>
         <add name="Access-Control-Request-Headers" value="Content-Type,Authorization" />
@@ -67,7 +66,8 @@
         <add name="Access-Control-Allow-Credentials" value="true" />
         <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, PATCH, DELETE, OPTIONS" />
     </customHeaders>
-</httpProtocol>
+  </httpProtocol>
+</system.webServer>
 ```
 4. Save web.config
 5. Run `iisreset`.
