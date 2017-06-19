@@ -33,7 +33,7 @@
 3. Open a Powershell window and execute the `install.ps1` in the root of the packge. 
 
 ```
-.\install.ps1 -ApplicationName MyTopologManager -portNumbder 8822 -CoreService_Domain mydomain -CoreService_UserName admin
+.\install.ps1 -ApplicationName MyTopologManager -portNumber 8822 -CoreService_Domain mydomain -CoreService_UserName admin
 ``` 
 
 ### TopologyManager 
