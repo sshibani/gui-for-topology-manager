@@ -6,13 +6,28 @@ import { ContextService } from './../services/context.service';
 import { TopologyEnvironment } from './../shared/models/topologyenvironment';
 import { Subscription } from 'rxjs/Subscription';
 import { MessageService } from './../services/message.service';
+import { ExportService } from './../services/export.service';
+// Services
+import { CmEnvironmentService } from './../services/cmenvironment.service';
+import { TopologyTypeService } from './../services/topologytype.service';
+import { EnvironmentService } from './../services/environment.service';
+import { WebsiteService } from './../services/website.service';
+import { WebApplicationService } from './../services/webapplication.service';
+import { MappingService } from './../services/mapping.service';
 
 @Component({
     moduleId: module.id,
     selector: 'env-selection',
     styleUrls: [ 'environment-selection.component.css'],
     templateUrl: 'environment-selection.component.html',
-    providers: [ TopologyEnvironmentService ]
+    providers: [ TopologyEnvironmentService,
+                 ExportService,
+                 CmEnvironmentService,
+                 EnvironmentService,
+                 TopologyTypeService,
+                 WebsiteService,
+                 WebApplicationService,
+                 MappingService ]
 })
 export class EnvironmentSelectionComponent implements OnInit {
     title = 'Select an environment';
@@ -24,6 +39,7 @@ export class EnvironmentSelectionComponent implements OnInit {
     constructor(private topologyEnvironmentService: TopologyEnvironmentService,
                 private contextService: ContextService,
                 private router: Router,
+                private exportService: ExportService,
                 private messageService: MessageService) {
                      this.setSubscribers();
                  }
@@ -41,6 +57,11 @@ export class EnvironmentSelectionComponent implements OnInit {
 
         const link = ['/' + RouteConst.EnvironmentOverviewPath];
         this.router.navigate(link, { skipLocationChange: true });
+    }
+
+    exportEnvironment(data: TopologyEnvironment): void {
+        console.log('export ' + data.Name);
+        this.exportService.export(data);
     }
 
     public delete(data: TopologyEnvironment): void {

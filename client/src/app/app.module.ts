@@ -63,6 +63,7 @@ import { ExtensionPropertiesComponent } from './shared/extensionsproperties/exte
 import { MessageComponent } from './shared/message/message.component';
 import { MessageService } from './services/message.service';
 import { ContextService } from './services/context.service';
+import { ExportService } from './services/export.service';
 
 @NgModule({
   imports: [
