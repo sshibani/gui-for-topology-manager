@@ -1,0 +1,221 @@
+{
+  "@odata.context":"http://localhost:81/ttm201501/$metadata#WebApplications","value":[
+    {
+      "Id":"devlv_prod2_nl_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod2_nl","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devlv_prod1_co_uk_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod1_co_uk","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devliv_prod1_de_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devliv_prod1_de","EnvironmentPurpose":"Live"
+    },{
+      "Id":"dev_prod2_se_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"dev_prod2_se","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devlv_fr_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_fr","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devlv_prod1professionals_us_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod1professionals_us","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devstprod1master_SAcom_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devstprod1master_SAcom","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod2_nl_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod2_nl","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devlv_prod3_com_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod3_com","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devLV_prod2_ZA_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devLV_prod2_ZA","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devst_prod1_nu_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod1_nu","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod1_de_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod1_de","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod3_local_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod3_local","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"Website1_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"Website1","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devlv_prod1professionals_nu_vardpersonal_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod1professionals_nu_vardpersonal","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod3_com_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod3_com","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_fr_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_fr","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"dev_prod2usa_com_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"dev_prod2usa_com","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devstprod1professionalcouk_rootwebapp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/professionals","WebsiteId":"devstprod1professionalcouk","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod2_co_uk_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod2_co_uk","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod1_ca_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod1_ca","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod2usa_com_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod2usa_com","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devlvprod1mastercom_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlvprod1mastercom","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devprod1de_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devprod1de","EnvironmentPurpose":"Live"
+    },{
+      "Id":"dev_prod1_de_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"dev_prod1_de","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod1_us_professionals_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod1_us_professionals","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_tpwmaster_prod1_com_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_tpwmaster_prod1_com","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devlv_prod2_co_uk_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod2_co_uk","EnvironmentPurpose":"Live"
+    },{
+      "Id":"dev_prod1_ca_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"dev_prod1_ca","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devlv_prod2_ca_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod2_ca","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devst_prod2_se_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod2_se","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devlv_tpwmaster_prod1_com_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_tpwmaster_prod1_com","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devst_prod1_co_uk_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod1_co_uk","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"devst_prod1professionals_us_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devst_prod1professionals_us","EnvironmentPurpose":"Staging"
+    },{
+      "Id":"Website2_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"Website2","EnvironmentPurpose":"Live"
+    },{
+      "Id":"devlv_prod1_nu_RootWebApp","ExtensionProperties":[
+
+      ],"ScopedRepositoryKeys":[
+
+      ],"ContextUrl":"/","WebsiteId":"devlv_prod1_nu","EnvironmentPurpose":"Live"
+    }
+  ]
+}

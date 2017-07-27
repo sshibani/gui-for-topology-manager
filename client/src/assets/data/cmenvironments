@@ -1,0 +1,10 @@
+{ "@odata.context":"http://localhost:81/ttm201501/$metadata#CmEnvironments","value":[
+    {
+      "Id":"Tridioncm_Local","ExtensionProperties":[
+
+      ],"CoreServiceRootUrl":"net.tcp://localhost:2660","WebsiteRootUrl":"http://my-tridion-cm:80","CoreServiceCredentials":{
+        "@odata.type":"#Tridion.TopologyManager.Client.WindowsServiceCredentials","AuthenticationType":"Windows","UserName":"domain\\mtsuser","Password":null
+      }
+    }
+  ]
+}

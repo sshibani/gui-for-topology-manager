@@ -13,7 +13,7 @@ Param(
     [Parameter(Mandatory=$true, HelpMessage="IIS website name? (Default=topology-manager-gui)")]
     [string]$ApplicationName,
     [Parameter(Mandatory=$true, HelpMessage="IIS PortNumber? (Default=4012)")]
-    [string]$portNumbder,
+    [string]$portNumber,
     [Parameter(Mandatory=$true, HelpMessage="CoreService domain.")]
     [string]$CoreService_Domain,
     [Parameter(Mandatory=$true, HelpMessage="CoreService user.")]
@@ -52,9 +52,9 @@ function createWebApplication() {
     }
 
     $bindings = @(
-    @{protocol="http";bindingInformation="*:" + $portNumbder + ":" + $iisAppName},
-    @{protocol="http";bindingInformation="*:" + $portNumbder + ":www." + $iisAppName},
-    @{protocol="http";bindingInformation="*:" + $portNumbder + ":"}
+    @{protocol="http";bindingInformation="*:" + $portNumber + ":" + $iisAppName},
+    @{protocol="http";bindingInformation="*:" + $portNumber + ":www." + $iisAppName},
+    @{protocol="http";bindingInformation="*:" + $portNumber + ":"}
     )
 
     #create the site

@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Local",
+    "CoreServiceEndpoint": {
+      "Url": "http://localhost:100",
+      "Domain": "",
+      "UserName": "administrator",
+      "Password": "Tr1v1d3nt"
+    },
+    "TopologyManagerEndpoint": {
+      "Url": "/assets/data/",
+      "Domain": null,
+      "UserName": "administrator",
+      "Password": "Tr1v1d3nt"
+    }
+  },
+  {
+    "Name": "test",
+    "CoreServiceEndpoint": {
+      "Url": "http://test:01",
+      "Domain": null,
+      "UserName": "username",
+      "Password": "pass"
+    },
+    "TopologyManagerEndpoint": {
+      "Url": "http://test:00",
+      "Domain": null,
+      "UserName": "username",
+      "Password": "pass"
+    }
+  }
+]

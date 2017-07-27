@@ -33,7 +33,7 @@
 3. Open a Powershell window and execute the `install.ps1` in the root of the packge. 
 
 ```
-.\install.ps1 -ApplicationName MyTopologManager -portNumbder 8822 -CoreService_Domain mydomain -CoreService_UserName admin
+.\install.ps1 -ApplicationName MyTopologManager -portNumber 8822 -CoreService_Domain mydomain -CoreService_UserName admin
 ``` 
 
 ### TopologyManager 
@@ -58,7 +58,6 @@
       </rules>
     </rewrite>
     ....
-</system.webServer>
 <httpProtocol>
     <customHeaders>
         <add name="Access-Control-Request-Headers" value="Content-Type,Authorization" />
@@ -67,7 +66,8 @@
         <add name="Access-Control-Allow-Credentials" value="true" />
         <add name="Access-Control-Allow-Methods" value="GET, POST, PUT, PATCH, DELETE, OPTIONS" />
     </customHeaders>
-</httpProtocol>
+  </httpProtocol>
+</system.webServer>
 ```
 4. Save web.config
 5. Run `iisreset`.
