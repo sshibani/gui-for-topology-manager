@@ -10,59 +10,53 @@ import { AppComponent } from './app.component';
 import { TabsModule, AccordionModule, CollapseModule, ButtonsModule, ModalModule, AlertModule   } from 'ng2-bootstrap';
 
 import { AppRoutingModule } from './app.routing';
+import { HasContextActivated, MessageService, ContextService } from './services';
 
-import { GlobalExceptionHandler } from './shared/handlers/global-exception-handler';
-import { HasContextActivated } from './services/has-context-environment';
+import { GlobalExceptionHandler,
+         HighlightDirective,
+         SearchComponent,
+         DeleteWindowComponent,
+         ExtensionPropertiesComponent,
+         MessageComponent } from './shared';
 
-// Main section
-import { MainComponent } from './main/main.component';
-
+        // Main section
+import { MainComponent } from './main';
 // Navigation
-import { NavigationComponent } from './navigation/navigation.component';
-import { EnvironmentSelectionComponent } from './environment-selection/environment-selection.component';
-import { EnvrionemtSelectionEditComponent } from './environment-selection/environment-selection-edit.component';
-import { EnvrionemtSelectionNavComponent } from './environment-selection/environment-selection-nav.component';
+import { NavigationComponent } from './navigation';
 
-import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
-import { CdEnvironmentOverviewComponent } from './cdenvironment/cdenvironment-overview.component';
-import { CdEnvironmentPromoboxComponent } from './cdenvironment/cdenvironment-promobox.component';
-import { CdEnvironmentEditComponent } from './cdenvironment/cdenvironment-edit.component';
+import { EnvironmentSelectionComponent,
+        EnvrionemtSelectionEditComponent,
+        EnvrionemtSelectionNavComponent } from './environment-selection';
 
-// import { CdEnvironmentComponent } from './cdenvironment/cdenvironment.component';
-import { CmEnvironmentOverviewComponent } from './cmenvironment/cmenvironment-overview.component';
-import { CmEnvironmentPromoboxComponent } from './cmenvironment/cmenvironment-promobox.component';
-import { CmEnvironmentEditComponent } from './cmenvironment/cmenvironment-edit.component';
+import { CdEnvironmentComponent,
+         CdEnvironmentOverviewComponent,
+         CdEnvironmentPromoboxComponent,
+         CdEnvironmentEditComponent } from './cdenvironment';
 
-import { WebsiteOverviewComponent } from './website/website-overview.component';
-import { WebsitePromoboxComponent } from './website/website-promobox.component';
-import { WebsiteEditComponent } from './website/website-edit.component';
-import { WebsiteComponent } from './website/website.component';
+import { CmEnvironmentOverviewComponent,
+         CmEnvironmentPromoboxComponent,
+         CmEnvironmentEditComponent } from './cmenvironment';
 
-import { WebApplicationOverviewComponent } from './webapplication/webapplication-overview.component';
-import { WebApplicationPromoboxComponent } from './webapplication/webapplication-promobox-component';
-import { WebApplicationEditComponent } from './webapplication/webapplication-edit.component';
+import { WebsiteOverviewComponent,
+         WebsitePromoboxComponent,
+         WebsiteEditComponent,
+         WebsiteComponent } from './website';
 
-import { MappingOverviewComponent } from './mapping/mapping-overview.component';
-import { MappingPromoboxComponent } from './mapping/mapping-promobox.component';
-import { MappingEditComponent } from './mapping/mapping-edit.component';
+import { WebApplicationOverviewComponent,
+         WebApplicationPromoboxComponent,
+         WebApplicationEditComponent } from './webapplication';
 
-import { TopologyTypeOverviewComponent } from './topologytype/topologytype-overview.component';
-import { TopologyTypePromoboxComponent } from './topologytype/topologytype-promobox.component';
-import { TopologyTypeEditComponent } from './topologytype/topologytype-edit.component';
-import { TopologyTypeComponent } from './topologytype/topologytype.component';
-
-// import { GoToDirective } from './shared/attribute-directives/goto-directive';
-import { HighlightDirective } from './shared/attribute-directives/highlight-directive';
+import { MappingOverviewComponent,
+         MappingPromoboxComponent,
+         MappingEditComponent } from './mapping';
 
 
-import { SearchComponent } from './shared/search/search.component';
+import { TopologyTypeOverviewComponent,
+         TopologyTypePromoboxComponent,
+         TopologyTypeEditComponent,
+         TopologyTypeComponent } from './topologytype';
 
 
-import { DeleteWindowComponent } from './shared/popup/delete-window.component';
-import { ExtensionPropertiesComponent } from './shared/extensionsproperties/extensionproperties.component';
-import { MessageComponent } from './shared/message/message.component';
-import { MessageService } from './services/message.service';
-import { ContextService } from './services/context.service';
 
 @NgModule({
   imports: [
